@@ -1,0 +1,16 @@
+{
+  "name": "claude_templates",
+  "version": "1.0.0",
+  "description": "このフォルダには、ちこの投稿作成に必要な全ファイルが含まれています。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv-parse": "^6.1.0",
+    "googleapis": "^155.0.0"
+  }
+}

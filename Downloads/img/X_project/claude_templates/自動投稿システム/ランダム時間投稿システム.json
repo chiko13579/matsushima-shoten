@@ -1,0 +1,286 @@
+{
+  "name": "ランダム時間投稿システム",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "cronExpression": "*/5 6-22 * * *"
+            }
+          ]
+        }
+      },
+      "id": "scheduled-trigger",
+      "name": "投稿チェックトリガー",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [240, 300],
+      "notes": "6時-22時の間、5分毎にチェック"
+    },
+    {
+      "parameters": {
+        "jsCode": "// 現在時刻を取得\nconst now = new Date();\nconst currentHour = now.getHours();\nconst currentMinute = now.getMinutes();\n\n// 投稿予定時間を定義（基準時間）\nconst scheduledHours = [7, 11, 20];\n\n// 各時間に対してランダムな変動を適用（±5分）\nlet shouldPost = false;\nlet targetHour = null;\n\nfor (const baseHour of scheduledHours) {\n  // ランダムな変動を生成（-5分から+5分）\n  const randomOffset = Math.floor(Math.random() * 11) - 5;\n  const targetTime = new Date();\n  targetTime.setHours(baseHour, randomOffset, 0, 0);\n  \n  // 負の分の場合は前の時間に調整\n  if (targetTime.getMinutes() < 0) {\n    targetTime.setHours(baseHour - 1, 60 + randomOffset, 0, 0);\n  }\n  // 60分以上の場合は次の時間に調整\n  else if (targetTime.getMinutes() >= 60) {\n    targetTime.setHours(baseHour + 1, randomOffset - 60, 0, 0);\n  }\n  \n  const targetHourFinal = targetTime.getHours();\n  const targetMinuteFinal = targetTime.getMinutes();\n  \n  // 現在時刻が目標時刻の±2分以内かチェック\n  if (currentHour === targetHourFinal) {\n    const timeDiff = Math.abs(currentMinute - targetMinuteFinal);\n    if (timeDiff <= 2) {\n      shouldPost = true;\n      targetHour = baseHour;\n      break;\n    }\n  }\n}\n\nif (shouldPost) {\n  return {\n    shouldPost: true,\n    baseHour: targetHour,\n    actualTime: now.toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo' }),\n    message: `${targetHour}時の投稿を実行`\n  };\n} else {\n  return null;\n}"
+      },
+      "id": "random-timing-check",
+      "name": "ランダム投稿時間チェック",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.shouldPost }}",
+              "operation": "equal",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "timing-filter",
+      "name": "投稿時間フィルター",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "resource": "sheet",
+        "operation": "read",
+        "documentId": "1Xhb0WtJHMePeaJmISlUqVxtpcy04G3m3i3gYh5PpcKY",
+        "sheetName": "シート1",
+        "options": {
+          "range": "A:H",
+          "valueRenderMode": "UNFORMATTED_VALUE"
+        }
+      },
+      "id": "read-spreadsheet",
+      "name": "スプレッドシート読み込み",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [900, 200],
+      "credentials": {
+        "googleSheetsApi": {
+          "id": "google-sheets-credential",
+          "name": "Google Sheets Access"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// 未投稿のデータから最も古いものを1件選択\nconst pendingPosts = [];\n\n// 全行をチェック\nfor (let i = 0; i < $input.all().length; i++) {\n  const item = $input.all()[i].json;\n  \n  // ヘッダー行をスキップ\n  if (i === 0 && (item.ID === 'ID' || item.ID === 'ＩＤ')) {\n    continue;\n  }\n  \n  // 未投稿でIDと投稿内容があるもの\n  if (item.ステータス === '未投稿' && item.ID && item.投稿内容) {\n    pendingPosts.push({\n      id: item.ID,\n      content: item.投稿内容,\n      type: item.投稿種類 || '不明',\n      rowNumber: i + 1, // スプレッドシートの行番号（1ベース）\n      memo: item.メモ || '',\n      createdOrder: parseInt(item.ID) || 0 // ID順でソート用\n    });\n  }\n}\n\n// IDが小さい（古い）順にソート\npendingPosts.sort((a, b) => a.createdOrder - b.createdOrder);\n\n// 投稿するものがある場合は最初の1件を返す\nif (pendingPosts.length > 0) {\n  const nextPost = pendingPosts[0];\n  \n  return [nextPost];\n} else {\n  return null;\n}"
+      },
+      "id": "select-post",
+      "name": "投稿選択ロジック",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1120, 200]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json }}",
+              "operation": "notEqual",
+              "value2": "null"
+            }
+          ]
+        }
+      },
+      "id": "check-post-exists",
+      "name": "投稿存在チェック",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [1340, 200]
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "text": "={{ $json.content }}",
+        "options": {}
+      },
+      "id": "twitter-post",
+      "name": "X(Twitter)投稿",
+      "type": "n8n-nodes-base.twitter",
+      "typeVersion": 2,
+      "position": [1500, 100],
+      "credentials": {
+        "twitterOAuth2Api": {
+          "id": "twitter-credential",
+          "name": "X (Twitter) Account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "sheet",
+        "operation": "update",
+        "documentId": "1Xhb0WtJHMePeaJmISlUqVxtpcy04G3m3i3gYh5PpcKY",
+        "sheetName": "シート1",
+        "range": "D{{ $('投稿選択ロジック').first().json.rowNumber }}:G{{ $('投稿選択ロジック').first().json.rowNumber }}",
+        "options": {
+          "valueInputOption": "USER_ENTERED"
+        },
+        "dataMode": "defineBelow",
+        "fieldsUi": {
+          "values": [
+            {
+              "column": "D",
+              "fieldValue": "投稿完了"
+            },
+            {
+              "column": "F",
+              "fieldValue": "{{ new Date().toLocaleString('ja-JP', { timeZone: 'Asia/Tokyo', year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit' }) }}"
+            },
+            {
+              "column": "G",
+              "fieldValue": "https://twitter.com/user/status/{{ $('X(Twitter)投稿').first().json.id_str || $('X(Twitter)投稿').first().json.id }}"
+            }
+          ]
+        }
+      },
+      "id": "update-status",
+      "name": "ステータス更新",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [1720, 100],
+      "credentials": {
+        "googleSheetsApi": {
+          "id": "google-sheets-credential",
+          "name": "Google Sheets Access"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "sheet",
+        "operation": "update",
+        "documentId": "1Xhb0WtJHMePeaJmISlUqVxtpcy04G3m3i3gYh5PpcKY",
+        "sheetName": "シート1",
+        "range": "H{{ $('投稿選択ロジック').first().json.rowNumber }}",
+        "options": {
+          "valueInputOption": "USER_ENTERED"
+        },
+        "dataMode": "defineBelow",
+        "fieldsUi": {
+          "values": [
+            {
+              "column": "H",
+              "fieldValue": "投稿エラー: {{ $json.error.message || $json.message || 'Unknown error' }}"
+            }
+          ]
+        }
+      },
+      "id": "log-error",
+      "name": "エラーログ記録",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.4,
+      "position": [1500, 300],
+      "credentials": {
+        "googleSheetsApi": {
+          "id": "google-sheets-credential",
+          "name": "Google Sheets Access"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "投稿チェックトリガー": {
+      "main": [
+        [
+          {
+            "node": "ランダム投稿時間チェック",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "ランダム投稿時間チェック": {
+      "main": [
+        [
+          {
+            "node": "投稿時間フィルター",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "投稿時間フィルター": {
+      "main": [
+        [
+          {
+            "node": "スプレッドシート読み込み",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "スプレッドシート読み込み": {
+      "main": [
+        [
+          {
+            "node": "投稿選択ロジック",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "投稿選択ロジック": {
+      "main": [
+        [
+          {
+            "node": "投稿存在チェック",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "投稿存在チェック": {
+      "main": [
+        [
+          {
+            "node": "X(Twitter)投稿",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "X(Twitter)投稿": {
+      "main": [
+        [
+          {
+            "node": "ステータス更新",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ],
+      "error": [
+        [
+          {
+            "node": "エラーログ記録",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "tags": ["random-timing", "auto-post", "smart-schedule"]
+}
