@@ -4,186 +4,418 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>松島商店 | 暮らしに寄り添う、確かな品質</title>
+    <meta name="robots" content="noindex">
+    <title>松島商店 | 半田市の建物解体プロフェッショナル</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@700;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <meta name="robots" content="noindex">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.8;
+            word-break: break-all;
+        }
+
+        .img-placeholder {
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            border: 1px solid #e5e5e5;
+        }
+
+        .img-placeholder::after {
+            content: "IMAGE PHOTO";
+        }
+
+        /* セクションタイトルの共通スタイル */
+        .main-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 1.75rem;
+            }
+        }
+
+        /* スムーズスクロール */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
 
 <body>
 
-    <header>
-        <div class="container header-inner">
-            <div class="logo">松島商店</div>
-            <nav class="nav-links">
-                <a href="index.html">ホーム</a>
-                <a href="flow.html">工事完了までの流れ</a>
-                <a href="company.html">会社概要</a>
-                <a href="faq.html">よくあるご質問</a>
-                <a href="recruit.html">採用に関して</a>
-                <a href="faq.html" class="contact-btn">お問合せ</a>
-            </nav>
+    <!-- Header Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-zinc-100">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="font-bold text-xl tracking-tighter">松島商店</div>
+            <div class="hidden lg:flex items-center space-x-8 text-xs font-bold uppercase tracking-widest">
+                <a href="index.html" class="hover:text-zinc-500 transition">ホーム</a>
+                <a href="flow.html" class="hover:text-zinc-500 transition">工事完了までの流れ</a>
+                <a href="faq.html" class="hover:text-zinc-500 transition">よくあるご質問</a>
+                <a href="recruit.html" class="hover:text-zinc-500 transition">採用に関して</a>
+                <a href="company.html" class="hover:text-zinc-500 transition">会社概要</a>
+                <a href="faq.html" class="bg-black text-white px-4 py-2 hover:bg-zinc-800 transition">お問合せ</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative bg-white pt-24 pb-40 border-b border-zinc-100 min-h-[85vh] flex flex-col justify-center">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <span class="inline-block text-sm font-bold tracking-[0.3em] text-zinc-400 mb-6">ESTABLISHED IN HANDA</span>
+            <h1 class="font-bold mb-8 leading-tight tracking-tighter text-zinc-900">
+                <span class="text-xl md:text-2xl block mb-2 text-zinc-500 font-medium">建物解体のプロフェッショナル</span>
+                <span class="text-4xl md:text-7xl">解体&nbsp;×&nbsp;再生</span>
+            </h1>
+            <div class="mb-12 space-y-4">
+                <p class="text-xl md:text-2xl font-bold text-zinc-800">
+                    不動産の解体、そして価値ある再生へ。
+                </p>
+                <p class="text-zinc-600 max-w-2xl mx-auto leading-relaxed">
+                    解体のプロフェッショナルとして迅速、安全、そして確実に<br class="hidden md:block">不動産価値への再生へと導くためのプロセスをお手伝いします。
+                </p>
+                <p class="text-lg md:text-xl text-zinc-600 pt-4">
+                    迅速・丁寧な解体工事をお約束します。
+                </p>
+            </div>
+            <div class="flex flex-col items-center">
+                <div class="bg-black text-white px-10 py-5 font-bold text-lg md:text-xl shadow-xl">
+                    ご相談・お見積もり完全無料
+                </div>
+            </div>
+        </div>
+
+        <!-- 採用ボタン（左下） -->
+        <div id="recruit-cta" class="absolute bottom-10 left-6 md:left-12">
+            <a href="recruit.html"
+                class="group block border-2 border-black px-6 py-3 hover:bg-black hover:text-white transition-all duration-300">
+                <span
+                    class="block text-[10px] font-bold text-zinc-400 tracking-widest uppercase mb-1 group-hover:text-zinc-300 transition-colors">Recruitment</span>
+                <span class="text-sm font-bold flex items-center">
+                    採用に関してはこちら <span
+                        class="ml-3 inline-block transform group-hover:translate-x-1 transition-transform">→</span>
+                </span>
+            </a>
         </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <div class="hero-overlay"></div>
-            <div class="container hero-container">
-                <div class="hero-top-label">ESTABLISHED IN HANDA</div>
-                <div class="hero-content">
-                    <h1>解体 × 再生</h1>
-                    <p>建物解体のプロフェッショナルとして、<br>不動産の解体、そして価値ある再生へ。</p>
-                    <div style="margin-top: 50px;">
-                        <a href="faq.html" class="cta-button-heavy">相談・見積もりは無料です</a>
-                    </div>
-                </div>
-                <div class="hero-floating-box-left" style="bottom: 40px; left: 40px;">
-                    <span class="label">RECRUITMENT</span>
-                    <p>新しい未来。新しい街づくり。<br><strong>解体・施工スタッフ募集中！</strong></p>
-                    <a href="recruit.html">採用情報を見る →</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="works" class="container">
-            <div class="section-title">
-                <h2>実績物件</h2>
-                <p>例えば、このような物件で実績がございます</p>
-            </div>
-            <div class="works-grid">
-                <div class="work-item">
-                    <div class="work-icon">🏠</div>
-                    <h3>家の解体</h3>
-                </div>
-                <div class="work-item">
-                    <div class="work-icon">🏢</div>
-                    <h3>空き家の解体</h3>
-                </div>
-                <div class="work-item">
-                    <div class="work-icon">🏗️</div>
-                    <h3>内装解体</h3>
-                </div>
-                <div class="work-item">
-                    <div class="work-icon">🔥</div>
-                    <h3>火事現場解体</h3>
-                </div>
-                <div class="work-item">
-                    <div class="work-icon">🏪</div>
-                    <h3>店舗解体</h3>
-                </div>
-            </div>
-            <div class="works-highlight-box">
-                <p>木造・鉄骨・RCなど あらゆる建物に対応可能。</p>
-                <p>建設会社・工務店・開発会社様などの業者様からの対応も、たくさんございます。</p>
-            </div>
-        </section>
-
-        <section id="achievements" style="background-color: var(--white);">
-            <div class="container">
-                <div class="section-title">
-                    <h2>解体工事実績の一部をご紹介</h2>
-                </div>
-                <div class="achievement-grid">
-                    <div class="achievement-card">
-                        <div class="image-placeholder" style="height: 200px;"></div>
-                        <div class="achievement-info">
-                            <span class="place-tag">PLACE：Aichi Handa</span>
-                            <h3>一般住宅 解体工事</h3>
-                            <span class="period-tag">PERIOD：20.JAN - 10.FEB</span>
-                        </div>
-                    </div>
-                    <div class="achievement-card">
-                        <div class="image-placeholder" style="height: 200px;"></div>
-                        <div class="achievement-info">
-                            <span class="place-tag">PLACE：Aichi Handa</span>
-                            <h3>店舗内装 スケルトン解体</h3>
-                            <span class="period-tag">PERIOD：15.FEB - 25.FEB</span>
-                        </div>
-                    </div>
-                    <div class="achievement-card">
-                        <div class="image-placeholder" style="height: 200px;"></div>
-                        <div class="achievement-info">
-                            <span class="place-tag">PLACE：Aichi Handa</span>
-                            <h3>空き家・蔵 解体撤去</h3>
-                            <span class="period-tag">PERIOD：01.MAR - 15.MAR</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="trust" style="background-color: var(--primary-color); color: var(--white); padding: 100px 0;">
-            <div class="container">
-                <div class="section-title">
-                    <h2 style="color: var(--white);">松島商店が選ばれる3つの理由</h2>
-                </div>
-                <div class="grid">
-                    <div class="card"
-                        style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.2); color: var(--white); box-shadow: none;">
-                        <div class="flow-number"
-                            style="position: static; margin-bottom: 20px; background: var(--accent-color); color: #000;">
-                            01</div>
-                        <h3 style="color: var(--white);">電子マニフェストによる透明性</h3>
-                        <p style="color: rgba(255,255,255,0.7);">適正な廃棄物処理を証明する電子マニフェストに完全対応。不法投棄の心配は一切ありません。</p>
-                    </div>
-                    <div class="card"
-                        style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.2); color: var(--white); box-shadow: none;">
-                        <div class="flow-number"
-                            style="position: static; margin-bottom: 20px; background: var(--accent-color); color: #000;">
-                            02</div>
-                        <h3 style="color: var(--white);">自社保有重機と処理場提携</h3>
-                        <p style="color: rgba(255,255,255,0.7);">
-                            愛知県内に多数の提携処分場を確保。運搬距離を短縮することで、業界トップクラスのコストパフォーマンスを実現します。</p>
-                    </div>
-                    <div class="card"
-                        style="background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.2); color: var(--white); box-shadow: none;">
-                        <div class="flow-number"
-                            style="position: static; margin-bottom: 20px; background: var(--accent-color); color: #000;">
-                            03</div>
-                        <h3 style="color: var(--white);">地域密着35年の実績</h3>
-                        <p style="color: rgba(255,255,255,0.7);">地元半田市を拠点に35年。地域の特性を熟知したスタッフが、迅速かつ柔軟に対応いたします。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="other-services"
-            style="background-color: var(--primary-color); color: var(--white); padding: 80px 0; border-top: 1px solid rgba(255,255,255,0.1);">
-            <div class="container text-center">
-                <h2 style="color: var(--white); margin-bottom: 30px;">その他のサービス (解体工事をご依頼いただいたお客様限定)</h2>
-                <div
-                    style="background: rgba(255,255,255,0.1); padding: 40px; border-radius: 8px; border: 1px dashed var(--accent-color);">
-                    <h3 style="color: var(--accent-color); font-size: 2rem; border: none; margin-top: 0;">
-                        無料お荷物預かりサービスのご案内</h3>
-                    <p style="font-size: 1.2rem; margin-top: 20px;">建て替えやリフォーム期間中、大切な家具や家財を最大180日間、無料でお預かりします。</p>
-                    <a href="luggage.html"
-                        style="color: var(--white); text-decoration: underline; font-weight: bold; margin-top: 20px; display: inline-block;">詳細はこちら
-                        →</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-info">
-                <p style="font-size: 1.2rem; margin-bottom: 30px; opacity: 0.9;">
-                    「見積もりだけほしい」「他社と比較したい」 どんなご相談でもOKです。<br>
-                    相談したからといって、契約する必要はありません。
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-zinc-50">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="main-title mb-10">あなたの「負」動産を, 価値ある資産へ再生しませんか？</h2>
+            <div class="space-y-8 text-zinc-700 text-lg leading-relaxed max-w-3xl mx-auto">
+                <p>
+                    解体のプロフェッショナルとして、迅速・安全に不動産価値の再生をお手伝いします。
+                    立地が良くても、古い建物があっては売却や運用ができません。私たちは解体工事によって建物を撤去し、活用可能な「更地」へと生まれ変わらせます。
                 </p>
-                <div class="logo" style="color: var(--white); margin-bottom: 20px;">松島商店</div>
-                <p style="font-weight: 700;">愛知県半田市 | 建物解体・土地再生のプロフェッショナル</p>
-            </div>
-            <div class="footer-copyright">
-                &copy; MATSUSHIMA SHOTEN All Rights Reserved.
+                <p>
+                    また、日本の住宅事情である密集地での施工もお任せください。解体は荒っぽい工事と思われがちですが、私たちは細かな配慮 <strong>と</strong>
+                    安全管理を徹底し、土地再生の第一歩をサポートします。
+                </p>
             </div>
         </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="main-title text-center mb-16 underline decoration-zinc-200 underline-offset-8">
+                例えば, このような物件で実績がございます
+            </h2>
+
+            <!-- 実績リストを1列（横並び）に配置 -->
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mb-12">
+                <div class="text-center">
+                    <div class="img-placeholder aspect-square mb-4"></div>
+                    <p class="font-bold">家の解体</p>
+                </div>
+                <div class="text-center">
+                    <div class="img-placeholder aspect-square mb-4"></div>
+                    <p class="font-bold">空き家の解体</p>
+                </div>
+                <div class="text-center">
+                    <div class="img-placeholder aspect-square mb-4"></div>
+                    <p class="font-bold">内装解体</p>
+                </div>
+                <div class="text-center">
+                    <div class="img-placeholder aspect-square mb-4"></div>
+                    <p class="font-bold">火事現場解体</p>
+                </div>
+                <div class="text-center">
+                    <div class="img-placeholder aspect-square mb-4"></div>
+                    <p class="font-bold">店舗解体</p>
+                </div>
+            </div>
+
+            <!-- 対応構造の文章を下に配置 -->
+            <div class="max-w-3xl mx-auto bg-zinc-900 text-white p-8 text-center mb-16">
+                <p class="text-xl font-bold leading-relaxed">
+                    木造・鉄骨・RCなど<br>
+                    あらゆる建物に対応可能
+                </p>
+            </div>
+
+            <!-- 業者様向け案内 -->
+            <div class="max-w-4xl mx-auto mb-16 text-center">
+                <p class="text-xl md:text-2xl font-bold text-zinc-800 leading-snug">
+                    建設会社・工務店・開発会社様などの業者様からの対応も、たくさんございます。
+                </p>
+            </div>
+
+            <!-- セクション：その他のサービス -->
+            <div class="pt-16 border-t border-zinc-100">
+                <h2 class="main-title text-center mb-12">
+                    その他のサービス
+                </h2>
+
+                <div class="max-w-4xl mx-auto text-center mb-12">
+                    <p class="text-zinc-500 font-bold tracking-wider mb-2">解体工事をご依頼いただいたお客様限定</p>
+                    <h2 class="main-title mb-6 underline decoration-zinc-200 underline-offset-8">
+                        無料お荷物預かりサービスのご案内
+                    </h2>
+                    <p class="text-xl md:text-2xl font-bold text-zinc-800">
+                        180日間, 荷物を無料でお預かりします
+                    </p>
+                </div>
+
+                <a href="luggage.html" class="block">
+                    <div class="img-placeholder aspect-[21/9] w-full max-w-4xl mx-auto hover:opacity-80 transition">
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Section -->
+    <section id="case" class="py-24 bg-zinc-50">
+        <div class="max-w-5xl mx-auto px-6">
+            <h2 class="main-title mb-16 border-l-[12px] border-black pl-8">解体工事実績の一部をご紹介</h2>
+            <div class="bg-white border border-zinc-200 overflow-hidden shadow-sm">
+                <div class="p-8 md:p-12">
+                    <div
+                        class="flex flex-col md:flex-row md:items-center justify-between mb-10 pb-6 border-b border-zinc-100">
+                        <h3 class="text-3xl font-bold">アパート解体</h3>
+                        <div class="mt-4 md:mt-0 space-x-6 text-zinc-500 font-bold text-sm uppercase tracking-widest">
+                            <span>Place : 半田市</span>
+                            <span>Period : 2ヶ月</span>
+                        </div>
+                    </div>
+                    <p class="mb-12 text-zinc-700 text-lg">
+                        半田市内の住宅地での工事でしたが, 近隣の方への配慮を徹底し, 無事故・クレームゼロで完了いたしました。
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <div class="img-placeholder aspect-video w-full mb-4"></div>
+                            <div class="flex items-center space-x-2 font-bold text-zinc-400 italic">
+                                <span class="w-4 h-px bg-zinc-300"></span>
+                                <span>解体中</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="img-placeholder aspect-video w-full mb-4"></div>
+                            <div class="flex items-center space-x-2 font-bold text-zinc-400 italic">
+                                <span class="w-4 h-px bg-zinc-300"></span>
+                                <span>解体後</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Strengths Section -->
+    <section class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <p class="text-zinc-500 font-bold tracking-wider mb-4">お客様に満足していただくために, </p>
+                <h2 class="main-title max-w-4xl mx-auto">
+                    「松島商店」では, この3つを大切にしております。
+                </h2>
+            </div>
+
+            <div class="space-y-24">
+                <!-- Point 1 -->
+                <div class="flex flex-col md:flex-row gap-12">
+                    <div class="md:w-1/12 text-6xl font-black text-zinc-100">01</div>
+                    <div class="md:w-11/12">
+                        <h3 class="text-2xl font-bold mb-8 pb-2 border-b-2 border-black inline-block">産業廃棄物は,
+                            すべて「電子マニフェスト」で管理だから透明性が高く・安心!!</h3>
+                        <div class="grid md:grid-cols-2 gap-12 items-start">
+                            <div>
+                                <div class="bg-zinc-50 p-8 border border-zinc-100 mb-8">
+                                    <p class="font-bold text-lg mb-4 italic">「電子マニフェスト」って何？</p>
+                                    <p class="text-zinc-600 mb-6">解体工事で出た廃材が, ちゃんと処分されているか追跡できるシステムです。</p>
+
+                                    <p class="font-bold text-lg mb-4">つまり, </p>
+                                    <ul class="space-y-4">
+                                        <li class="flex items-center font-bold"><span
+                                                class="w-2 h-2 bg-black mr-3"></span>不法投棄の心配がゼロ</li>
+                                        <li class="flex items-center font-bold"><span
+                                                class="w-2 h-2 bg-black mr-3"></span>廃材がどこでどう処理されたか, すべて記録に残る</li>
+                                        <li class="flex items-center font-bold"><span
+                                                class="w-2 h-2 bg-black mr-3"></span>透明性が高く, 安心</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="h-full">
+                                <div class="img-placeholder aspect-[4/3] md:aspect-auto md:h-80 w-full"></div>
+                            </div>
+                        </div>
+                        <p class="text-zinc-500 text-sm leading-relaxed bg-zinc-50 p-6 border border-zinc-100">
+                            不適切な処分をする業者に依頼してしまうと, 後からお客様（施主様）の責任が問われるリスクがあります。
+                            松島商店では, すべての工程を「電子マニフェスト」で可視化しているため, 将来にわたって安心をお約束します。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Point 2 -->
+                <div class="flex flex-col md:flex-row gap-12">
+                    <div class="md:w-1/12 text-6xl font-black text-zinc-100">02</div>
+                    <div class="md:w-11/12">
+                        <h3 class="text-2xl font-bold mb-8 pb-2 border-b-2 border-black inline-block">
+                            多数の産業廃棄物処理場と契約。だから余分なコストがかからない。</h3>
+
+                        <div class="grid md:grid-cols-2 gap-12 items-start">
+                            <!-- 左側：文章 -->
+                            <div>
+                                <p class="text-xl font-bold mb-6">だから, どの地域でも安定した価格で工事を施工できます。</p>
+                                <div class="space-y-6 text-zinc-700">
+                                    <p>
+                                        解体工事で出た廃材は, すべて専門の処理場へ適正に運搬します。<br>
+                                        リサイクルできるものは資源として再利用, それ以外は法律に基づいて適正処分。 環境に配慮した処理を徹底しています。
+                                    </p>
+                                    <p>
+                                        また, 半田市周辺に加えて, 愛知県の複数の処理場と契約しているため, 運搬距離が短く, 余計な運搬コストがかかりません。<br>
+                                        だから, 解体工事を適正価格でご提供できるんです。
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- 右側：写真（グレーの四角） -->
+                            <div class="h-full">
+                                <div class="img-placeholder aspect-[4/3] md:aspect-auto md:h-80 w-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Point 3 -->
+                <div class="flex flex-col md:flex-row gap-12">
+                    <div class="md:w-1/12 text-6xl font-black text-zinc-100">03</div>
+                    <div class="md:w-11/12">
+                        <h3 class="text-2xl font-bold mb-8 pb-2 border-b-2 border-black inline-block">スピード対応と,
+                            きめ細やかなフォロー</h3>
+                        <div class="grid md:grid-cols-3 gap-8">
+                            <div class="space-y-4">
+                                <p class="font-bold text-lg border-l-4 border-black pl-4">お見積もりは, すぐに出します</p>
+                                <p class="text-sm text-zinc-600">最短即日でお見積もりに伺います。 内容も分かりやすく説明するので, 「何にいくらかかるのか」一目瞭然です。
+                                </p>
+                            </div>
+                            <div class="space-y-4">
+                                <p class="font-bold text-lg border-l-4 border-black pl-4">近隣への挨拶も, 私たちが代わりに行います</p>
+                                <p class="text-sm text-zinc-600">「近所に説明するのが気まずい…」という方もご安心ください。 工前に,
+                                    弊社スタッフが責任を持ってご挨拶に伺います。</p>
+                            </div>
+                            <div class="space-y-4">
+                                <p class="font-bold text-lg border-l-4 border-black pl-4">工事中の不安も, すぐに解決</p>
+                                <p class="text-sm text-zinc-600">「今どんな状況？」「いつ終わる？」など, 気になることがあれば, すぐに担当者が丁寧にお答えします。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="mt-24 text-center font-bold text-xl md:text-2xl bg-zinc-900 text-white py-10 px-6">
+                半田市を拠点として, 長年やってきたからこそ, <br class="md:hidden">地域に密着した対応ができます。
+            </p>
+        </div>
+    </section>
+
+    <!-- Banner Section: Flow and FAQ -->
+    <section class="py-24 bg-zinc-50 border-y border-zinc-200">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Flow Banner -->
+                <a href="flow.html" class="block group">
+                    <div
+                        class="bg-zinc-200 aspect-[21/9] flex items-center justify-center border border-zinc-300 group-hover:bg-zinc-300 transition-colors">
+                        <h2 class="text-2xl font-bold tracking-wider">解体工事の流れ</h2>
+                    </div>
+                </a>
+                <!-- FAQ Banner -->
+                <a href="faq.html" class="block group">
+                    <div
+                        class="bg-zinc-200 aspect-[21/9] flex items-center justify-center border border-zinc-300 group-hover:bg-zinc-300 transition-colors">
+                        <h2 class="text-2xl font-bold tracking-wider">よくあるご質問</h2>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-32 bg-white">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="main-title mb-10">まずは無料相談から, お気軽にどうぞ</h2>
+
+            <div class="bg-zinc-50 border border-zinc-200 p-12 mb-16 shadow-sm">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="text-left border-r border-zinc-200 md:pr-8">
+                        <span class="text-xs font-bold text-zinc-400 tracking-widest uppercase">Direct Line</span>
+                        <p class="text-2xl md:text-3xl font-bold mt-2">📞 0569-21-5789</p>
+                        <p class="text-sm text-zinc-500 mt-2 font-bold italic">お電話はこちらから</p>
+                    </div>
+                    <div class="text-left md:pl-8">
+                        <span class="text-xs font-bold text-zinc-400 tracking-widest uppercase">24h Reception</span>
+                        <p class="text-lg font-bold mt-2">📧 メールでのお問い合わせは<br>24時間受付中</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="space-y-6 mb-16 text-xl text-zinc-600 font-medium">
+                <p>「とりあえず話を聞いてみたい」</p>
+                <p>「見積もりだけほしい」</p>
+                <p>「他社と比較したい」</p>
+                <p class="text-zinc-900 font-bold">どんなご相談でもOKです。相談したからといって, 契約する必要はありません。</p>
+            </div>
+
+            <div class="p-10 border-t-4 border-black">
+                <p class="text-2xl md:text-3xl font-bold leading-relaxed tracking-tight">
+                    半田市での解体工事は, 地域密着35年の実績を持つ<br class="hidden md:block">「松島商店」にお任せください。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Company Info -->
+    <footer id="company" class="bg-zinc-950 py-16 text-center text-zinc-500">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="font-bold text-white text-2xl mb-4 tracking-tighter">有限会社 松島商店</div>
+            <p class="text-sm mb-4">愛知県半田市 | 建物解体・土地再生のプロフェッショナル</p>
+            <div class="text-xs space-y-2 mb-10">
+                <p>所在地：愛知県半田市</p>
+                <p>創業：昭和60年</p>
+            </div>
+            <div class="w-12 h-px bg-zinc-800 mx-auto mb-10"></div>
+            <p class="text-xs">&copy; MATSUSHIMA SHOTEN. All Rights Reserved.</p>
+        </div>
     </footer>
+
 </body>
 
 </html>
