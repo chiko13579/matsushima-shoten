@@ -4,109 +4,370 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
     <title>施工の流れ | 松島商店</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@700;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <meta name="robots" content="noindex">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            scroll-behavior: smooth;
+        }
+
+        .step-number {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+        }
+
+        .hover-lift {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        .detail-box {
+            background-color: #f9fafb;
+            border-left: 3px solid #1a1a1a;
+        }
+
+        /* スクロールバーもグレーに統一 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #ccc;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #999;
+        }
+    </style>
 </head>
 
-<body>
+<body class="bg-gray-50">
 
-    <header>
-        <div class="container header-inner">
-            <div class="logo">松島商店</div>
-            <nav class="nav-links">
-                <a href="index.html">ホーム</a>
-                <a href="flow.html">工事完了までの流れ</a>
-                <a href="faq.html">よくあるご質問</a>
-                <a href="recruit.html">採用に関して</a>
-                <a href="company.html">会社概要</a>
-                <a href="luggage.html">お問合せ</a>
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <span class="font-bold text-xl tracking-tighter shrink-0">松島商店</span>
+            </div>
+            <!-- Navigation -->
+            <nav class="hidden lg:flex space-x-6 text-[13px] font-medium text-gray-500">
+                <a href="index.html" class="hover:text-black transition-colors py-2">ホーム</a>
+                <a href="flow.html" class="text-black border-b-2 border-black py-2">工事完了までの流れ</a>
+                <a href="faq.html" class="hover:text-black transition-colors py-2">よくあるご質問</a>
+                <a href="recruit.html" class="hover:text-black transition-colors py-2">採用に関して</a>
+                <a href="company.html" class="hover:text-black transition-colors py-2">会社概要</a>
+                <a href="faq.html" class="hover:text-black transition-colors py-2">お問合せ</a>
             </nav>
+            <!-- Mobile Menu Icon (Placeholder) -->
+            <div class="lg:hidden">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </div>
         </div>
     </header>
 
-    <main>
-        <div class="page-header container">
-            <h1>施工の流れ</h1>
-            <p>お見積りから工事完了まで、責任を持ってサポートいたします。</p>
+    <!-- Hero Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <span
+                class="inline-block px-4 py-1.5 mb-6 text-xs font-bold tracking-widest text-white bg-black rounded-full uppercase">Workflow</span>
+            <h1 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight">お見積りから工事完了までの流れ</h1>
+            <p class="text-gray-500 max-w-2xl mx-auto leading-relaxed">
+                大切なお住まいの解体・造成工事を、お見積りから最終確認まで一貫した体制で管理いたします。<br class="hidden md:block">
+                法令遵守と近隣配慮を徹底し、スムーズな土地のバトンタッチをサポートします。
+            </p>
         </div>
+    </section>
 
-        <section class="container">
-            <div class="flow-container">
-                <div class="flow-item">
-                    <div class="flow-number">01</div>
-                    <div class="flow-content">
-                        <h3>現地調査・お見積り</h3>
-                        <p>専門スタッフが現地を訪問し、建物の構造や周辺環境、法令義務であるアスベストの事前調査などを細かく行います。調査に基づき、詳細な見積書を無料で作成いたします。</p>
-                        <div class="flow-note">
-                            目安期間：30坪の住宅で約2〜3日、50坪で約4〜5日で調査回答
+    <!-- Flow Section -->
+    <section class="py-20">
+        <div class="max-w-4xl mx-auto px-6">
+
+            <!-- STEP 1 -->
+            <div class="flex flex-col md:flex-row mb-20">
+                <div class="md:w-1/4 mb-4 md:mb-0">
+                    <div class="flex items-center space-x-4 md:flex-col md:space-x-0 md:items-start">
+                        <span class="step-number text-5xl text-gray-200">01</span>
+                        <span
+                            class="md:mt-2 px-3 py-1 bg-black text-white text-[10px] font-bold tracking-widest rounded">FREE</span>
+                    </div>
+                </div>
+                <div class="md:w-3/4 bg-white p-8 rounded-2xl border border-gray-100 hover-lift">
+                    <h3 class="text-xl font-bold mb-2 flex items-center">
+                        現地調査・お見積り
+                    </h3>
+                    <p class="text-gray-500 text-sm mb-6">建物の構造や周辺の状況などを調査し、正確なお見積りを作成いたします。</p>
+
+                    <div class="detail-box p-6 space-y-6">
+                        <h4 class="text-sm font-bold border-b border-gray-200 pb-2">この段階で確認すること</h4>
+                        <div class="grid grid-cols-1 gap-6">
+                            <div>
+                                <p class="text-sm font-bold mb-2 flex items-center"><i data-lucide="microscope"
+                                        class="w-4 h-4 mr-2"></i>アスベスト事前調査</p>
+                                <p class="text-xs text-gray-600 leading-relaxed">
+                                    法令により義務付けられている事前調査を実施します。含有が確認された場合は、除去費用を含めた見積りを再提示いたします。</p>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold mb-2 flex items-center"><i data-lucide="calendar"
+                                        class="w-4 h-4 mr-2"></i>工期の目安</p>
+                                <ul class="text-xs text-gray-600 space-y-1">
+                                    <li>・木造住宅(30坪程度)：5〜7日</li>
+                                    <li>・木造住宅(50坪程度)：7〜10日</li>
+                                    <li>・RC造・鉄骨造：規模により10日〜数週間</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p class="text-sm font-bold mb-2 flex items-center"><i data-lucide="truck"
+                                        class="w-4 h-4 mr-2"></i>産業廃棄物処理</p>
+                                <p class="text-xs text-gray-600 leading-relaxed">適正処理の方法とマニフェスト（管理票）交付について事前に詳しくご説明します。
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="flow-item">
-                    <div class="flow-number">02</div>
-                    <div class="flow-content">
-                        <h3>ご契約</h3>
-                        <p>お見積り内容にご納得いただけましたら、正式にご契約となります。お支払いは着手金・中間金・残金の3分割となります。建設リサイクル法に基づく届け出など、官公庁への煩雑な行政手続きも当社が代行いたします。
-                        </p>
-                    </div>
+            <!-- STEP 2 -->
+            <div class="flex flex-col md:flex-row mb-20">
+                <div class="md:w-1/4 mb-4 md:mb-0">
+                    <span class="step-number text-5xl text-gray-200">02</span>
                 </div>
+                <div class="md:w-3/4 bg-white p-8 rounded-2xl border border-gray-100 hover-lift">
+                    <h3 class="text-xl font-bold mb-2 flex items-center">ご契約</h3>
+                    <p class="text-gray-500 text-sm mb-6">内容に納得いただければご契約となります。煩雑な書類手続きは当社が代行いたします。</p>
 
-                <div class="flow-item">
-                    <div class="flow-number">03</div>
-                    <div class="flow-content">
-                        <h3>ライフライン停止の依頼</h3>
-                        <p>お客様にて、電気・ガス・電話などの停止連絡をお願いいたします。水道については、工事中の粉塵飛散防止（散水）に使用するため、開栓したままにしておいてください。</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="bg-gray-50 p-5 rounded-xl">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">お支払い条件</h4>
+                            <ul class="text-xs space-y-2 text-gray-600 border-b border-gray-100 pb-2">
+                                <li class="flex justify-between"><span>着手金</span><span class="font-medium">契約時に
+                                        ○○%</span></li>
+                                <li class="flex justify-between"><span>中間金</span><span class="font-medium">解体完了時に
+                                        ○○%</span></li>
+                                <li class="flex justify-between"><span>残金</span><span class="font-medium">工事完了後に
+                                        ○○%</span></li>
+                            </ul>
+                            <p class="mt-3 text-[10px] text-gray-400">※地中埋設物等の追加費用発生時は事前にご相談します。</p>
+                        </div>
+                        <div class="bg-gray-50 p-5 rounded-xl">
+                            <h4 class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">官公庁への届出（代行）</h4>
+                            <ul class="text-[11px] space-y-1.5 text-gray-600">
+                                <li class="flex items-start"><i data-lucide="check"
+                                        class="w-3 h-3 mr-2 mt-0.5"></i>建設リサイクル法に基づく届出</li>
+                                <li class="flex items-start"><i data-lucide="check"
+                                        class="w-3 h-3 mr-2 mt-0.5"></i>道路使用許可申請</li>
+                                <li class="flex items-start"><i data-lucide="check"
+                                        class="w-3 h-3 mr-2 mt-0.5"></i>アスベスト除去作業の届出</li>
+                            </ul>
+                            <p class="mt-3 text-[10px] text-gray-400">※お客様には書類へのご記入のみお願いします。</p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="flow-item">
-                    <div class="flow-number">04</div>
-                    <div class="flow-content">
-                        <h3>近隣挨拶・養生設営</h3>
-                        <p>工事開始の1週間前までに当社スタッフが近隣住民の皆様へご挨拶に伺い、工事内容をご説明します。その後、防音・防塵のための養生シートや足場を設置します。</p>
-                    </div>
-                </div>
-
-                <div class="flow-item">
-                    <div class="flow-number">05</div>
-                    <div class="flow-content">
-                        <h3>解体工事・搬出</h3>
-                        <p>内装解体から始まり、建物本体、基礎の順に進めます。廃棄物は種類ごとに分別し、提携する処分場へ適正に搬出します。荷物が多い場合は、当社の無料あづかりサービスもご利用いただけます。</p>
-                        <p><a href="luggage.html" style="color: var(--accent-color); font-weight: bold;">→
-                                荷物あづかりサービスの詳細</a></p>
-                    </div>
-                </div>
-
-                <div class="flow-item">
-                    <div class="flow-number">06</div>
-                    <div class="flow-content">
-                        <h3>工事完了</h3>
-                        <p>工事後の現場を清掃し、お客様立ち会いのもと最終確認を行います。完了報告書、マニフェスト（廃棄物管理票）の写し、工事写真データをお渡しして完了となります。</p>
+                    <div class="mt-4 p-4 border border-gray-100 rounded-xl flex items-start">
+                        <i data-lucide="shield-check" class="w-5 h-5 text-gray-400 mr-3 shrink-0"></i>
+                        <div>
+                            <p class="text-xs font-bold mb-1">保険・補償について</p>
+                            <p class="text-[11px] text-gray-500 leading-relaxed">
+                                工事保険に加入しており、万が一の事故や近隣への損害にも迅速に対応いたします。詳細は契約時にご説明します。</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-info">
-                <div class="logo" style="color: var(--white); margin-bottom: 20px;">松島商店</div>
-                <p style="opacity: 0.7;">愛知県半田市・岐阜県羽島市を中心に、東海エリア全域をカバー</p>
+            <!-- STEP 3 -->
+            <div class="flex flex-col md:flex-row mb-20">
+                <div class="md:w-1/4 mb-4 md:mb-0">
+                    <div class="flex items-center space-x-4 md:flex-col md:space-x-0 md:items-start">
+                        <span class="step-number text-5xl text-gray-200">03</span>
+                        <span
+                            class="md:mt-2 px-3 py-1 bg-gray-400 text-white text-[10px] font-bold tracking-widest rounded">CLIENT</span>
+                    </div>
+                </div>
+                <div class="md:w-3/4 bg-white p-8 rounded-2xl border border-gray-100 hover-lift">
+                    <h3 class="text-xl font-bold mb-4 flex items-center">
+                        <i data-lucide="phone-off" class="w-5 h-5 mr-3"></i>
+                        ライフラインの手続き
+                    </h3>
+                    <p class="text-gray-600 leading-relaxed mb-6 text-sm">
+                        電気、ガス、電話、CATV（ケーブルテレビ）等のライフラインの解約・変更手続きをお客様ご自身でお願いいたします。
+                    </p>
+                    <div
+                        class="text-xs bg-gray-50 p-4 rounded-lg text-gray-800 flex items-start border border-gray-200">
+                        <i data-lucide="info" class="w-4 h-4 mr-2 mt-0.5 shrink-0 text-black"></i>
+                        <span><strong>水道の停止時期について：</strong>
+                            水道は工事中の粉塵飛散防止のために使用する場合がございます。停止時期については事前に弊社担当者へご相談ください。</span>
+                    </div>
+                </div>
             </div>
-            <div class="footer-copyright">
-                &copy; MATSUSHIMA SHOTEN All Rights Reserved.
+
+            <!-- STEP 4 -->
+            <div class="flex flex-col md:flex-row mb-20">
+                <div class="md:w-1/4 mb-4 md:mb-0">
+                    <span class="step-number text-5xl text-gray-200">04</span>
+                </div>
+                <div class="md:w-3/4 bg-white p-8 rounded-2xl border border-gray-100 hover-lift">
+                    <h3 class="text-xl font-bold mb-2 flex items-center">近隣へのご挨拶</h3>
+                    <p class="text-gray-500 text-sm mb-6">良好な近隣関係を保つため、当社が責任を持ってご挨拶に伺います。</p>
+
+                    <div class="detail-box p-6 space-y-4">
+                        <div>
+                            <p class="text-sm font-bold mb-2">近隣対応のスケジュール</p>
+                            <p class="text-xs text-gray-600 leading-relaxed">
+                                工事開始の1週間前までに、当社担当者が近隣へご挨拶に伺い、工事期間、作業時間、騒音・振動対策について丁寧に説明いたします。</p>
+                        </div>
+                        <div class="bg-white p-4 rounded border border-gray-100">
+                            <p class="text-[11px] font-bold uppercase text-gray-400 mb-1">クレーム対応窓口</p>
+                            <p class="text-xs text-gray-600">工事期間中の近隣からのご意見・ご要望は、専任の現場責任者が窓口となり迅速に対応いたします。</p>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+            <!-- STEP 5 -->
+            <div class="flex flex-col md:flex-row mb-20">
+                <div class="md:w-1/4 mb-4 md:mb-0">
+                    <span class="step-number text-5xl text-gray-800">05</span>
+                </div>
+                <div class="md:w-3/4 bg-black text-white p-8 rounded-2xl shadow-2xl">
+                    <h3 class="text-2xl font-bold mb-8 flex items-center">
+                        <i data-lucide="hard-hat" class="w-6 h-6 mr-3 text-white"></i>
+                        工事着工
+                    </h3>
+
+                    <div class="space-y-8 mb-10">
+                        <div class="flex items-start">
+                            <span class="text-lg font-bold text-gray-500 mr-4">1.</span>
+                            <div>
+                                <p class="font-bold text-sm mb-2">事前準備、事前措置</p>
+                                <p class="text-xs text-gray-400 leading-relaxed mb-3">
+                                    建物内の不要物の搬出、養生シート、鉄板敷き等の設置、屋根葺材の撤去を行います。</p>
+                                <a href="luggage.html"
+                                    class="inline-flex items-center text-[10px] font-bold px-3 py-1.5 bg-white text-black rounded hover:bg-gray-200 transition-all">
+                                    荷物お預かりサービスのご案内
+                                    <i data-lucide="arrow-right" class="w-3 h-3 ml-1.5"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-lg font-bold text-gray-500 mr-4">2.</span>
+                            <p class="font-bold text-sm pt-0.5">内装材撤去</p>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-lg font-bold text-gray-500 mr-4">3.</span>
+                            <p class="font-bold text-sm pt-0.5">建物解体</p>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-lg font-bold text-gray-500 mr-4">4.</span>
+                            <p class="font-bold text-sm pt-0.5">基礎等解体</p>
+                        </div>
+                        <div class="flex items-start">
+                            <span class="text-lg font-bold text-gray-500 mr-4">5.</span>
+                            <div>
+                                <p class="font-bold text-sm mb-2">整地・産業廃棄物処理</p>
+                                <p class="text-xs text-gray-400 leading-relaxed">重機による地表面の整地、および地中埋設物の撤去を行います。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 border-t border-gray-800">
+                        <div>
+                            <h4 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">整地について</h4>
+                            <p class="text-[11px] text-gray-400 leading-relaxed">
+                                次の土地活用（建築、駐車場等）に応じた整地レベルをご相談の上で対応いたします。
+                            </p>
+                        </div>
+                        <div>
+                            <h4 class="text-xs font-bold text-gray-500 uppercase tracking-widest mb-4">廃棄物の適正処理</h4>
+                            <p class="text-[11px] text-gray-400 leading-relaxed mb-2">
+                                マニフェスト（管理票）を発行し、処理経路を明確に記録します。
+                            </p>
+                            <p class="text-[10px] text-gray-500 italic border-l border-gray-700 pl-2">
+                                ※法令により、マニフェストはお客様にて5年間の保管義務がございます。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 6 -->
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/4 mb-4 md:mb-0">
+                    <span class="step-number text-5xl text-gray-200">06</span>
+                </div>
+                <div class="md:w-3/4 bg-white p-8 rounded-2xl border border-gray-100 hover-lift">
+                    <h3 class="text-xl font-bold mb-2 flex items-center">工事完了</h3>
+                    <p class="text-gray-500 text-sm mb-6">お施主様に最終確認をしていただき、必要書類一式をお渡しいたします。</p>
+
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-100">
+                        <h4 class="text-sm font-bold mb-4 flex items-center">
+                            <i data-lucide="files" class="w-4 h-4 mr-2"></i>
+                            完了時にお渡しする書類
+                        </h4>
+                        <ul class="grid grid-cols-1 md:grid-cols-2 gap-y-2 gap-x-4">
+                            <li class="flex items-center text-xs text-gray-600">
+                                <i data-lucide="check" class="w-3 h-3 mr-2 text-black"></i>
+                                工事完了報告書
+                            </li>
+                            <li class="flex items-center text-xs text-gray-600">
+                                <i data-lucide="check" class="w-3 h-3 mr-2 text-black"></i>
+                                産業廃棄物マニフェスト
+                            </li>
+                            <li class="flex items-center text-xs text-gray-600">
+                                <i data-lucide="check" class="w-3 h-3 mr-2 text-black"></i>
+                                廃棄物処理完了報告書
+                            </li>
+                            <li class="flex items-center text-xs text-gray-600">
+                                <i data-lucide="check" class="w-3 h-3 mr-2 text-black"></i>
+                                工事写真（着工・中間・完了）
+                            </li>
+                            <li class="flex items-center text-xs text-gray-600 md:col-span-2">
+                                <i data-lucide="check" class="w-3 h-3 mr-2 text-black"></i>
+                                その他官公庁への届出書類控え
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-16 mt-20">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold mb-4">お問い合わせ・ご相談</h2>
+            <p class="text-gray-500 text-sm mb-8">不明な点やご心配なことがございましたら、いつでもお気軽にご相談ください。</p>
+            <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4 mb-12">
+                <a href="faq.html"
+                    class="flex items-center justify-center px-8 py-4 bg-black text-white rounded-sm font-bold hover:bg-gray-800 transition-colors">
+                    <i data-lucide="phone" class="w-5 h-5 mr-2"></i>
+                    お問い合わせはこちら
+                </a>
+            </div>
+            <p class="text-[10px] text-gray-400 tracking-widest uppercase">© 2026 Matsushima Shoten All Rights Reserved.
+            </p>
         </div>
     </footer>
 
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
 </body>
 
 </html>
