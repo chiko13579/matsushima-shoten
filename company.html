@@ -4,117 +4,340 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>会社概要 | 松島商店</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="robots" content="noindex">
+    <title>会社概要 | 有限会社 松島商店</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <meta name="robots" content="noindex">
+    <style>
+        :root {
+            --brand-black: #111111;
+            --brand-gray: #f8f8f8;
+            --brand-border: #e5e7eb;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--brand-black);
+            background-color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        /* ゴシック体（太字）を強調するためのクラス */
+        .font-gothic-bold {
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #111 0%, #333 100%);
+        }
+
+        .section-number {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            color: #999;
+            margin-bottom: 0.5rem;
+            display: block;
+            font-weight: 700;
+        }
+
+        .profile-table dt {
+            background-color: var(--brand-gray);
+            padding: 1.25rem;
+            font-weight: 700;
+            border-bottom: 1px solid var(--brand-border);
+        }
+
+        .profile-table dd {
+            padding: 1.25rem;
+            border-bottom: 1px solid var(--brand-border);
+        }
+
+        @media (min-width: 768px) {
+            .profile-table {
+                display: grid;
+                grid-template-columns: 240px 1fr;
+            }
+
+            .profile-table dt {
+                border-bottom: 1px solid var(--brand-border);
+                border-right: 1px solid var(--brand-border);
+            }
+        }
+    </style>
 </head>
 
-<body>
+<body class="antialiased">
 
-    <!-- Header Navigation -->
-    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-zinc-100">
-        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="font-bold text-xl tracking-tighter cursor-pointer" onclick="location.href='index.html'">松島商店
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div>
+                <a href="index.html" class="text-xl font-black tracking-tighter flex items-center">
+                    <span class="bg-black text-white px-2 py-1 mr-2 text-sm">松</span>
+                    有限会社 松島商店
+                </a>
             </div>
-            <div class="hidden lg:flex items-center space-x-8 text-xs font-bold uppercase tracking-widest">
-                <a href="index.html" class="hover:text-zinc-500 transition">ホーム</a>
-                <a href="flow.html" class="hover:text-zinc-500 transition">工事完了までの流れ</a>
-                <a href="faq.html" class="hover:text-zinc-500 transition">よくあるご質問</a>
-                <a href="recruit.html" class="hover:text-zinc-500 transition">採用に関して</a>
-                <a href="luggage.html" class="hover:text-zinc-500 transition">荷物預かり</a>
-                <a href="company.html" class="hover:text-zinc-500 transition">会社概要</a>
-                <a href="faq.html" class="bg-black text-white px-4 py-2 hover:bg-zinc-800 transition">お問合せ</a>
+            <!-- Updated Navigation -->
+            <nav class="hidden md:flex space-x-8 text-[11px] font-bold uppercase tracking-widest">
+                <a href="index.html" class="hover:text-gray-500 transition-colors">ホーム</a>
+                <a href="flow.html" class="hover:text-gray-500 transition-colors">工事完了までの流れ</a>
+                <a href="faq.html" class="hover:text-gray-500 transition-colors">よくあるご質問</a>
+                <a href="recruit.html" class="hover:text-gray-500 transition-colors">採用に関して</a>
+                <a href="luggage.html" class="hover:text-gray-500 transition-colors">荷物預かり</a>
+                <a href="company.html"
+                    class="hover:text-gray-500 transition-colors border-b-2 border-black pb-1">会社概要</a>
+                <a href="faq.html" class="hover:text-gray-500 transition-colors">お問合せ</a>
+            </nav>
+            <div class="md:hidden">
+                <button class="p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
             </div>
         </div>
-    </nav>
+    </header>
 
-    <main>
-        <div class="page-header container">
-            <h1>会社概要</h1>
-            <p>半田から東海エリアへ。確かな品質をお届けします。</p>
+    <!-- Hero -->
+    <section class="relative h-[80vh] flex items-center hero-gradient text-white overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div
+                class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1541888946425-d81bb19480c5?auto=format&fit=crop&q=80&w=2070')] bg-cover bg-center grayscale">
+            </div>
         </div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10 w-full text-center md:text-left">
+            <span
+                class="inline-block px-3 py-1 bg-white/10 backdrop-blur-md text-[10px] tracking-[0.3em] font-bold uppercase mb-6 text-gray-300">Established
+                1990</span>
+            <h1 class="text-6xl md:text-8xl font-gothic-bold leading-tight mb-8 tracking-tighter uppercase">
+                会社概要
+            </h1>
+            <div class="max-w-2xl">
+                <p class="text-white text-lg md:text-xl font-bold mb-4">
+                    解体を通じて、次なる一歩を支える。
+                </p>
+                <p class="text-gray-400 text-sm md:text-base font-medium leading-relaxed mb-12">
+                    愛知県半田市を拠点に、愛知・岐阜・三重・滋賀の全域で、<br class="hidden md:block">
+                    確かな技術と誠実な対応で「安心して任せられる施工」をお届けします。
+                </p>
+            </div>
+            <a href="#about" class="inline-flex items-center group">
+                <span
+                    class="w-12 h-12 rounded-full border border-white/30 flex items-center justify-center mr-4 group-hover:bg-white group-hover:text-black transition-all">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                    </svg>
+                </span>
+                <span class="text-xs font-bold tracking-widest uppercase">詳細を見る</span>
+            </a>
+        </div>
+    </section>
 
-        <section class="container">
-            <div class="company-table">
-                <div class="table-row">
-                    <div class="table-label">社名</div>
-                    <div class="table-content">有限会社 松島商店 (Matsushima Shoten Co., Ltd.)</div>
-                </div>
-                <div class="table-row">
-                    <div class="table-label">代表者</div>
-                    <div class="table-content">松嶋 知幸</div>
-                </div>
-                <div class="table-row">
-                    <div class="table-label">設立</div>
-                    <div class="table-content">平成2年5月2日</div>
-                </div>
-                <div class="table-row">
-                    <div class="table-label">本社所在地</div>
-                    <div class="table-content">〒475-0836 愛知県半田市青山4丁目21番地5</div>
-                </div>
-                <div class="table-row">
-                    <div class="table-label">岐阜営業所</div>
-                    <div class="table-content">〒501-6215 岐阜県羽島市正木町須賀赤松295</div>
-                </div>
-                <div class="table-row">
-                    <div class="table-label">事業内容</div>
-                    <div class="table-content">
-                        建物解体工事全般、内装解体、斫り工事、産業廃棄物収集運搬業、古物商
+    <!-- Representative Message -->
+    <section id="about" class="py-32 bg-white border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-12 gap-16 items-start">
+                <div class="lg:col-span-5">
+                    <div class="relative">
+                        <div
+                            class="aspect-[4/5] bg-gray-100 overflow-hidden rounded-sm border border-gray-100 shadow-sm flex items-center justify-center">
+                            <div class="text-gray-400 italic text-sm">Representative Portrait</div>
+                        </div>
+                        <div class="absolute -bottom-8 -right-8 bg-black text-white p-10 hidden md:block shadow-2xl">
+                            <p class="text-[10px] font-bold tracking-[0.2em] mb-2 opacity-60 uppercase">Representative
+                            </p>
+                            <p class="text-2xl font-black tracking-wider">松嶋 知幸</p>
+                        </div>
                     </div>
                 </div>
-                <div class="table-row">
-                    <div class="table-label">許可・登録</div>
-                    <div class="table-content">
-                        愛知県知事 許可（般-5）第43362号 (とび・土工・解体)<br>
-                        産業廃棄物収集運搬業許可（愛知県・岐阜県・三重県・静岡県）<br>
-                        古物商許可
+                <div class="lg:col-span-7 pt-4">
+                    <span class="section-number">01 / MESSAGE</span>
+                    <h2 class="text-3xl md:text-4xl font-gothic-bold mb-12 leading-snug">
+                        「安心して任せてもらえる仕事」を<br class="hidden md:block text-gray-400">
+                        30年以上、大切にしてきました。
+                    </h2>
+                    <div class="space-y-6 text-gray-600 font-medium leading-loose">
+                        <p>有限会社松島商店のホームページをご覧いただき、ありがとうございます。代表の松嶋です。</p>
+                        <p>当社は平成2年の創業以来、解体工事を通じて「安心して任せてもらえる仕事」を一貫して追求してまいりました。解体工事は、人生や事業の大きな節目に関わることが多く、お客様が不安を感じられることも少なくありません。
+                        </p>
+                        <p>だからこそ私たちは、専門的な内容も分かりやすく説明し、常に誠実な対応を心がけています。現場では安全管理を徹底し、近隣の方々へのご挨拶や配慮を欠かさず、「松島商店に頼んでよかった」と思っていただける施工を目指しています。
+                        </p>
+                        <p>これからも地域密着の解体業者として、一つひとつの現場に責任を持ち、丁寧な仕事を積み重ねてまいります。どんな小さなことでも、お気軽にご相談ください。</p>
                     </div>
-                </div>
-                <div class="table-row">
-                    <div class="table-label">対応エリア</div>
-                    <div class="table-content">
-                        愛知県、岐阜県、三重県、滋賀県（その他エリアはご相談ください）
+                    <div class="mt-12 md:hidden">
+                        <p class="text-[10px] font-bold opacity-60">代表取締役</p>
+                        <p class="text-xl font-black tracking-widest">松嶋 知幸</p>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="access" class="container">
-            <div class="section-title">
-                <h2>アクセス</h2>
+    <!-- Company Profile Section -->
+    <section id="profile" class="py-32">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="text-center mb-20">
+                <span class="section-number">02 / PROFILE</span>
+                <h2 class="text-4xl font-gothic-bold uppercase tracking-tight">会社概要</h2>
+                <!-- メッセージの追加 -->
+                <p class="mt-6 text-xl font-bold tracking-tight">解体を通じて、次なる一歩を支える。</p>
+                <p class="text-xs font-bold text-gray-400 mt-4 uppercase tracking-[0.3em]">Company Information</p>
             </div>
-            <div class="grid">
-                <div class="card">
-                    <h3>本社（愛知）</h3>
-                    <div class="image-placeholder" style="height: 300px; margin-top: 20px;">
-                        <span>本社地図</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <h3>岐阜営業所</h3>
-                    <div class="image-placeholder" style="height: 300px; margin-top: 20px;">
-                        <span>岐阜地図</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-info">
-                <div class="logo" style="color: var(--white); margin-bottom: 20px;">松島商店</div>
-                <p style="opacity: 0.7;">愛知県半田市・岐阜県羽島市を中心に、東海エリア全域をカバー</p>
+            <div class="border-t-4 border-black">
+                <dl class="profile-table text-sm">
+                    <dt>社名</dt>
+                    <dd class="font-bold">有限会社 松島商店</dd>
+
+                    <dt>代表者</dt>
+                    <dd>代表取締役 松嶋 知幸</dd>
+
+                    <dt>設立</dt>
+                    <dd>平成2年5月2日</dd>
+
+                    <dt>所在地（本社）</dt>
+                    <dd class="font-medium">
+                        〒475-0836 愛知県半田市青山4丁目21番地5<br>
+                        <span class="text-gray-400 mr-2">TEL.</span>0569-21-5789<br>
+                        <span class="text-gray-400 mr-2">FAX.</span>0569-21-5782
+                    </dd>
+
+                    <dt>岐阜営業所</dt>
+                    <dd class="font-medium">
+                        〒501-6215 岐阜県羽島市正木町須賀赤松295<br>
+                        <span class="text-gray-400 mr-2">TEL.</span>0584-55-1758<br>
+                        <span class="text-gray-400 mr-2">FAX.</span>0584-55-1768
+                    </dd>
+
+                    <dt>取引銀行</dt>
+                    <dd>半田信用金庫 住吉町駅西支店 / 知多信用金庫 青山支店</dd>
+
+                    <dt>営業エリア</dt>
+                    <dd>愛知、岐阜、三重、滋賀</dd>
+
+                    <dt>建設業許可</dt>
+                    <dd class="font-medium">
+                        とび・土工工事業、解体工事業<br>
+                        愛知県知事 許可（般-2）第43985号<br>
+                        <div class="flex space-x-4 mt-2 text-[10px] text-gray-500 uppercase tracking-wider">
+                            <span>許可年月日：令和2年8月21日</span>
+                            <span>有効期限：令和7年8月20日</span>
+                        </div>
+                    </dd>
+
+                    <dt>収集運搬業許可</dt>
+                    <dd class="font-medium space-y-1">
+                        <div>愛知県 第2300036820号</div>
+                        <div>岐阜県 第2100036820号</div>
+                        <div>三重県 第2400036820号</div>
+                        <div>滋賀県 第2501036820号</div>
+                    </dd>
+
+                    <dt>古物商許可</dt>
+                    <dd>愛知県公安委員会 第542772203000号</dd>
+                </dl>
             </div>
-            <div class="footer-copyright">
-                &copy; MATSUSHIMA SHOTEN All Rights Reserved.
+        </div>
+    </section>
+
+    <!-- Business Content -->
+    <section id="services" class="py-32 bg-gray-50 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="mb-20">
+                <span class="section-number">03 / BUSINESS</span>
+                <h2 class="text-3xl md:text-4xl font-gothic-bold uppercase">事業内容</h2>
+                <div class="w-12 h-1 bg-black mt-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div
+                    class="bg-white p-12 border border-gray-100 hover:border-black transition-all group relative overflow-hidden">
+                    <span
+                        class="absolute right-4 top-4 text-8xl font-black text-gray-50 group-hover:text-gray-100 transition-colors z-0">01</span>
+                    <div class="relative z-10">
+                        <h3 class="text-xl font-bold mb-6 pb-4 border-b border-gray-100">木造建物解体工事</h3>
+                        <p class="text-sm text-gray-500 font-medium leading-relaxed">戸建て住宅やアパートなど、木造建築物の解体を安全かつ迅速に行います。
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="bg-white p-12 border border-gray-100 hover:border-black transition-all group relative overflow-hidden">
+                    <span
+                        class="absolute right-4 top-4 text-8xl font-black text-gray-50 group-hover:text-gray-100 transition-colors z-0">02</span>
+                    <div class="relative z-10">
+                        <h3 class="text-xl font-bold mb-6 pb-4 border-b border-gray-100">鉄骨建物解体工事</h3>
+                        <p class="text-sm text-gray-500 font-medium leading-relaxed">工場や店舗など、鉄骨造の特性に応じた適切な工法で施工いたします。
+                        </p>
+                    </div>
+                </div>
+                <div
+                    class="bg-white p-12 border border-gray-100 hover:border-black transition-all group relative overflow-hidden">
+                    <span
+                        class="absolute right-4 top-4 text-8xl font-black text-gray-50 group-hover:text-gray-100 transition-colors z-0">03</span>
+                    <div class="relative z-10">
+                        <h3 class="text-xl font-bold mb-6 pb-4 border-b border-gray-100">RC造建物解体工事</h3>
+                        <p class="text-sm text-gray-500 font-medium leading-relaxed">ビルやマンション等の鉄筋コンクリート構造物を高度な技術で解体します。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="contact" class="py-32 bg-black text-white text-center">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-3xl font-gothic-bold mb-8 uppercase tracking-wider">お問合せ</h2>
+            <p class="text-gray-400 mb-12 font-medium leading-loose text-sm md:text-base">
+                どんな小さな解体工事でも、まずは一度ご相談ください。<br>
+                現場調査からお見積りまで、迅速かつ丁寧に対応いたします。
+            </p>
+            <div class="grid md:grid-cols-2 gap-6">
+                <a href="tel:0569-21-5789"
+                    class="block bg-white text-black py-8 rounded-sm font-black hover:bg-gray-200 transition-colors">
+                    <span class="text-[10px] block mb-2 font-bold opacity-60 uppercase tracking-widest">Phone (Head
+                        Office)</span>
+                    <span class="text-2xl">0569-21-5789</span>
+                </a>
+                <div class="bg-white/10 backdrop-blur-md py-8 rounded-sm flex flex-col justify-center">
+                    <span class="text-[10px] block mb-2 font-bold opacity-60 uppercase tracking-widest">Reception
+                        Hours</span>
+                    <span class="text-lg font-bold">平日・土曜 8:00 - 18:00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
+                <div class="mb-8 md:mb-0">
+                    <a href="index.html" class="text-lg font-black tracking-tighter flex items-center mb-2">
+                        <span class="bg-black text-white px-2 py-1 mr-2 text-xs">松</span>
+                        有限会社 松島商店
+                    </a>
+                    <p class="text-[10px] text-gray-400 tracking-widest uppercase font-bold">
+                        © Matsushima Shoten Co., Ltd. All Rights Reserved.
+                    </p>
+                </div>
+                <!-- Updated Footer Navigation -->
+                <div
+                    class="grid grid-cols-2 md:grid-cols-3 gap-x-12 gap-y-4 text-[11px] font-black tracking-widest uppercase text-gray-400">
+                    <a href="index.html" class="hover:text-black transition-colors">ホーム</a>
+                    <a href="flow.html" class="hover:text-black transition-colors">工事完了までの流れ</a>
+                    <a href="faq.html" class="hover:text-black transition-colors">よくあるご質問</a>
+                    <a href="recruit.html" class="hover:text-black transition-colors">採用に関して</a>
+                    <a href="luggage.html" class="hover:text-black transition-colors">荷物預かり</a>
+                    <a href="company.html" class="hover:text-black transition-colors">会社概要</a>
+                    <a href="faq.html" class="hover:text-black transition-colors">お問合せ</a>
+                </div>
             </div>
         </div>
     </footer>
