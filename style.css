@@ -107,39 +107,33 @@ header {
     width: 100%;
 }
 
+.nav-links a.contact-btn {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 12px 28px;
+    border-radius: 4px;
+    font-weight: 700;
+    margin-left: 15px;
+}
+
+.nav-links a.contact-btn:hover {
+    background: var(--accent-color);
+    color: var(--primary-color);
+}
+
+.nav-links a.contact-btn::after {
+    display: none;
+}
+
 /* Hero Section */
 .hero {
-    height: 100vh;
+    position: relative;
+    height: 90vh;
     display: flex;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding-top: 100px;
-    position: relative;
     overflow: hidden;
-}
-
-.hero-content {
-    z-index: 1;
-}
-
-.hero h1 {
-    font-size: 5rem;
-    margin-bottom: 20px;
-    letter-spacing: 0.1em;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 1s forwards 0.5s;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    color: var(--gray-medium);
-    margin-bottom: 40px;
-    letter-spacing: 0.1em;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 1s forwards 0.8s;
+    padding: 0;
+    text-align: left;
 }
 
 .hero-overlay {
@@ -148,8 +142,61 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle, rgba(250, 250, 249, 0.5) 0%, rgba(250, 250, 249, 1) 100%);
-    z-index: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2));
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: var(--white);
+    max-width: 900px;
+    text-align: left;
+    margin: 0;
+}
+
+.hero h1 {
+    font-size: 5.5rem;
+    line-height: 1.2;
+    margin-bottom: 30px;
+    letter-spacing: 0.05em;
+    font-weight: 900;
+    opacity: 1;
+    transform: none;
+    animation: none;
+    color: var(--white);
+}
+
+.hero p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    color: var(--white);
+    margin-bottom: 0;
+    opacity: 1;
+    transform: none;
+    animation: none;
+}
+
+.hero-feature-box {
+    position: absolute;
+    right: 5%;
+    top: 55%;
+    transform: translateY(-50%);
+    background: var(--white);
+    padding: 40px;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-left: 10px solid var(--accent-color);
+    z-index: 10;
+    text-align: left;
+}
+
+.hero-feature-box h3 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    border: none;
 }
 
 /* Sections */
