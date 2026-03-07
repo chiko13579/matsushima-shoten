@@ -4,112 +4,468 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>無料の荷物あづかりサービス | 松島商店</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@700;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
     <meta name="robots" content="noindex">
+    <title>荷物お預かりサービス | 松島商店</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+
+        body {
+            font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+            color: #1a1a1a;
+            background-color: #ffffff;
+            scroll-behavior: smooth;
+        }
+
+        .gray-placeholder {
+            background-color: #e5e7eb;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #9ca3af;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+
+        .section-gray {
+            background-color: #f9fafb;
+        }
+
+        .border-gray-custom {
+            border-color: #d1d5db;
+        }
+    </style>
 </head>
 
-<body>
+<body class="leading-relaxed">
 
-    <header>
-        <div class="container header-inner">
-            <div class="logo">松島商店</div>
-            <nav class="nav-links">
-                <a href="index.html">ホーム</a>
-                <a href="flow.html">工事完了までの流れ</a>
-                <a href="faq.html">よくあるご質問</a>
-                <a href="recruit.html">採用に関して</a>
-                <a href="company.html">会社概要</a>
-                <a href="luggage.html">お問合せ</a>
-            </nav>
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md z-50 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="text-xl font-black tracking-tighter">松島商店</div>
+                <div class="hidden lg:flex space-x-6 text-sm font-bold">
+                    <a href="index.html" class="hover:text-gray-500 transition">ホーム</a>
+                    <a href="flow.html" class="hover:text-gray-500 transition">工事完了までの流れ</a>
+                    <a href="faq.html" class="hover:text-gray-500 transition">よくあるご質問</a>
+                    <a href="company.html" class="hover:text-gray-500 transition">会社概要</a>
+                    <a href="faq.html" class="hover:text-gray-500 transition">お問合せ</a>
+                </div>
+                <a href="tel:0569215789"
+                    class="bg-black text-white px-4 py-2 text-sm font-bold rounded hover:bg-gray-800 transition">
+                    電話でお問合せ
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-32 pb-20 px-4">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span
+                        class="inline-block bg-black text-white text-xs font-bold px-3 py-1 mb-4">解体工事をご依頼いただいたお客様限定</span>
+                    <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">
+                        無料の荷物<br>預かりサービス
+                    </h1>
+                    <div class="mb-8">
+                        <p class="text-xl font-bold text-gray-600">
+                            180日間、荷物を無料でお預かりします。
+                        </p>
+                        <p class="text-lg font-bold text-gray-400 mt-2">
+                            建て替え時の荷物保管、お任せください。
+                        </p>
+                    </div>
+                    <div>
+                        <div class="flex flex-col space-y-2 text-sm">
+                            <div class="flex items-center"><i data-lucide="check"
+                                    class="w-4 h-4 mr-2 text-gray-400"></i> 仮住まいが狭くて荷物が入らない</div>
+                            <div class="flex items-center"><i data-lucide="check"
+                                    class="w-4 h-4 mr-2 text-gray-400"></i> トランクルーム代を節約したい</div>
+                            <div class="flex items-center"><i data-lucide="check"
+                                    class="w-4 h-4 mr-2 text-gray-400"></i> 大切な家具を処分したくない</div>
+                        </div>
+                        <p class="mt-4 text-sm font-bold text-gray-800">こんな時にご活用ください</p>
+                    </div>
+                </div>
+                <div class="gray-placeholder aspect-square w-full">
+                    [荷物保管の様子のイメージ画像]
+                </div>
+            </div>
         </div>
     </header>
 
-    <main>
-        <div class="page-header container">
-            <h1>無料の荷物あづかりサービス</h1>
-            <p>解体工事中、大切な家財を安心・安全にお預かりします。</p>
-        </div>
+    <!-- Problems Section -->
+    <section id="about" class="py-20 section-gray px-4">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-2xl font-bold mb-12">こんなお悩み、ありませんか？</h2>
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white p-8 rounded border border-gray-200 shadow-sm">
+                    <p class="text-sm font-bold italic">「仮住まい、思ったより狭くて荷物が入らない...」</p>
+                </div>
+                <div class="bg-white p-8 rounded border border-gray-200 shadow-sm">
+                    <p class="text-sm font-bold italic">トランクルーム借りるとなると、高い.....</p>
+                </div>
+                <div class="bg-white p-8 rounded border border-gray-200 shadow-sm">
+                    <p class="text-sm font-bold italic">「大切な家具、どこに置けばいいの？」</p>
+                </div>
+            </div>
+            <div class="text-left bg-white p-8 md:p-12 rounded-lg border-l-8 border-black shadow-lg">
+                <p class="mb-6">
+                    建て替えを決めたのはいいけれど、いざ引っ越しとなると頭を悩ませるのが「荷物の保管場所」です。
+                    持ち家で暮らしてきた方は、収納にも余裕があり、思った以上にたくさんの荷物をお持ちです。
+                </p>
+                <p class="mb-6">
+                    子供の思い出の品、季節ごとの家電、大切な家具、趣味の道具...。いざ仮住まいに移ろうとすると、「え、これ全部入らない！」と気づいて慌てることも少なくありません。
+                </p>
+                <p class="mb-10 text-gray-500">
+                    民間のトランクルームを借りれば、月2〜3万円の出費。半年間借りると10万円以上の費用になってしまいます。かといって、泣く泣く大切なものを処分するのも忍びない...。
+                </p>
+                <div class="text-center">
+                    <p class="text-2xl font-black mb-8">そんなお悩みを、私たちが解決します。</p>
 
-        <section class="container">
-            <div class="two-column align-center">
-                <div class="column">
-                    <div class="image-placeholder" style="height: 400px; margin-top: 0;">
-                        <span>専用コンテナ外観</span>
+                    <p class="bg-gray-100 py-4 px-6 inline-block font-bold mb-8">
+                        弊社にて解体工事をご依頼のお客様には、家具や家電、思い出の品などを<span
+                            class="text-2xl px-1 underline decoration-4">180日間無料</span>でお預かりするサービスを行っております。
+                    </p>
+
+                    <!-- Black Banner Section -->
+                    <div class="bg-black text-white p-8 rounded">
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                            <div class="flex flex-col items-center">
+                                <i data-lucide="circle-dollar-sign" class="w-8 h-8 mb-2"></i>
+                                <p class="text-sm font-bold">ご利用料金無料</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <i data-lucide="calendar" class="w-8 h-8 mb-2"></i>
+                                <p class="text-sm font-bold">ご利用期間180日</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <i data-lucide="clock" class="w-8 h-8 mb-2"></i>
+                                <p class="text-sm font-bold">24時間出し入れ自由</p>
+                            </div>
+                            <div class="flex flex-col items-center">
+                                <i data-lucide="shield-check" class="w-8 h-8 mb-2"></i>
+                                <p class="text-xs font-bold leading-snug">鍵付きシャッター<br>防犯カメラ設置で安全安心</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="column">
-                    <h2 style="margin-bottom: 20px;">最大180日間、完全無料で貸出</h2>
-                    <p>「建て替えや引っ越しまでの間、家具を預けたいけれどレンタル倉庫は高い…」そんなお客様の声から生まれたサービスです。当社で解体工事をご依頼いただいたお客様に限り、16基の専用コンテナを無料で提供いたします。
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="voice" class="py-20 px-4">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl font-black text-center mb-16 underline decoration-gray-300 underline-offset-8">
+                ご利用いただいたお客様の声</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Voice 1 -->
+                <div class="flex flex-col">
+                    <div class="gray-placeholder aspect-video mb-4">[お客様の声1の画像]</div>
+                    <h3 class="font-bold text-lg mb-2">「おかげで仮住まいの家賃を抑えられました」</h3>
+                    <p class="text-sm text-gray-600 mb-4">
+                        トランクルームを別に借りなくて済んだので、その分、少し広めの仮住まいを選ぶことができました。家族4人でも窮屈せず過ごせて助かりました。
                     </p>
-                    <ul class="feature-list" style="margin-top: 20px; list-style: none; padding: 0;">
-                        <li style="margin-bottom: 10px;"><strong style="color: var(--accent-color);">✓</strong>
-                            24時間出し入れ自由</li>
-                        <li style="margin-bottom: 10px;"><strong style="color: var(--accent-color);">✓</strong> サイズ：2.3m
-                            × 3m × 2m</li>
-                        <li style="margin-bottom: 10px;"><strong style="color: var(--accent-color);">✓</strong>
-                            セキュリティ：シャッター鍵付き・防犯カメラ全24基</li>
-                        <li style="margin-bottom: 10px;"><strong style="color: var(--accent-color);">✓</strong>
-                            限定16基（先着順）</li>
+                    <span class="text-xs font-bold text-gray-400">（40代・ご夫婦＋お子様2人）</span>
+                </div>
+                <!-- Voice 2 -->
+                <div class="flex flex-col">
+                    <div class="gray-placeholder aspect-video mb-4">[お客様の声2の画像]</div>
+                    <h3 class="font-bold text-lg mb-2">「大切な家具を手放さずに済んで本当に良かった」</h3>
+                    <p class="text-sm text-gray-600 mb-4">
+                        亡くなった母の形見のタンスと、子供たちが小さい頃使っていた学習机。処分も考えましたが、預かってもらえて本当に安心しました。新居でまた使っています。
+                    </p>
+                    <span class="text-xs font-bold text-gray-400">（50代・ご夫婦）</span>
+                </div>
+                <!-- Voice 3 -->
+                <div class="flex flex-col">
+                    <div class="gray-placeholder aspect-video mb-4">[お客様の声3の画像]</div>
+                    <h3 class="font-bold text-lg mb-2">「解体業者さんが一緒にやってくれるから楽でした」</h3>
+                    <p class="text-sm text-gray-600 mb-4">
+                        別々の業者を探す手間がなく、解体の打ち合わせのときに一緒に相談できたのが良かったです。荷物の搬入も手伝ってもらえて助かりました。
+                    </p>
+                    <span class="text-xs font-bold text-gray-400">（30代・ご夫婦）</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specifications -->
+    <section id="details" class="py-20 section-gray px-4 border-y border-gray-200">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Facility Info -->
+                <div>
+                    <h2 class="text-2xl font-black mb-8 border-l-4 border-black pl-4">サービス内容・施設仕様</h2>
+
+                    <div class="mb-8">
+                        <h3 class="font-bold mb-3 flex items-center"><i data-lucide="box" class="w-5 h-5 mr-2"></i>
+                            コンテナ仕様</h3>
+                        <ul class="text-sm space-y-1 bg-white p-4 rounded border border-gray-200">
+                            <li>サイズ：間口 約2.3m × 奥行き 約3m × 高さ 約2m</li>
+                            <li>設置数：16個</li>
+                            <li>仕様：鍵付きシャッター完備 / 防犯カメラ24時間監視</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-8">
+                        <h3 class="font-bold mb-3 flex items-center"><i data-lucide="shield-check"
+                                class="w-5 h-5 mr-2"></i> セキュリティ対策</h3>
+                        <ul class="text-sm space-y-1 bg-white p-4 rounded border border-gray-200">
+                            <li>敷地内に防犯カメラ設置（24時間録画）</li>
+                            <li>各コンテナに鍵付きシャッター</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="font-bold mb-3 flex items-center"><i data-lucide="thermometer-snowflake"
+                                class="w-5 h-5 mr-2"></i> 保管環境</h3>
+                        <div class="text-sm bg-white p-4 rounded border border-gray-200">
+                            <p>屋外コンテナでの保管となります。雨風からは守られますが、温度・湿度管理はございません。精密機器や湿気に弱いものは対策をお願いいたします。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Terms -->
+                <div>
+                    <h2 class="text-2xl font-black mb-8 border-l-4 border-black pl-4">ご利用条件</h2>
+                    <div class="bg-black text-white p-6 rounded shadow-lg">
+                        <div class="mb-6">
+                            <p class="text-xs uppercase tracking-widest opacity-70">Price</p>
+                            <p class="text-xl font-bold">料金：無料</p>
+                            <p class="text-xs opacity-70">※弊社にて解体工事をご依頼のお客様限定</p>
+                        </div>
+                        <div class="mb-6">
+                            <p class="text-xs uppercase tracking-widest opacity-70">Period</p>
+                            <p class="text-xl font-bold">利用期間：180日間目安</p>
+                            <p class="text-xs opacity-70">※新築工事の進捗により柔軟に対応いたします</p>
+                        </div>
+                        <div class="text-xs space-y-1 opacity-70">
+                            <p>・空き状況によりご利用いただけない場合があります</p>
+                            <p>・解体工事をご依頼されない方向けの有料プランもございます</p>
+                            <p>・180日を超える場合は事前にご相談ください</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Allowed / Not Allowed Items -->
+    <section class="py-20 px-4">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-2xl font-black text-center mb-12">預けられるもの・預けられないもの</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="border border-gray-200 p-8 rounded">
+                    <h3 class="text-lg font-black mb-6 text-gray-800 flex items-center">
+                        <i data-lucide="thumbs-up" class="w-6 h-6 mr-2 text-green-600"></i> 預けられるもの
+                    </h3>
+                    <ul class="grid grid-cols-2 gap-3 text-sm font-bold">
+                        <li class="flex items-center"><i data-lucide="minus" class="w-3 h-3 mr-2"></i> 家具全般</li>
+                        <li class="flex items-center"><i data-lucide="minus" class="w-3 h-3 mr-2"></i> 家電製品</li>
+                        <li class="flex items-center"><i data-lucide="minus" class="w-3 h-3 mr-2"></i> 季節用品</li>
+                        <li class="flex items-center"><i data-lucide="minus" class="w-3 h-3 mr-2"></i> 衣類・寝具</li>
+                        <li class="flex items-center"><i data-lucide="minus" class="w-3 h-3 mr-2"></i> 本・書類</li>
+                        <li class="flex items-center"><i data-lucide="minus" class="w-3 h-3 mr-2"></i> 日用品・雑貨</li>
+                    </ul>
+                </div>
+                <div class="border border-gray-200 p-8 rounded bg-gray-50">
+                    <h3 class="text-lg font-black mb-6 text-gray-800 flex items-center">
+                        <i data-lucide="thumbs-down" class="w-6 h-6 mr-2 text-red-600"></i> 預けられないもの
+                    </h3>
+                    <ul class="grid grid-cols-2 gap-3 text-xs text-gray-600">
+                        <li>・貴重品（現金・宝石等）</li>
+                        <li>・危険物（火気厳禁物）</li>
+                        <li>・生鮮食品・食料品</li>
+                        <li>・動植物</li>
+                        <li>・異臭を発するもの</li>
+                        <li>・法律で禁止されているもの</li>
                     </ul>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section style="background-color: var(--white);">
-            <div class="container">
-                <div class="section-title">
-                    <h2>ご利用のメリット</h2>
-                </div>
-                <div class="grid">
-                    <div class="card">
-                        <h3>コストの大幅削減</h3>
-                        <p>通常、半年間の外部倉庫利用には数十万円かかることも。本サービスなら無料なので、その分を新居の準備などに充てられます。</p>
-                    </div>
-                    <div class="card">
-                        <h3>一括サポート</h3>
-                        <p>解体と荷物預かりを同じ会社が担当するため、スケジュール調整がスムーズ。運び出しのご相談も承ります。</p>
-                    </div>
-                    <div class="card">
-                        <h3>思い出を大切に</h3>
-                        <p>「新居でも使いたい思い出の家具」。捨てたくないけれど置き場がない…そんな悩みを解決し、大切な品を守ります。</p>
+    <!-- Usage Flow Section -->
+    <section id="flow" class="py-24 section-gray px-4 border-t border-gray-200">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-black text-center mb-16 underline decoration-gray-300 underline-offset-8">ご利用の流れ
+            </h2>
+            <div class="space-y-12">
+                <div class="flex gap-6">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-bold text-xl">
+                        1</div>
+                    <div>
+                        <h3 class="text-xl font-black mb-2">お申し込み</h3>
+                        <p class="text-gray-600">解体工事のご契約時に、荷物預かりサービスのご利用をお申し出ください。</p>
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="container">
-            <div class="section-title">
-                <h2>お客様の声</h2>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <p style="font-style: italic;">「建て替え中に仮住まいが狭くて困っていましたが、このサービスのおかげで思い出のソファを手放さずに済みました。」</p>
+                <div class="flex gap-6">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-bold text-xl">
+                        2</div>
+                    <div>
+                        <h3 class="text-xl font-black mb-2">荷物の搬入</h3>
+                        <p class="text-gray-600 mb-2">解体工事開始の◯日前から搬入可能です。搬入日時をご予約ください。</p>
+                        <p class="text-sm bg-white p-3 rounded inline-block border border-gray-200">
+                            ※搬入・搬出はお客様ご自身で行っていただきます。人手が必要な場合はスタッフがお手伝いいたします（要相談）。</p>
+                    </div>
                 </div>
-                <div class="card">
-                    <p style="font-style: italic;">「解体業者さんが倉庫も持っているなんて驚きでした。鍵もしっかりしていて安心して預けられました。」</p>
+                <div class="flex gap-6">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-bold text-xl">
+                        3</div>
+                    <div>
+                        <h3 class="text-xl font-black mb-2">保管期間中</h3>
+                        <p class="text-gray-600 mb-2">荷物の出し入れは原則自由ですが、事前にご連絡をお願いします。</p>
+                        <p class="text-xs font-bold">営業時間：平日 8:00〜17:00 / 土曜 9:00〜15:00（日祝は予約制）</p>
+                    </div>
+                </div>
+                <div class="flex gap-6">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 bg-black text-white rounded-full flex items-center justify-center font-bold text-xl">
+                        4</div>
+                    <div>
+                        <h3 class="text-xl font-black mb-2">荷物の引き取り</h3>
+                        <p class="text-gray-600">新居完成後、お客様のご都合に合わせて荷物をお引き取りください。</p>
+                    </div>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-info">
-                <div class="logo" style="color: var(--white); margin-bottom: 20px;">松島商店</div>
-                <p style="opacity: 0.7;">愛知県半田市・岐阜県羽島市を中心に、東海エリア全域をカバー</p>
+    <!-- FAQ Section -->
+    <section id="faq" class="py-24 px-4 border-t border-gray-200">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-3xl font-black text-center mb-16 underline decoration-gray-300 underline-offset-8">よくあるご質問
+            </h2>
+            <div class="space-y-12">
+                <!-- Q1 -->
+                <div>
+                    <h3 class="text-xl font-black mb-4 flex items-start">
+                        <span class="text-gray-400 mr-4">Q.</span>
+                        <span>荷物の搬入は手伝ってもらえますか？</span>
+                    </h3>
+                    <div class="pl-10 text-gray-600 font-bold border-l-2 border-gray-200">
+                        <p>A. 基本的にはお客様ご自身で搬入をお願いしておりますが、大型家具など人手が必要な場合はスタッフがお手伝いいたします。事前にご相談ください。</p>
+                    </div>
+                </div>
+                <!-- Q2 -->
+                <div>
+                    <h3 class="text-xl font-black mb-4 flex items-start">
+                        <span class="text-gray-400 mr-4">Q.</span>
+                        <span>保管期間中に荷物を取り出すことはできますか？</span>
+                    </h3>
+                    <div class="pl-10 text-gray-600 font-bold border-l-2 border-gray-200">
+                        <p>A. はい、24時間出し入れ可能です。</p>
+                    </div>
+                </div>
+                <!-- Q3 -->
+                <div>
+                    <h3 class="text-xl font-black mb-4 flex items-start">
+                        <span class="text-gray-400 mr-4">Q.</span>
+                        <span>冷蔵庫や洗濯機も預けられますか？</span>
+                    </h3>
+                    <div class="pl-10 text-gray-600 font-bold border-l-2 border-gray-200">
+                        <p>A. はい、可能です。ただし、温度・湿度管理はございませんので、カビや故障のリスクがあることをご了承ください。</p>
+                    </div>
+                </div>
             </div>
-            <div class="footer-copyright">
-                &copy; MATSUSHIMA SHOTEN All Rights Reserved.
+        </div>
+    </section>
+
+    <!-- Extra Service & Company Section -->
+    <section id="company" class="py-24 px-4 bg-gray-50">
+        <div class="max-w-5xl mx-auto">
+            <div class="bg-black text-white p-8 md:p-16 rounded-xl">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-black mb-6">家財品＆遺品整理も承ります</h2>
+                        <p class="mb-8 text-lg opacity-90">
+                            解体前の不用品処分、思い出の品の整理、遺品の供養手配など、お客様のご要望に応じて丁寧に対応いたします。荷物預かりサービスとの併用も可能です。
+                        </p>
+                        <div class="space-y-6">
+                            <div class="bg-white/20 px-4 py-2 rounded text-sm inline-block">
+                                古物商許可証番号：愛知県公安委員会 第542772203000号
+                            </div>
+                            <div class="font-bold border-l-2 border-white pl-4 text-sm">
+                                「これは残したい、これは処分したい」といった仕分けもお手伝いいたします。
+                            </div>
+                        </div>
+                    </div>
+                    <div class="gray-placeholder aspect-video w-full">
+                        [家財品・遺品整理のイメージ画像]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Company Overview / Contact Section -->
+    <footer id="contact" class="bg-white border-t border-gray-200 py-24 px-4">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-4xl font-black mb-6 tracking-tighter">松島商店</h2>
+                    <p class="text-lg font-bold mb-8">解体工事も, その後の安心も, すべてお任せください。</p>
+
+                    <div class="space-y-4 mb-8">
+                        <p class="font-bold flex justify-between border-b border-gray-100 pb-2"><span>会社名</span>
+                            <span>松島商店</span></p>
+                        <p class="font-bold flex justify-between border-b border-gray-100 pb-2"><span>所在地</span>
+                            <span>愛知県半田市</span></p>
+                        <p class="font-bold flex justify-between border-b border-gray-100 pb-2"><span>創業</span>
+                            <span>昭和60年</span></p>
+                        <p class="font-bold flex justify-between border-b border-gray-100 pb-2"><span>事業内容</span>
+                            <span>解体工事・荷物保管・遺品整理</span></p>
+                    </div>
+
+                    <div class="gray-placeholder w-full h-48 mb-6">[会社外観のイメージ画像 / 地図]</div>
+                </div>
+                <div class="space-y-8">
+                    <div class="bg-gray-50 p-8 border border-gray-200 rounded shadow-sm">
+                        <h3 class="text-xl font-black mb-6">お問合せ</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-center">
+                                <i data-lucide="phone" class="w-6 h-6 mr-4"></i>
+                                <div>
+                                    <p class="text-sm text-gray-500">電話番号</p>
+                                    <p class="text-2xl font-black">0569-21-5789</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-lucide="clock" class="w-6 h-6 mr-4"></i>
+                                <div>
+                                    <p class="text-sm text-gray-500">受付時間</p>
+                                    <p class="font-bold">平日 8:00〜17:00</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <i data-lucide="mail" class="w-6 h-6 mr-4"></i>
+                                <div>
+                                    <p class="text-sm text-gray-500">メール</p>
+                                    <p class="font-bold">info@matsushima-shoten.co.jp</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-20 pt-8 border-t border-gray-100 text-center text-xs text-gray-400">
+                &copy; 松島商店 All Rights Reserved.
             </div>
         </div>
     </footer>
 
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
 </body>
 
 </html>
