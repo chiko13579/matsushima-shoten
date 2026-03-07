@@ -7,7 +7,7 @@
     --white: #ffffff;
     --gray-light: #f1f1f1;
     --gray-medium: #888;
-    --serif-font: 'Noto Serif JP', serif;
+    --serif-font: 'Noto Sans JP', sans-serif;
     --sans-font: 'Noto Sans JP', sans-serif;
     --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
@@ -124,9 +124,9 @@ header {
 }
 
 .hero h1 {
-    font-size: 4rem;
+    font-size: 5rem;
     margin-bottom: 20px;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.1em;
     opacity: 0;
     transform: translateY(30px);
     animation: fadeInUp 1s forwards 0.5s;
@@ -163,7 +163,7 @@ section {
 }
 
 .section-title h2 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     display: inline-block;
     position: relative;
     padding-bottom: 20px;
@@ -238,7 +238,7 @@ footer {
 }
 
 .page-header h1 {
-    font-size: 3rem;
+    font-size: 4rem;
     margin-bottom: 20px;
 }
 
