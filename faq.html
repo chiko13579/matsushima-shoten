@@ -4,110 +4,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>よくあるご質問 | 松島商店</title>
+    <meta name="robots" content="noindex">
+    <title>よくあるご質問 | 有限会社松島商店</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@700;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <meta name="robots" content="noindex">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            line-height: 1.8;
+        }
+
+        .q-badge {
+            background-color: #000;
+            color: #fff;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border-radius: 4px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .a-badge {
+            background-color: #f3f4f6;
+            color: #4b5563;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            border-radius: 4px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+    </style>
 </head>
 
-<body>
+<body class="bg-white">
 
-    <header>
-        <div class="container header-inner">
-            <div class="logo">松島商店</div>
-            <nav class="nav-links">
-                <a href="index.html">ホーム</a>
-                <a href="flow.html">工事完了までの流れ</a>
-                <a href="faq.html">よくあるご質問</a>
-                <a href="recruit.html">採用に関して</a>
-                <a href="company.html">会社概要</a>
-                <a href="luggage.html">お問合せ</a>
+    <!-- Header -->
+    <header class="border-b border-gray-100 sticky top-0 bg-white/80 backdrop-blur-md z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-xl font-bold tracking-tighter shrink-0">
+                有限会社<span class="font-bold text-black">松島商店</span>
+            </div>
+            <nav class="hidden lg:block">
+                <ul class="flex space-x-6 text-sm font-medium text-gray-500">
+                    <li><a href="index.html" class="hover:text-black transition whitespace-nowrap">ホーム</a></li>
+                    <li><a href="flow.html" class="hover:text-black transition whitespace-nowrap">工事完了までの流れ</a></li>
+                    <li><a href="faq.html" class="text-black border-b-2 border-black pb-1 whitespace-nowrap">よくあるご質問</a>
+                    </li>
+                    <li><a href="recruit.html" class="hover:text-black transition whitespace-nowrap">採用に関して</a></li>
+                    <li><a href="company.html" class="hover:text-black transition whitespace-nowrap">会社概要</a></li>
+                    <li><a href="faq.html" class="hover:text-black transition whitespace-nowrap">お問合せ</a></li>
+                </ul>
             </nav>
+            <!-- Mobile Menu Icon (Placeholder) -->
+            <div class="lg:hidden text-gray-500">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
+                    </path>
+                </svg>
+            </div>
         </div>
     </header>
 
-    <main>
-        <div class="page-header container">
-            <h1>よくあるご質問</h1>
-            <p>解体工事に関する疑問や不安にお答えします。</p>
+    <!-- Hero Section -->
+    <section class="bg-gray-50 py-16 md:py-24">
+        <div class="max-w-4xl mx-auto px-6">
+            <span class="text-xs font-bold tracking-widest text-gray-400 uppercase">Support</span>
+            <h1 class="text-3xl md:text-5xl font-bold mt-2 text-black leading-tight">よくあるご質問</h1>
+            <p class="text-gray-500 mt-4 max-w-xl">
+                お客様から寄せられることの多いご質問と回答をまとめました。
+            </p>
         </div>
+    </section>
 
-        <section class="container" style="max-width: 900px;">
-            <div class="faq-list">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Q</span>
-                        <h3>見積り料金は？</h3>
+    <!-- FAQ Section -->
+    <main class="py-12 md:py-20">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="space-y-12">
+
+                <!-- FAQ Item 1 -->
+                <div class="flex flex-col space-y-4">
+                    <div class="flex gap-4">
+                        <div class="q-badge">Q</div>
+                        <h3 class="text-lg md:text-xl font-bold">見積りを依頼した場合の見積り料金はかかりますか？</h3>
                     </div>
-                    <div class="faq-answer">
-                        <p>はい、現地調査からお見積りの作成まで、一切費用はかかりません。お気軽にご相談ください。</p>
+                    <div class="flex gap-4 pl-0 md:pl-11">
+                        <div class="a-badge md:hidden">A</div>
+                        <div class="bg-gray-50 p-6 rounded-2xl text-gray-700 flex-grow border border-gray-100">
+                            <p>見積もりは無料です。まずはお気軽にスタッフに質問していただき、見積り金額を見てから判断されるのがオススメです。</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Q</span>
-                        <h3>道が狭いのですが、工事は可能ですか？</h3>
+                <!-- FAQ Item 2 -->
+                <div class="flex flex-col space-y-4">
+                    <div class="flex gap-4">
+                        <div class="q-badge">Q</div>
+                        <h3 class="text-lg md:text-xl font-bold">接する道路が狭く、車が出入りしづらい場所でも対応出来ますか？</h3>
                     </div>
-                    <div class="faq-answer">
-                        <p>可能です。小型の重機や手壊しでの作業など、状況に合わせた最適なプランをご提案します。ただし、特殊な車両が必要な場合は費用が変動することがありますので、現地調査時にご説明いたします。
-                        </p>
-                    </div>
-                </div>
-
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Q</span>
-                        <h3>家具やゴミがそのままなのですが、大丈夫ですか？</h3>
-                    </div>
-                    <div class="faq-answer">
-                        <p>問題ありません。不用品の処分も承っています。また、残しておきたい大切な家具などがある場合は、当社の無料荷物あづかりサービスが便利ですので、ぜひご検討ください。</p>
+                    <div class="flex gap-4 pl-0 md:pl-11">
+                        <div class="a-badge md:hidden">A</div>
+                        <div class="bg-gray-50 p-6 rounded-2xl text-gray-700 flex-grow border border-gray-100">
+                            <p>もちろん対応できます。ただし、重機やダンプが入りづらい場所であると、作業時間がかかるためどうしても費用が高くなってしまうケースが多いです。その場合は、現地調査（もしくは見積りご提出）の際にスタッフからお伝えさせていただきます。
+                            </p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Q</span>
-                        <h3>調査や工事の際に立ち会いは必要ですか？</h3>
+                <!-- FAQ Item 3 -->
+                <div class="flex flex-col space-y-4">
+                    <div class="flex gap-4">
+                        <div class="q-badge">Q</div>
+                        <h3 class="text-lg md:text-xl font-bold">解体時に立ち会いは必要ですか？</h3>
                     </div>
-                    <div class="faq-answer">
-                        <p>基本的には不要ですが、正確な現状把握のため、現地調査時の同行を推奨しております。工事中は当社にお任せください。</p>
+                    <div class="flex gap-4 pl-0 md:pl-11">
+                        <div class="a-badge md:hidden">A</div>
+                        <div class="bg-gray-50 p-6 rounded-2xl text-gray-700 flex-grow border border-gray-100">
+                            <p>特に必要ありません。ただ、トラブルを未然に防ぐためにも、現地調査に同行されることをオススメします。</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Q</span>
-                        <h3>家具の保管はどうすればいいですか？</h3>
+                <!-- FAQ Item 4 -->
+                <div class="flex flex-col space-y-4">
+                    <div class="flex gap-4">
+                        <div class="q-badge">Q</div>
+                        <h3 class="text-lg md:text-xl font-bold">荷物が多くて保管に困っています。どうしたら良いですか？</h3>
                     </div>
-                    <div class="faq-answer">
-                        <p>松島商店独自の「無料荷物預かりサービス」が利用可能です。大切なお荷物を責任を持ってお預かりします。</p>
+                    <div class="flex gap-4 pl-0 md:pl-11">
+                        <div class="a-badge md:hidden">A</div>
+                        <div class="bg-gray-50 p-6 rounded-2xl text-gray-700 flex-grow border border-gray-100">
+                            <p>松島商店では荷物を一時的にお預かりするサービスを行っておりますので、仮住まいに入りきらなかった荷物を保管しておくことができます。ぜひこちらのサービスをご利用ください。</p>
+                        </div>
                     </div>
                 </div>
+
             </div>
-
-            <div class="cta-banner"
-                style="margin-top: 100px; text-align: center; background: var(--primary-color); color: var(--white); padding: 60px 40px; border-radius: 4px;">
-                <h2 style="color: var(--white); margin-bottom: 20px;">家具の置き場にお困りではありませんか？</h2>
-                <p style="margin-bottom: 30px; opacity: 0.8;">解体工事をご契約のお客様限定で、最大180日間、荷物を無料でお預かりします。</p>
-                <a href="luggage.html"
-                    style="background: var(--accent-color); color: var(--primary-color); padding: 15px 40px; border-radius: 30px; font-weight: bold;">荷物あづかりサービスの詳細</a>
-            </div>
-        </section>
+        </div>
     </main>
 
-    <footer>
-        <div class="container">
-            <div class="footer-info">
-                <div class="logo" style="color: var(--white); margin-bottom: 20px;">松島商店</div>
-                <p style="opacity: 0.7;">愛知県半田市・岐阜県羽島市を中心に、東海エリア全域をカバー</p>
+    <!-- Banner / CTA -->
+    <section class="max-w-4xl mx-auto px-6 pb-20">
+        <div class="bg-black text-white rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
+            <div class="relative z-10">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">荷物お預かりサービスのご案内</h2>
+                <p class="text-gray-400 mb-8 max-w-lg mx-auto leading-relaxed">
+                    解体や引越しの際の家財道具の保管にお困りではありませんか？松島商店が責任を持ってお預かりいたします。
+                </p>
+                <a href="luggage.html"
+                    class="inline-flex items-center bg-white text-black font-bold py-4 px-10 rounded-full hover:bg-gray-200 transition">
+                    サービス詳細を見る
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
             </div>
-            <div class="footer-copyright">
-                &copy; MATSUSHIMA SHOTEN All Rights Reserved.
+            <!-- Decorative circle -->
+            <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-gray-800 rounded-full opacity-50"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-12">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="text-lg font-bold mb-4 text-black">有限会社松島商店</div>
+            <p class="text-sm text-gray-500 mb-8">
+                愛知県半田市 | 建物解体・土地再生のプロフェッショナル<br>
+                TEL: 00-0000-0000 / FAX: 00-0000-0000
+            </p>
+            <div class="border-t border-gray-200 pt-8">
+                <p class="text-xs text-gray-400">© Matsushima Shoten Co., Ltd. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
