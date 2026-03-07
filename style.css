@@ -199,8 +199,8 @@ header {
 
 .hero-floating-box-left {
     position: absolute;
-    bottom: -150px;
-    left: 0;
+    bottom: 40px;
+    left: 40px;
     background: var(--white);
     padding: 30px;
     border: 1px solid #000;
@@ -561,6 +561,7 @@ footer {
         font-size: 3.5rem;
     }
 }
+
 /* Works Highlight Box */
 .works-highlight-box {
     background: #000;
