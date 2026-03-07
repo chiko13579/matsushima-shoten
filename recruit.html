@@ -4,117 +4,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>採用情報 | 松島商店</title>
+    <meta name="robots" content="noindex">
+    <title>RECRUIT - 松島商店 採用情報</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@700;900&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <meta name="robots" content="noindex">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: #1a1a1a;
+            background-color: #ffffff;
+            line-height: 1.7;
+            scroll-behavior: smooth;
+        }
+
+        .section-title {
+            position: relative;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: #1a1a1a;
+        }
+
+        .bg-gray-custom {
+            background-color: #f5f5f5;
+        }
+
+        .voice-img-container {
+            aspect-ratio: 4 / 3;
+            background-color: #e5e7eb;
+            overflow: hidden;
+        }
+
+        .voice-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: filter 0.3s ease;
+        }
+
+        .voice-img-container img:hover {
+            filter: grayscale(0%);
+        }
+
+        /* Step styles */
+        .step-number {
+            font-family: serif;
+            font-style: italic;
+            font-size: 2rem;
+            color: #e5e7eb;
+            line-height: 1;
+        }
+    </style>
 </head>
 
 <body>
 
-    <header>
-        <div class="container header-inner">
-            <div class="logo">松島商店</div>
-            <nav class="nav-links">
-                <a href="index.html">ホーム</a>
-                <a href="flow.html">工事完了までの流れ</a>
-                <a href="faq.html">よくあるご質問</a>
-                <a href="recruit.html">採用に関して</a>
-                <a href="company.html">会社概要</a>
-                <a href="luggage.html">お問合せ</a>
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100">
+        <div class="container mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="text-xl font-bold tracking-tighter cursor-pointer" onclick="location.href='index.html'">松島商店
+            </div>
+            <nav class="hidden lg:flex space-x-6 text-[13px] font-medium">
+                <a href="index.html" class="hover:text-gray-500 transition">ホーム</a>
+                <a href="flow.html" class="hover:text-gray-500 transition">工事完了までの流れ</a>
+                <a href="faq.html" class="hover:text-gray-500 transition">よくあるご質問</a>
+                <a href="recruit.html" class="hover:text-gray-500 transition">採用に関して</a>
+                <a href="company.html" class="hover:text-gray-500 transition">会社概要</a>
+                <a href="faq.html" class="hover:text-gray-500 transition">お問合せ</a>
             </nav>
+            <a href="#contact"
+                class="bg-black text-white px-5 py-2 text-[12px] rounded-none hover:bg-gray-800 transition uppercase tracking-wider">Entry</a>
         </div>
     </header>
 
-    <main>
-        <div class="page-header container">
-            <h1>採用情報</h1>
-            <p>地域の未来を、一緒に作り上げませんか。</p>
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 md:pt-48 md:pb-32 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <p class="text-sm font-bold tracking-widest text-gray-500 mb-4 uppercase">Recruitment</p>
+            <h1 class="text-4xl md:text-6xl font-black mb-8 leading-tight">
+                地域に根付いて、<br>人の役に立つ。
+            </h1>
+            <div class="max-w-2xl">
+                <p class="text-lg text-gray-600">
+                    私たち松島商店は、解体工事を通じて地域の安全と発展に貢献しています。老朽化した建物を安全に解体し、次の街づくりへとつなげる。それが私たちの使命です。
+                </p>
+            </div>
         </div>
+    </section>
 
-        <section class="container">
-            <div class="section-title">
-                <h2>街をつくる、やりがい。</h2>
-            </div>
-            <div class="two-column align-center">
-                <div class="column">
-                    <h2 style="margin-bottom: 20px;">「地域に根付いて、人の役に立つ。」</h2>
-                    <p>私たちの仕事は、単に建物を壊すことではありません。老朽化した建物を安全に解体し、次の街づくりへとつなげる大切な役割を担っています。</p>
-                    <p>松島商店では、経験の有無に関わらず、誠実に仕事に向き合える仲間を募集しています。大型免許などの資格取得支援制度も充実しており、体力に合わせて成長できるキャリアをサポートします。</p>
+    <!-- Flow Section -->
+    <section id="flow" class="py-20 bg-gray-custom px-6">
+        <div class="container mx-auto max-w-5xl">
+            <h2 class="text-2xl font-bold mb-16 section-title">工事完了までの流れ</h2>
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="relative p-6 bg-white shadow-sm">
+                    <span class="step-number mb-4 block">01</span>
+                    <h3 class="font-bold mb-2">建物調査・見積り</h3>
+                    <p class="text-xs text-gray-500">現地の建物の構造や周辺環境を詳細に調査し、最適なプランをご提案します。</p>
                 </div>
-                <div class="column">
-                    <div class="image-placeholder" style="height: 350px;">
-                        <span>働くスタッフの姿</span>
-                    </div>
+                <div class="relative p-6 bg-white shadow-sm">
+                    <span class="step-number mb-4 block">02</span>
+                    <h3 class="font-bold mb-2">近隣挨拶・養生</h3>
+                    <p class="text-xs text-gray-500">近隣住民の方々へ丁寧なご説明を行い、粉塵や騒音を抑えるための養生を徹底します。</p>
+                </div>
+                <div class="relative p-6 bg-white shadow-sm">
+                    <span class="step-number mb-4 block">03</span>
+                    <h3 class="font-bold mb-2">解体工事・搬出</h3>
+                    <p class="text-xs text-gray-500">重機と手作業を組み合わせ、安全第一で解体。廃材は分別して適正に運び出します。</p>
+                </div>
+                <div class="relative p-6 bg-white shadow-sm">
+                    <span class="step-number mb-4 block">04</span>
+                    <h3 class="font-bold mb-2">整地・完了</h3>
+                    <p class="text-xs text-gray-500">地面を綺麗に整え、お客様に確認いただき工事完了となります。</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section style="background-color: var(--white);">
-            <div class="container">
-                <div class="section-title">
-                    <h2>社員の声</h2>
-                </div>
-                <div class="grid">
-                    <div class="card">
-                        <h3>「達成感が違います」</h3>
-                        <p>現場ごとに状況が異なり、毎日が新鮮です。更地になった時の清々しさは、この仕事ならではの魅力ですね。（入社3年目）</p>
+    <!-- Voices Section -->
+    <section id="voices" class="py-20 px-6">
+        <div class="container mx-auto max-w-5xl">
+            <h2 class="text-2xl font-bold mb-16 section-title">採用に関して（働く人の声）</h2>
+            <div class="space-y-12">
+                <!-- Voice 1 -->
+                <div class="flex flex-col md:flex-row bg-white border border-gray-100 shadow-sm overflow-hidden">
+                    <div class="md:w-1/3 voice-img-container">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop"
+                            alt="社員の写真1">
                     </div>
-                    <div class="card">
-                        <h3>「未経験でも安心でした」</h3>
-                        <p>最初は不安でしたが、先輩たちが丁寧に教えてくれました。資格も会社負担で取らせてもらえるので、自信に繋がっています。（入社1年目）</p>
-                    </div>
-                    <div class="card">
-                        <h3>「家族との時間も大切に」</h3>
-                        <p>現場仕事ですが、工期管理がしっかりしているので、プライベートの時間も確保しやすい環境です。（入社5年目）</p>
+                    <div class="md:w-2/3 p-8 md:p-12 flex flex-col justify-center">
+                        <p class="text-xl md:text-2xl font-bold mb-4">「この仕事、やればやるほど奥が深くて面白いよ」</p>
+                        <p class="text-sm text-gray-500 mb-6">32歳 / 現場リーダー</p>
+                        <p class="text-gray-600">建物の構造を読み、安全に、確実に解体する。毎回違う現場、違う挑戦がある。</p>
                     </div>
                 </div>
-            </div>
-        </section>
 
-        <section class="container">
-            <div class="section-title">
-                <h2>採用Q&A</h2>
-            </div>
-            <div class="faq-list" style="max-width: 800px; margin: 0 auto;">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>未経験でも大丈夫ですか？</h3>
+                <!-- Voice 2 -->
+                <div
+                    class="flex flex-col md:flex-row-reverse bg-white border border-gray-100 shadow-sm overflow-hidden">
+                    <div class="md:w-1/3 voice-img-container">
+                        <img src="https://images.unsplash.com/photo-1590644365607-1c5a519a7a37?q=80&w=800&auto=format&fit=crop"
+                            alt="社員の写真2">
                     </div>
-                    <p>大歓迎です！現在活躍している社員の多くも未経験からのスタートでした。基礎からじっくり指導します。</p>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>必要な資格はありますか？</h3>
+                    <div class="md:w-2/3 p-8 md:p-12 flex flex-col justify-center">
+                        <p class="text-xl md:text-2xl font-bold mb-4">「手に職だから、この先も食いっぱぐれない安心感がある」</p>
+                        <p class="text-gray-600">資格を取るごとに手当がつき、技術が身につく。将来の不安がない仕事です。</p>
                     </div>
-                    <p>普通自動車免許があればOKです。重機オペレーターなどの資格は、入社後に取得を目指していただけます。</p>
-                </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <h3>どのような雰囲気の職場ですか？</h3>
-                    </div>
-                    <p>20代から50代まで幅広い層が働いていますが、風通しが良く、協力し合う体制が整っています。</p>
                 </div>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-info">
-                <div class="logo" style="color: var(--white); margin-bottom: 20px;">松島商店</div>
-                <p style="opacity: 0.7;">愛知県半田市・岐阜県羽島市を中心に、東海エリア全域をカバー</p>
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-gray-custom px-6">
+        <div class="container mx-auto max-w-3xl">
+            <h2 class="text-2xl font-bold mb-12 section-title">よくあるご質問</h2>
+            <div class="space-y-4">
+                <!-- Q1 -->
+                <div class="bg-white p-6 shadow-sm">
+                    <p class="font-bold mb-2 flex items-start text-sm md:text-base">
+                        <span class="bg-black text-white text-[10px] px-2 py-1 mr-3 mt-1 shrink-0">Q</span>
+                        未経験でも応募できますか？
+                    </p>
+                    <p class="text-gray-600 text-sm ml-9">
+                        はい、大丈夫です。先輩社員が一から丁寧に指導します。現在活躍している社員の多くが未経験からのスタートです。
+                    </p>
+                </div>
+                <!-- Q2 -->
+                <div class="bg-white p-6 shadow-sm">
+                    <p class="font-bold mb-2 flex items-start text-sm md:text-base">
+                        <span class="bg-black text-white text-[10px] px-2 py-1 mr-3 mt-1 shrink-0">Q</span>
+                        どんな資格が必要ですか？
+                    </p>
+                    <p class="text-gray-600 text-sm ml-9">
+                        入社時に特別な資格は不要です。普通自動車免許があれば応募可能。入社後、重機操縦や施工管理などの資格取得を会社がサポートします（費用会社負担）。
+                    </p>
+                </div>
+                <!-- Q3 -->
+                <div class="bg-white p-6 shadow-sm">
+                    <p class="font-bold mb-2 flex items-start text-sm md:text-base">
+                        <span class="bg-black text-white text-[10px] px-2 py-1 mr-3 mt-1 shrink-0">Q</span>
+                        体力に自信がないのですが...
+                    </p>
+                    <p class="text-gray-600 text-sm ml-9">
+                        確かに体を使う仕事ですが、最初から無理はさせません。少しずつ体を慣らしながら、自分のペースで成長できます。
+                    </p>
+                </div>
             </div>
-            <div class="footer-copyright">
-                &copy; MATSUSHIMA SHOTEN All Rights Reserved.
+        </div>
+    </section>
+
+    <!-- Company Section -->
+    <section id="company" class="py-20 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-2xl font-bold mb-12 section-title">会社概要</h2>
+            <div class="overflow-hidden border-t border-gray-100">
+                <dl class="divide-y divide-gray-100">
+                    <div class="py-6 sm:grid sm:grid-cols-3 sm:gap-4">
+                        <dt class="text-sm font-bold">会社名</dt>
+                        <dd class="mt-1 text-sm text-gray-600 sm:mt-0 sm:col-span-2">有限会社 松島商店</dd>
+                    </div>
+                    <div class="py-6 sm:grid sm:grid-cols-3 sm:gap-4">
+                        <dt class="text-sm font-bold">所在地</dt>
+                        <dd class="mt-1 text-sm text-gray-600 sm:mt-0 sm:col-span-2">愛知県半田市</dd>
+                    </div>
+                    <div class="py-6 sm:grid sm:grid-cols-3 sm:gap-4">
+                        <dt class="text-sm font-bold">創業</dt>
+                        <dd class="mt-1 text-sm text-gray-600 sm:mt-0 sm:col-span-2">昭和60年</dd>
+                    </div>
+                    <div class="py-6 sm:grid sm:grid-cols-3 sm:gap-4">
+                        <dt class="text-sm font-bold">事業内容</dt>
+                        <dd class="mt-1 text-sm text-gray-600 sm:mt-0 sm:col-span-2">
+                            総合解体工事（住宅・店舗・ビル）<br>
+                            産業廃棄物収集運搬、土木工事業
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact -->
+    <footer id="contact" class="bg-black text-white py-20 px-6">
+        <div class="container mx-auto max-w-5xl text-center">
+            <h2 class="text-2xl font-bold mb-12 section-title after:bg-white">お問合せ</h2>
+            <p class="mb-12 text-gray-400">
+                採用や工事に関するお問い合わせは、お電話または下記フォームよりお願いいたします。
+            </p>
+            <div class="flex flex-col items-center space-y-8">
+                <div class="text-3xl font-bold">TEL: 0569-21-5789</div>
+                <a href="faq.html"
+                    class="inline-block bg-white text-black px-12 py-5 font-bold hover:bg-gray-200 transition">
+                    お問い合わせはこちら
+                </a>
+                <div class="pt-20 border-t border-gray-900 w-full">
+                    <p class="text-[10px] text-gray-600">© MATSUSHIMA SHOTEN All Rights Reserved.</p>
+                </div>
             </div>
         </div>
     </footer>
 
+    <script>
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const targetId = this.getAttribute('href');
+                if (targetId.startsWith('#')) {
+                    const target = document.querySelector(targetId);
+                    if (target) {
+                        e.preventDefault();
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
