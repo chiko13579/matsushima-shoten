@@ -63,7 +63,14 @@
     <!-- Header Navigation -->
     <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-zinc-100">
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="font-bold text-xl tracking-tighter cursor-pointer" onclick="location.href='index.html'">松島商店
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="location.href='index.html'">
+                <!-- Mascot Placeholder -->
+                <div
+                    class="mascot-placeholder w-10 h-10 border-2 border-black rounded-full text-[8px] flex flex-col items-center justify-center font-black bg-white group-hover:scale-110 transition-transform leading-none">
+                    <span class="mb-0.5">ちょこん</span>
+                    <span>M</span>
+                </div>
+                <div class="font-bold text-xl tracking-tighter">松島商店</div>
             </div>
             <div class="hidden lg:flex items-center space-x-8 text-xs font-bold uppercase tracking-widest">
                 <a href="index.html" class="hover:text-zinc-500 transition">ホーム</a>
@@ -72,7 +79,8 @@
                 <a href="recruit.html" class="hover:text-zinc-500 transition">採用に関して</a>
                 <a href="luggage.html" class="hover:text-zinc-500 transition">荷物預かり</a>
                 <a href="company.html" class="hover:text-zinc-500 transition">会社概要</a>
-                <a href="faq.html" class="bg-black text-white px-4 py-2 hover:bg-zinc-800 transition">お問合せ</a>
+                <a href="faq.html#inquiry-form"
+                    class="bg-black text-white px-4 py-2 hover:bg-zinc-800 transition">お問合せ</a>
             </div>
         </div>
     </nav>
@@ -348,10 +356,18 @@
             <h2 class="text-2xl font-bold mb-4">お問い合わせ・ご相談</h2>
             <p class="text-gray-500 text-sm mb-8">不明な点やご心配なことがございましたら、いつでもお気軽にご相談ください。</p>
             <div class="flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-4 mb-12">
-                <a href="faq.html"
+                <a href="faq.html#inquiry-form"
                     class="flex items-center justify-center px-8 py-4 bg-black text-white rounded-sm font-bold hover:bg-gray-800 transition-colors">
                     <i data-lucide="phone" class="w-5 h-5 mr-2"></i>
                     お問い合わせはこちら
+                </a>
+                <a href="#"
+                    class="btn-line bg-[#06C755] text-white px-8 py-4 rounded-sm font-bold flex items-center justify-center hover:opacity-90 transition">
+                    <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                        <path
+                            d="M24 10.304c0-5.232-5.383-9.489-12-9.489s-12 4.257-12 9.489c0 4.69 4.27 8.625 10.035 9.345.39.083.92.258 1.045.592.12.316.079.81-.039 1.413-.119.613-.574 2.403-.66 2.768-.098.423.119.592.428.423.298-.163 3.868-2.616 5.483-4.143 1.154-1.127 1.543-1.85 1.708-2.608 3.511-1.724 6-4.639 6-7.802zm-16.792 3.129h-2.112c-.179 0-.323-.146-.323-.324v-3.793c0-.178.144-.323.323-.323s.323.145.323.323v3.469h1.789c.178 0 .323.145.323.323s-.145.325-.323.325zm2.844-.324c0 .178-.145.324-.324.324s-.323-.146-.323-.324v-3.793c0-.178.144-.323.323-.323s.324.145.324.323v3.793zm5.006 0c0 .165-.119.303-.277.321l-.046.002h-2.112a.324.324 0 01-.322-.303l-.001-.021v-3.793c0-.178.145-.323.323-.323s.324.145.324.323v3.469h1.789c.179 0 .323.145.323.323zm3.174-3.793v3.793c0 .178-.145.324-.323.324s-.324-.146-.324-.324v-1.638h-1.503v1.638c0 .178-.145.324-.324.324s-.323-.146-.323-.324v-3.793c0-.178.144-.323.323-.323s.324.145.324.323v1.547h1.503v-1.547c0-.178.145-.323.324-.323s.323.145.323.323z" />
+                    </svg>
+                    LINEで相談
                 </a>
             </div>
             <p class="text-[10px] text-gray-400 tracking-widest uppercase">© 2026 Matsushima Shoten All Rights Reserved.

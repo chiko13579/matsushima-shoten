@@ -614,3 +614,43 @@ footer {
     font-size: 1.5rem;
     margin: 0;
 }
+
+/* LINE Button */
+.btn-line {
+    background-color: #06C755;
+    color: #fff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: 9999px;
+    font-weight: 700;
+    transition: var(--transition);
+}
+
+.btn-line:hover {
+    background-color: #05b34c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(6, 199, 85, 0.3);
+}
+
+/* Mascot Placeholder */
+.mascot-placeholder {
+    width: 60px;
+    height: 60px;
+    background-color: #f0f0f0;
+    border: 2px dashed #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    color: #999;
+    border-radius: 50%;
+}
+
+/* New Component Utilities */
+.feature-highlight {
+    border-left: 8px solid #000;
+    padding-left: 20px;
+    margin-bottom: 40px;
+}

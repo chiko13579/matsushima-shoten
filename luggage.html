@@ -43,7 +43,14 @@
     <!-- Header Navigation -->
     <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-zinc-100">
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="font-bold text-xl tracking-tighter cursor-pointer" onclick="location.href='index.html'">松島商店
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="location.href='index.html'">
+                <!-- Mascot Placeholder -->
+                <div
+                    class="mascot-placeholder w-10 h-10 border-2 border-black rounded-full text-[8px] flex flex-col items-center justify-center font-black bg-white group-hover:scale-110 transition-transform leading-none">
+                    <span class="mb-0.5">ちょこん</span>
+                    <span>M</span>
+                </div>
+                <div class="font-bold text-xl tracking-tighter">松島商店</div>
             </div>
             <div class="hidden lg:flex items-center space-x-8 text-xs font-bold uppercase tracking-widest">
                 <a href="index.html" class="hover:text-zinc-500 transition">ホーム</a>
@@ -52,7 +59,8 @@
                 <a href="recruit.html" class="hover:text-zinc-500 transition">採用に関して</a>
                 <a href="luggage.html" class="hover:text-zinc-500 transition">荷物預かり</a>
                 <a href="company.html" class="hover:text-zinc-500 transition">会社概要</a>
-                <a href="faq.html" class="bg-black text-white px-4 py-2 hover:bg-zinc-800 transition">お問合せ</a>
+                <a href="faq.html#inquiry-form"
+                    class="bg-black text-white px-4 py-2 hover:bg-zinc-800 transition">お問合せ</a>
             </div>
         </div>
     </nav>
@@ -181,9 +189,9 @@
                 <!-- Voice 3 -->
                 <div class="flex flex-col">
                     <div class="gray-placeholder aspect-video mb-4">[お客様の声3の画像]</div>
-                    <h3 class="font-bold text-lg mb-2">「解体業者さんが一緒にやってくれるから楽でした」</h3>
+                    <h3 class="font-bold text-lg mb-2">「別々の業者を探す手間がなくて助かりました」</h3>
                     <p class="text-sm text-gray-600 mb-4">
-                        別々の業者を探す手間がなく、解体の打ち合わせのときに一緒に相談できたのが良かったです。荷物の搬入も手伝ってもらえて助かりました。
+                        解体業者さんと別に荷物預かりの業者を探す手間がなく、解体の打ち合わせのときに一緒に相談できたのが良かったです。荷物の出し入れもスムーズにできました。
                     </p>
                     <span class="text-xs font-bold text-gray-400">（30代・ご夫婦）</span>
                 </div>
@@ -220,9 +228,10 @@
 
                     <div>
                         <h3 class="font-bold mb-3 flex items-center"><i data-lucide="thermometer-snowflake"
-                                class="w-5 h-5 mr-2"></i> 保管環境</h3>
+                                class="w-5 h-5 mr-2"></i> 保管環境・規約</h3>
                         <div class="text-sm bg-white p-4 rounded border border-gray-200">
-                            <p>屋外コンテナでの保管となります。雨風からは守られますが、温度・湿度管理はございません。精密機器や湿気に弱いものは対策をお願いいたします。</p>
+                            <p class="mb-2">屋外コンテナでの保管となります。雨風からは守られますが、温度・湿度管理はございません。精密機器や湿気に弱いものは対策をお願いいたします。</p>
+                            <p class="font-bold text-red-500">※お預かりしたお荷物に関して、破損・盗難等の保証はございません（無保証）。あらかじめご了承ください。</p>
                         </div>
                     </div>
                 </div>
@@ -319,8 +328,8 @@
                         3</div>
                     <div>
                         <h3 class="text-xl font-black mb-2">保管期間中</h3>
-                        <p class="text-gray-600 mb-2">荷物の出し入れは原則自由ですが、事前にご連絡をお願いします。</p>
-                        <p class="text-xs font-bold">営業時間：平日 8:00〜17:00 / 土曜 9:00〜15:00（日祝は予約制）</p>
+                        <p class="text-gray-600 mb-2">荷物の出し入れは原則自由ですが、防犯上、事前のご連絡をお願いしております。</p>
+                        <p class="text-xs font-bold">営業時間：平日 8:00〜17:00 / 土曜 9:00〜15:00（日祝は休業）</p>
                     </div>
                 </div>
                 <div class="flex gap-6">
@@ -359,10 +368,20 @@
                         <span>保管期間中に荷物を取り出すことはできますか？</span>
                     </h3>
                     <div class="pl-10 text-gray-600 font-bold border-l-2 border-gray-200">
-                        <p>A. はい、24時間出し入れ可能です。</p>
+                        <p>A. はい、営業（8:00〜17:00）時間内であれば、原則自由に出し入れが可能です。事前に一本お電話をいただければスムーズです。</p>
                     </div>
                 </div>
-                <!-- Q3 -->
+                <!-- Q3: 車の乗り入れ -->
+                <div>
+                    <h3 class="text-xl font-black mb-4 flex items-start">
+                        <span class="text-gray-400 mr-4">Q.</span>
+                        <span>車やトラックで近くまで入れますか？</span>
+                    </h3>
+                    <div class="pl-10 text-gray-600 font-bold border-l-2 border-gray-200">
+                        <p>A. はい、3Tトラックまでであればコンテナのすぐ近くまで乗り入れが可能です。大きなお荷物の出し入れもスムーズに行っていただけます。</p>
+                    </div>
+                </div>
+                <!-- Q4 -->
                 <div>
                     <h3 class="text-xl font-black mb-4 flex items-start">
                         <span class="text-gray-400 mr-4">Q.</span>
@@ -382,7 +401,7 @@
             <div class="bg-black text-white p-8 md:p-16 rounded-xl">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div>
-                        <h2 class="text-3xl font-black mb-6">家財品＆遺品整理も承ります</h2>
+                        <h2 class="text-3xl font-black mb-6">家財品＆遺品片付けも承ります</h2>
                         <p class="mb-8 text-lg opacity-90">
                             解体前の不用品処分、思い出の品の整理、遺品の供養手配など、お客様のご要望に応じて丁寧に対応いたします。荷物預かりサービスとの併用も可能です。
                         </p>
