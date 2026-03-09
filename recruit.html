@@ -77,7 +77,6 @@
     <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-zinc-100">
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
             <div class="flex items-center space-x-3 cursor-pointer" onclick="location.href='index.html'">
-                <!-- Mascot Placeholder -->
                 <div
                     class="mascot-placeholder w-10 h-10 border-2 border-black rounded-full text-[8px] flex flex-col items-center justify-center font-black bg-white group-hover:scale-110 transition-transform leading-none">
                     <span class="mb-0.5">ちょこん</span>
@@ -99,241 +98,240 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="pt-32 pb-20 md:pt-48 md:pb-32 px-6">
-        <div class="container mx-auto max-w-4xl">
-            <p class="text-sm font-bold tracking-widest text-gray-500 mb-4 uppercase">Recruitment</p>
-            <h1 class="text-4xl md:text-6xl font-black mb-8 leading-tight">
-                地域に根付いて、<br>人の役に立つ。
+    <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 px-6 overflow-hidden bg-zinc-900 text-white">
+        <div class="container mx-auto max-w-5xl relative z-10">
+            <span
+                class="inline-block bg-white text-black text-[10px] font-black px-3 py-1 mb-6 tracking-widest uppercase">Join
+                Our Team</span>
+            <h1 class="text-5xl md:text-8xl font-black mb-10 leading-none tracking-tighter">
+                街の明日を、<br>
+                一緒につくる。
             </h1>
-            <div class="max-w-2xl">
-                <p class="text-lg text-gray-600">
-                    私たち松島商店は、解体工事を通じて地域の安全と発展に貢献しています。老朽化した建物を安全に解体し、次の街づくりへとつなげる。それが私たちの使命です。
-                </p>
+            <p class="text-xl md:text-2xl text-zinc-400 max-w-2xl font-medium leading-relaxed">
+                解体は「壊す」仕事ではなく、新しい未来を「創る」ための第一歩。松島商店では、20人の仲間が今日も汗を流しています。
+            </p>
+        </div>
+        <!-- Decorative text bg -->
+        <div
+            class="absolute -bottom-10 -right-20 text-[20vw] font-black text-white/[0.03] pointer-events-none select-none leading-none">
+            MATSUSHIMA</div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-24 bg-white px-6">
+        <div class="container mx-auto max-w-5xl">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-3xl font-black mb-8 border-l-8 border-black pl-6 italic">「厳しい」なんて、<br>もう古い。</h2>
+                    <p class="text-zinc-600 mb-6 leading-relaxed">
+                        解体現場と聞くと「怖そう」「厳しそう」というイメージがあるかもしれません。でも、松島商店は違います。先輩が親身になって教え、困ったときは助け合う。そんな空気感が自慢です。
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-zinc-50 p-4 border border-zinc-100 rounded-xl">
+                            <p class="text-xs text-zinc-400 font-bold mb-1 italic">Culture 01</p>
+                            <p class="font-black text-lg">社員旅行 & BBQ</p>
+                        </div>
+                        <div class="bg-zinc-50 p-4 border border-zinc-100 rounded-xl">
+                            <p class="text-xs text-zinc-400 font-bold mb-1 italic">Culture 02</p>
+                            <p class="font-black text-lg">いつでも見学OK</p>
+                        </div>
+                    </div>
+                </div>
+                <div
+                    class="bg-zinc-100 aspect-video flex items-center justify-center rounded-2xl overflow-hidden shadow-2xl">
+                    <p class="text-zinc-400 font-bold italic">[楽しそうなBBQや社員旅行の風景画像]</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Roles Section -->
-    <section id="roles" class="py-20 px-6">
-        <div class="container mx-auto max-w-5xl">
-            <h2 class="text-2xl font-bold mb-12 section-title">募集職種</h2>
+    <section class="py-24 bg-zinc-50 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-20">
+                <h2 class="text-4xl font-black mb-4 tracking-tight italic">募集職種</h2>
+                <div class="w-12 h-1 bg-black mx-auto"></div>
+            </div>
+
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 border border-gray-100 shadow-sm rounded-lg">
-                    <h3 class="text-xl font-bold mb-4">営業職</h3>
-                    <p class="text-sm text-gray-600 mb-6">
-                        既存のお客様のフォローを中心に、新規のご提案もお任せします。飛び込み営業もありますが、ノルマはありません。やる気のある方を歓迎します！</p>
-                    <ul class="text-xs text-gray-500 space-y-2">
-                        <li>・まずは既存顧客の対応からスタート</li>
-                        <li>・徐々に新規開拓へ</li>
-                        <li>・インセンティブあり</li>
-                    </ul>
-                </div>
-                <div class="bg-white p-8 border border-gray-100 shadow-sm rounded-lg">
-                    <h3 class="text-xl font-bold mb-4">現場管理</h3>
-                    <p class="text-sm text-gray-600 mb-6">現場の工程管理や安全管理、指示出しを行います。実務経験10年以上の方、施工管理技士などの資格をお持ちの方は大歓迎です。
+                <!-- Sales Role -->
+                <div class="bg-white p-10 border border-zinc-200 hover:border-black transition-all flex flex-col group">
+                    <span class="text-[10px] font-black tracking-widest text-zinc-400 uppercase mb-4">Role 01</span>
+                    <h3 class="text-2xl font-black mb-6">営業職</h3>
+                    <p class="text-sm text-zinc-500 mb-8 leading-relaxed">
+                        既存のお客様へのフォローからスタート。慣れてきたら新規提案（飛び込み含む）もお任せします。
                     </p>
-                    <ul class="text-xs text-gray-500 space-y-2">
-                        <li>・実務経験10年以上優遇</li>
-                        <li>・土木/施工管理士/解体施工技師 歓迎</li>
-                        <li>・現場全体を統括するやりがい</li>
-                    </ul>
-                </div>
-                <div class="bg-white p-8 border border-gray-100 shadow-sm rounded-lg">
-                    <h3 class="text-xl font-bold mb-4">現場作業員</h3>
-                    <p class="text-sm text-gray-600 mb-6">未経験からでもスタート可能。重機の運転から手作業まで、幅広く活躍できます。50代から入社される方も多く、元気に働いています。
-                    </p>
-                    <ul class="text-xs text-gray-500 space-y-2">
-                        <li>・未経験・50代・女性 歓迎</li>
-                        <li>・資格取得支援制度あり</li>
-                        <li>・残業代全額支給</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Flow Section -->
-    <section id="flow" class="py-20 bg-gray-custom px-6">
-        <div class="container mx-auto max-w-5xl">
-            <h2 class="text-2xl font-bold mb-16 section-title">工事完了までの流れ</h2>
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="relative p-6 bg-white shadow-sm">
-                    <span class="step-number mb-4 block">01</span>
-                    <h3 class="font-bold mb-2">建物調査・見積り</h3>
-                    <p class="text-xs text-gray-500">現地の建物の構造や周辺環境を詳細に調査し、最適なプランをご提案します。</p>
-                </div>
-                <div class="relative p-6 bg-white shadow-sm">
-                    <span class="step-number mb-4 block">02</span>
-                    <h3 class="font-bold mb-2">近隣挨拶・養生</h3>
-                    <p class="text-xs text-gray-500">近隣住民の方々へ丁寧なご説明を行い、粉塵や騒音を抑えるための養生を徹底します。</p>
-                </div>
-                <div class="relative p-6 bg-white shadow-sm">
-                    <span class="step-number mb-4 block">03</span>
-                    <h3 class="font-bold mb-2">解体工事・搬出</h3>
-                    <p class="text-xs text-gray-500">重機と手作業を組み合わせ、安全第一で解体。廃材は分別して適正に運び出します。</p>
-                </div>
-                <div class="relative p-6 bg-white shadow-sm">
-                    <span class="step-number mb-4 block">04</span>
-                    <h3 class="font-bold mb-2">整地・完了</h3>
-                    <p class="text-xs text-gray-500">地面を綺麗に整え、お客様に確認いただき工事完了となります。</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section id="benefits" class="py-20 bg-black text-white px-6">
-        <div class="container mx-auto max-w-5xl">
-            <h2 class="text-2xl font-bold mb-16 section-title after:bg-white text-white">働く環境と福利厚生</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-                <div class="p-6 border border-gray-800">
-                    <div class="text-3xl mb-4">🍖</div>
-                    <h3 class="font-bold mb-2">充実の社内行事</h3>
-                    <p class="text-xs text-gray-400">社員旅行やBBQなど、社員同士の交流を大切にしています。</p>
-                </div>
-                <div class="p-6 border border-gray-800">
-                    <div class="text-3xl mb-4">☕️</div>
-                    <h3 class="font-bold mb-2">適度な休憩</h3>
-                    <p class="text-xs text-gray-400">10時、15時、お昼の休憩があり、メリハリをつけて働けます。</p>
-                </div>
-                <div class="p-6 border border-gray-800">
-                    <div class="text-3xl mb-4">🛡️</div>
-                    <h3 class="font-bold mb-2">各種保険完備</h3>
-                    <p class="text-xs text-gray-400">社会保険、雇用保険、年金、36協定遵守。安心して長く働けます。</p>
-                </div>
-                <div class="p-6 border border-gray-800">
-                    <div class="text-3xl mb-4">👕</div>
-                    <h3 class="font-bold mb-2">用品支給</h3>
-                    <p class="text-xs text-gray-400">作業服などの仕事に必要なものはすべて支給いたします。</p>
-                </div>
-            </div>
-            <div class="mt-12 text-center text-sm text-gray-400">
-                <p>有休休暇（規定通り） / 賞与あり / 従業員数：約20名</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Voices Section -->
-    <section id="voices" class="py-20 px-6">
-        <div class="container mx-auto max-w-5xl">
-            <h2 class="text-2xl font-bold mb-16 section-title">採用に関して（働く人の声）</h2>
-            <div class="space-y-12">
-                <!-- Voice 1 -->
-                <div class="flex flex-col md:flex-row bg-white border border-gray-100 shadow-sm overflow-hidden">
-                    <div class="md:w-1/3 voice-img-container">
-                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop"
-                            alt="社員の写真1">
-                    </div>
-                    <div class="md:w-2/3 p-8 md:p-12 flex flex-col justify-center">
-                        <p class="text-xl md:text-2xl font-bold mb-4">「この仕事、やればやるほど奥が深くて面白いよ」</p>
-                        <p class="text-sm text-gray-500 mb-6">32歳 / 現場リーダー</p>
-                        <p class="text-gray-600">建物の構造を読み、安全に、確実に解体する。毎回違う現場、違う挑戦がある。</p>
+                    <div class="mt-auto space-y-4">
+                        <div class="flex items-center text-sm font-bold bg-zinc-50 px-4 py-2 rounded">
+                            <span class="w-2 h-2 bg-black mr-3"></span>
+                            ノルマなし
+                        </div>
+                        <div class="flex items-center text-sm font-bold bg-zinc-50 px-4 py-2 rounded">
+                            <span class="w-2 h-2 bg-black mr-3"></span>
+                            やる気重視の採用
+                        </div>
                     </div>
                 </div>
 
-                <!-- Voice 2: 50代女性 -->
+                <!-- Site Manager Role -->
                 <div
-                    class="flex flex-col md:flex-row-reverse bg-white border border-gray-100 shadow-sm overflow-hidden">
-                    <div class="md:w-1/3 voice-img-container">
-                        <img src="https://images.unsplash.com/photo-1590644365607-1c5a519a7a37?q=80&w=800&auto=format&fit=crop"
-                            alt="社員の写真2">
+                    class="bg-black text-white p-10 border border-black hover:bg-zinc-800 transition-all flex flex-col">
+                    <span class="text-[10px] font-black tracking-widest text-zinc-500 uppercase mb-4">Role 02</span>
+                    <h3 class="text-2xl font-black mb-6">現場管理</h3>
+                    <p class="text-sm text-zinc-400 mb-8 leading-relaxed">
+                        現場全体を俯瞰し、的確な指示を出す司令塔。安全と品質を守る、責任あるポジションです。
+                    </p>
+                    <div class="mt-auto space-y-4 text-zinc-200">
+                        <div class="flex items-center text-sm font-bold bg-zinc-800 px-4 py-2 rounded">
+                            <span class="w-2 h-2 bg-white mr-3"></span>
+                            実務経験10年以上歓迎
+                        </div>
+                        <div class="flex items-center text-sm font-bold bg-zinc-800 px-4 py-2 rounded">
+                            <span class="w-2 h-2 bg-white mr-3"></span>
+                            有資格者 大歓迎
+                        </div>
                     </div>
-                    <div class="md:w-2/3 p-8 md:p-12 flex flex-col justify-center">
-                        <p class="text-xl md:text-2xl font-bold mb-4">「50代の女性の私でも、元気に、楽しく働けています」</p>
-                        <p class="text-sm text-gray-500 mb-6">54歳 / 現場アシスタント</p>
-                        <p class="text-gray-600">最初は不安でしたが、先輩方が親身になって教えてくれるので安心しました。厳しい感じがなく、働きやすい職場です。</p>
+                </div>
+
+                <!-- Worker Role -->
+                <div class="bg-white p-10 border border-zinc-200 hover:border-black transition-all flex flex-col group">
+                    <span class="text-[10px] font-black tracking-widest text-zinc-400 uppercase mb-4">Role 03</span>
+                    <h3 class="text-2xl font-black mb-6">現場作業員</h3>
+                    <p class="text-sm text-zinc-500 mb-8 leading-relaxed">
+                        未経験からでもOK。手作業が中心で, 重機に乗る人は限られているので安心してください。
+                    </p>
+                    <div class="mt-auto space-y-4">
+                        <div class="flex items-center text-sm font-bold bg-zinc-50 px-4 py-2 rounded">
+                            <span class="w-2 h-2 bg-black mr-3"></span>
+                            50代からの入社実績あり
+                        </div>
+                        <div class="flex items-center text-sm font-bold bg-zinc-50 px-4 py-2 rounded">
+                            <span class="w-2 h-2 bg-black mr-3"></span>
+                            未経験・女性も活躍中
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FAQ Section -->
-    <section id="faq" class="py-20 bg-gray-custom px-6">
-        <div class="container mx-auto max-w-3xl">
-            <h2 class="text-2xl font-bold mb-12 section-title">よくあるご質問</h2>
-            <div class="space-y-4">
-                <!-- Q1 -->
-                <div class="bg-white p-6 shadow-sm">
-                    <p class="font-bold mb-2 flex items-start text-sm md:text-base">
-                        <span class="bg-black text-white text-[10px] px-2 py-1 mr-3 mt-1 shrink-0">Q</span>
-                        未経験でも応募できますか？
-                    </p>
-                    <p class="text-gray-600 text-sm ml-9">
-                        はい、大丈夫です。先輩社員が一から丁寧に指導します。現在活躍している社員の多くが未経験からのスタートです。
-                    </p>
-                </div>
-                <!-- Q2 -->
-                <div class="bg-white p-6 shadow-sm">
-                    <p class="font-bold mb-2 flex items-start text-sm md:text-base">
-                        <span class="bg-black text-white text-[10px] px-2 py-1 mr-3 mt-1 shrink-0">Q</span>
-                        どんな資格が必要ですか？
-                    </p>
-                    <p class="text-gray-600 text-sm ml-9">
-                        入社時に特別な資格は不要です。普通自動車免許があれば応募可能。入社後、重機操縦や施工管理などの資格取得を会社がサポートします（費用会社負担）。
-                    </p>
-                </div>
-                <!-- Q3 -->
-                <div class="bg-white p-6 shadow-sm">
-                    <p class="font-bold mb-2 flex items-start text-sm md:text-base">
-                        <span class="bg-black text-white text-[10px] px-2 py-1 mr-3 mt-1 shrink-0">Q</span>
-                        体力に自信がないのですが...
-                    </p>
-                    <p class="text-gray-600 text-sm ml-9">
-                        確かに体を使う仕事ですが、最初から無理はさせません。少しずつ体を慣らしながら、自分のペースで成長できます。
-                    </p>
+    <!-- Qualification Section -->
+    <section class="py-16 bg-zinc-900 text-white overflow-hidden">
+        <div class="container mx-auto max-w-5xl px-6 flex flex-col md:flex-row items-center justify-between">
+            <h2 class="text-2xl font-black mb-8 md:mb-0">こんな資格をお持ちの方は、<br class="hidden md:block">即戦力として大歓迎です。</h2>
+            <div class="flex flex-wrap gap-4">
+                <span class="bg-white text-black px-6 py-2 rounded-full text-sm font-black">土木施工管理士</span>
+                <span class="bg-white text-black px-6 py-2 rounded-full text-sm font-black">建築施工管理士</span>
+                <span class="bg-white text-black px-6 py-2 rounded-full text-sm font-black">解体工事施工技師</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Employee Voices -->
+    <section class="py-24 px-6 bg-white overflow-hidden">
+        <div class="container mx-auto max-w-5xl">
+            <h2 class="text-3xl font-black mb-16 italic underline decoration-zinc-100 underline-offset-8">働く人のこえ</h2>
+
+            <div class="space-y-16">
+                <!-- Case 1 -->
+                <div class="flex flex-col md:flex-row gap-12 items-center">
+                    <div class="md:w-1/2">
+                        <div class="bg-zinc-100 aspect-[4/5] rounded-3xl flex items-center justify-center shadow-inner">
+                            <p class="text-zinc-400 font-bold italic">[50代女性スタッフの笑顔の画像]</p>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2">
+                        <p class="text-sm font-bold text-zinc-400 mb-4 tracking-widest italic">Interview 01</p>
+                        <h3 class="text-3xl font-black mb-6 leading-tight">「50代の女性の私でも、元気に、楽しく働けています」</h3>
+                        <p class="text-lg text-zinc-600 leading-relaxed mb-6">
+                            最初は体力的に不安もありましたが、休憩（10時, 12時, 15時）がしっかりあるので無理なく続けられています。何より、先輩方が本当に親身に教えてくれるので安心しました。
+                        </p>
+                        <p class="font-bold text-zinc-900 border-l-4 border-black pl-4">50代・現場アシスタント（入社3年目）</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Company Section -->
-    <section id="company" class="py-20 px-6">
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="text-2xl font-bold mb-12 section-title">会社概要</h2>
-            <div class="overflow-hidden border-t border-gray-100">
-                <dl class="divide-y divide-gray-100">
-                    <div class="py-6 sm:grid sm:grid-cols-3 sm:gap-4">
-                        <dt class="text-sm font-bold">会社名</dt>
-                        <dd class="mt-1 text-sm text-gray-600 sm:mt-0 sm:col-span-2">有限会社 松島商店</dd>
+    <!-- Details Section -->
+    <section class="py-24 bg-zinc-50 border-y border-zinc-200 px-6">
+        <div class="container mx-auto max-w-5xl">
+            <div class="grid md:grid-cols-2 gap-16">
+                <!-- Benefits -->
+                <div>
+                    <h2 class="text-2xl font-black mb-10 border-b-2 border-black inline-block pb-1">働くメリット・環境</h2>
+                    <ul class="space-y-6">
+                        <li class="flex items-start">
+                            <div
+                                class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shrink-0 shadow-sm mr-6 text-xl">
+                                🛡️</div>
+                            <div>
+                                <p class="font-black text-lg">社会保険・厚生年金 完備</p>
+                                <p class="text-sm text-zinc-500">雇用保険、健康保険、厚生年金。将来まで安心の環境です。</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div
+                                class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shrink-0 shadow-sm mr-6 text-xl">
+                                👕</div>
+                            <div>
+                                <p class="font-black text-lg">作業服・装備品 支給</p>
+                                <p class="text-sm text-zinc-500">仕事道具、制服はすべて会社から支給いたします。</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <div
+                                class="w-12 h-12 bg-white rounded-2xl flex items-center justify-center shrink-0 shadow-sm mr-6 text-xl">
+                                💰</div>
+                            <div>
+                                <p class="font-black text-lg">残業代全額支給 & ボーナス</p>
+                                <p class="text-sm text-zinc-500">頑張った分はしっかり還元。規定通りの有給取得も可能です。</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Company Info -->
+                <div class="bg-black text-white p-10 rounded-3xl shadow-2xl relative overflow-hidden">
+                    <div class="relative z-10">
+                        <h2 class="text-2xl font-black mb-8 italic">会社のこと</h2>
+                        <div class="space-y-6 text-zinc-400">
+                            <div class="flex justify-between border-b border-zinc-800 pb-2">
+                                <span class="text-sm">従業員数</span>
+                                <span class="font-bold text-white text-lg">20名</span>
+                            </div>
+                            <div class="flex justify-between border-b border-zinc-800 pb-2">
+                                <span class="text-sm">お休み</span>
+                                <span class="font-bold text-white text-lg">日祝定休 / 有休あり</span>
+                            </div>
+                            <div class="flex justify-between border-b border-zinc-800 pb-2">
+                                <span class="text-sm">36協定</span>
+                                <span class="font-bold text-white text-lg">遵守しています</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="py-6 sm:grid sm:grid-cols-3 sm:gap-4">
-                        <dt class="text-sm font-bold">所在地</dt>
-                        <dd class="mt-1 text-sm text-gray-600 sm:mt-0 sm:col-span-2">愛知県半田市</dd>
-                    </div>
-                    <div class="py-6 sm:grid sm:grid-cols-3 sm:gap-4">
-                        <dt class="text-sm font-bold">創業</dt>
-                        <dd class="mt-1 text-sm text-gray-600 sm:mt-0 sm:col-span-2">昭和60年</dd>
-                    </div>
-                    <div class="py-6 sm:grid sm:grid-cols-3 sm:gap-4">
-                        <dt class="text-sm font-bold">事業内容</dt>
-                        <dd class="mt-1 text-sm text-gray-600 sm:mt-0 sm:col-span-2">
-                            総合解体工事（住宅・店舗・ビル）<br>
-                            産業廃棄物収集運搬、土木工事業
-                        </dd>
-                    </div>
-                </dl>
+                    <!-- Mascot bg -->
+                    <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-zinc-800 rounded-full opacity-30"></div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer / Contact -->
-    <footer id="contact" class="bg-black text-white py-20 px-6">
-        <div class="container mx-auto max-w-5xl text-center">
-            <h2 class="text-2xl font-bold mb-12 section-title after:bg-white">お問合せ</h2>
-            <p class="mb-12 text-gray-400">
-                採用や工事に関するお問い合わせは、お電話または下記フォームよりお願いいたします。
+    <!-- Footer / CTA -->
+    <footer id="contact" class="bg-white py-32 px-6">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-4xl font-black mb-8 italic">いつでも見学OK!!</h2>
+            <p class="text-zinc-500 mb-12 text-lg">
+                実際の現場や会社の雰囲気を見に来ませんか？<br>
+                まずはお電話、またはお問い合わせフォームからお気軽にご連絡ください。
             </p>
             <div class="flex flex-col items-center space-y-8">
-                <div class="text-3xl font-bold">TEL: 0569-21-5789</div>
+                <div class="text-4xl md:text-5xl font-black tracking-tighter">0569-21-5789</div>
                 <a href="faq.html#inquiry-form"
-                    class="inline-block bg-white text-black px-12 py-5 font-bold hover:bg-gray-200 transition">
-                    お問い合わせはこちら
+                    class="bg-black text-white px-12 py-5 font-bold hover:bg-zinc-800 transition shadow-2xl">
+                    採用のお問い合わせはこちら
                 </a>
-                <p class="text-sm text-gray-400 mt-4 underline cursor-pointer">いつでも見学OK！まずはお気軽にご連絡ください。</p>
-                <div class="pt-20 border-t border-gray-900 w-full">
-                    <p class="text-[10px] text-gray-600">© MATSUSHIMA SHOTEN All Rights Reserved.</p>
-                </div>
+                <p class="text-xs text-zinc-400 pt-20">© MATSUSHIMA SHOTEN All Rights Reserved.</p>
             </div>
         </div>
     </footer>
