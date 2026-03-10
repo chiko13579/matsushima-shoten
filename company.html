@@ -72,39 +72,30 @@
 
 <body class="antialiased">
 
-    <!-- Header -->
-    <header class="fixed w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-3 cursor-pointer" onclick="location.href='index.html'">
-                <!-- Mascot Placeholder -->
-                <div
-                    class="mascot-placeholder w-10 h-10 border-2 border-black rounded-full text-[8px] flex flex-col items-center justify-center font-black bg-white group-hover:scale-110 transition-transform leading-none">
-                    <span class="mb-0.5">ちょこん</span>
-                    <span>M</span>
+    <!-- Header Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-zinc-100">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="flex items-center">
+                <div class="font-bold text-xl tracking-tighter mr-4">松島商店</div>
+                <div class="hidden md:flex bg-zinc-100 rounded-full px-3 py-1 items-center">
+                    <div
+                        class="w-6 h-6 bg-zinc-300 rounded-full mr-2 flex items-center justify-center text-[8px] text-zinc-500">
+                        Mascot</div>
+                    <span class="text-[10px] font-bold text-zinc-500">松島くん</span>
                 </div>
-                <div class="text-xl font-black tracking-tighter">松島商店</div>
             </div>
-            <!-- Updated Navigation -->
-            <nav class="hidden md:flex space-x-8 text-[11px] font-bold uppercase tracking-widest">
-                <a href="index.html" class="hover:text-gray-500 transition-colors">ホーム</a>
-                <a href="flow.html" class="hover:text-gray-500 transition-colors">工事完了までの流れ</a>
-                <a href="faq.html" class="hover:text-gray-500 transition-colors">よくあるご質問</a>
-                <a href="recruit.html" class="hover:text-gray-500 transition-colors">採用に関して</a>
-                <a href="luggage.html" class="hover:text-gray-500 transition-colors">荷物預かり</a>
-                <a href="company.html"
-                    class="hover:text-gray-500 transition-colors border-b-2 border-black pb-1">会社概要</a>
-                <a href="faq.html#inquiry-form" class="hover:text-gray-500 transition-colors">お問合せ</a>
-            </nav>
-            <div class="md:hidden">
-                <button class="p-2">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
+            <div class="hidden lg:flex items-center space-x-8 text-xs font-bold uppercase tracking-widest">
+                <a href="index.html" class="hover:text-zinc-500 transition">ホーム</a>
+                <a href="flow.html" class="hover:text-zinc-500 transition">工事完了までの流れ</a>
+                <a href="faq.html" class="hover:text-zinc-500 transition">よくあるご質問</a>
+                <a href="recruit.html" class="hover:text-zinc-500 transition">採用に関して</a>
+                <a href="luggage.html" class="hover:text-zinc-500 transition">荷物預かり</a>
+                <a href="company.html" class="hover:text-zinc-500 transition">会社概要</a>
+                <a href="faq.html#inquiry-form"
+                    class="bg-black text-white px-4 py-2 hover:bg-zinc-800 transition">お問合せ</a>
             </div>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero -->
     <section class="relative h-[80vh] flex items-center hero-gradient text-white overflow-hidden">

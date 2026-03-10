@@ -53,14 +53,14 @@
     <!-- Header Navigation -->
     <nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-sm border-b border-zinc-100">
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="flex items-center space-x-3 cursor-pointer" onclick="location.href='index.html'">
-                <!-- Mascot Placeholder -->
-                <div
-                    class="mascot-placeholder w-10 h-10 border-2 border-black rounded-full text-[8px] flex flex-col items-center justify-center font-black bg-white group-hover:scale-110 transition-transform leading-none">
-                    <span class="mb-0.5">ちょこん</span>
-                    <span>M</span>
+            <div class="flex items-center">
+                <div class="font-bold text-xl tracking-tighter mr-4">松島商店</div>
+                <div class="hidden md:flex bg-zinc-100 rounded-full px-3 py-1 items-center">
+                    <div
+                        class="w-6 h-6 bg-zinc-300 rounded-full mr-2 flex items-center justify-center text-[8px] text-zinc-500">
+                        Mascot</div>
+                    <span class="text-[10px] font-bold text-zinc-500">松島くん</span>
                 </div>
-                <div class="font-bold text-xl tracking-tighter">松島商店</div>
             </div>
             <div class="hidden lg:flex items-center space-x-8 text-xs font-bold uppercase tracking-widest">
                 <a href="index.html" class="hover:text-zinc-500 transition">ホーム</a>
@@ -72,201 +72,193 @@
                 <a href="faq.html#inquiry-form"
                     class="bg-black text-white px-4 py-2 hover:bg-zinc-800 transition">お問合せ</a>
             </div>
-            <!-- Mobile Menu Icon (Placeholder) -->
-            <div class="lg:hidden text-gray-500">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7">
-                    </path>
-                </svg>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="bg-gray-50 py-16 md:py-24">
+        <div class="max-w-4xl mx-auto px-6">
+            <span class="text-xs font-bold tracking-widest text-gray-400 uppercase">Support</span>
+            <h1 class="text-3xl md:text-5xl font-bold mt-2 text-black leading-tight">よくあるご質問</h1>
+            <p class="text-gray-500 mt-4 max-w-xl">
+                お客様から寄せられることの多いご質問と回答をまとめました。
+            </p>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <main class="py-12 md:py-20">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="space-y-12">
+
+                <!-- FAQ Item 1 -->
+                <div class="flex flex-col space-y-4">
+                    <div class="flex gap-4">
+                        <div class="q-badge">Q</div>
+                        <h3 class="text-lg md:text-xl font-bold">見積りを依頼した場合の見積り料金はかかりますか？</h3>
+                    </div>
+                    <div class="flex gap-4 pl-0 md:pl-11">
+                        <div class="a-badge md:hidden">A</div>
+                        <div class="bg-gray-50 p-6 rounded-2xl text-gray-700 flex-grow border border-gray-100 italic">
+                            <p class="mb-2"><strong>もちろん、お見積りは完全に無料です。</strong></p>
+                            <p class="text-sm">
+                                松島商店では「まずはお客様に正しい情報を知っていただくこと」を大切にしています。お見積り後のしつこい営業も一切ございません。他社様との相見積もりも大歓迎ですので、まずは現状把握のために、お気軽にご活用ください。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 2 -->
+                <div class="flex flex-col space-y-4">
+                    <div class="flex gap-4">
+                        <div class="q-badge">Q</div>
+                        <h3 class="text-lg md:text-xl font-bold">接する道路が狭く、車が出入りしづらい場所でも対応出来ますか？</h3>
+                    </div>
+                    <div class="flex gap-4 pl-0 md:pl-11">
+                        <div class="a-badge md:hidden">A</div>
+                        <div class="bg-gray-50 p-6 rounded-2xl text-gray-700 flex-grow border border-gray-100">
+                            <p class="mb-2"><strong>はい、問題なく対応可能です。ご安心ください。</strong></p>
+                            <p class="text-sm leading-relaxed">
+                                弊社では狭小地専用の小型重機（ミニユンボ）や軽トラックを保有しておりますので、大型車両が入れない場所でも安全に施工できます。人力による解体（手壊し）を組み合わせるなど、現場に最適な工法をご提案します。道路の幅や電線の位置が気になる場合も、まずは現地を確認させていただきます。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 3 -->
+                <div class="flex flex-col space-y-4">
+                    <div class="flex gap-4">
+                        <div class="q-badge">Q</div>
+                        <h3 class="text-lg md:text-xl font-bold">解体時に立ち会いは必要ですか？</h3>
+                    </div>
+                    <div class="flex gap-4 pl-0 md:pl-11">
+                        <div class="a-badge md:hidden">A</div>
+                        <div class="bg-gray-50 p-6 rounded-2xl text-gray-700 flex-grow border border-gray-100">
+                            <p class="mb-2"><strong>基本的には不要ですが、初回（現地調査時）の立ち会いをおすすめしています。</strong></p>
+                            <p class="text-sm leading-relaxed">
+                                解体範囲の最終確認（残してほしい庭木や石垣、境界線の確認など）を現地で行うことで、後のトラブルを未然に防ぐことができます。工事期間中については、安全確保の観点からも常時立ち会っていただく必要はありません。工事の進捗は随時ご報告させていただきます。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 4 -->
+                <div class="flex flex-col space-y-4">
+                    <div class="flex gap-4">
+                        <div class="q-badge">Q</div>
+                        <h3 class="text-lg md:text-xl font-bold">荷物が多くて保管に困っています。どうしたら良いですか？</h3>
+                    </div>
+                    <div class="flex gap-4 pl-0 md:pl-11">
+                        <div class="a-badge md:hidden">A</div>
+                        <div class="bg-gray-50 p-6 rounded-2xl text-gray-700 flex-grow border border-gray-100">
+                            <p>松島商店では荷物を一時的にお預かりするサービスを行っておりますので、仮住まいに入りきらなかった荷物を保管しておくことができます。ぜひこちらのサービスをご利用ください。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 5: 近隣への影響 -->
+                <div class="flex flex-col space-y-4">
+                    <div class="flex gap-4">
+                        <div class="q-badge">Q</div>
+                        <h3 class="text-lg md:text-xl font-bold">解体工事で近所の人に迷惑をかけないか心配です。</h3>
+                    </div>
+                    <div class="flex gap-4 pl-0 md:pl-11">
+                        <div class="a-badge md:hidden">A</div>
+                        <div class="bg-gray-50 p-6 rounded-2xl text-gray-700 flex-grow border border-gray-100">
+                            <p>ご安心ください。着工前に弊社スタッフが近隣の方々へ丁寧にご挨拶に伺い、工事の内容やスケジュールをご説明します。また、養生や散水を徹底し、騒音や粉塵を最小限に抑えるよう細心の注意を払っております。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 6: 工期 -->
+                <div class="flex flex-col space-y-4">
+                    <div class="flex gap-4">
+                        <div class="q-badge">Q</div>
+                        <h3 class="text-lg md:text-xl font-bold">解体工事にはどのくらいの期間がかかりますか？</h3>
+                    </div>
+                    <div class="flex gap-4 pl-0 md:pl-11">
+                        <div class="a-badge md:hidden">A</div>
+                        <div class="bg-gray-50 p-6 rounded-2xl text-gray-700 flex-grow border border-gray-100">
+                            <p>建物の規模や構造にもよりますが、一般的な木造住宅（のべ40坪程度）の場合、約1週間から15日間が目安となります。正確な工期は、現地調査後のお見積り時にご提示させていただきます。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 7: 追加費用 -->
+                <div class="flex flex-col space-y-4">
+                    <div class="flex gap-4">
+                        <div class="q-badge">Q</div>
+                        <h3 class="text-lg md:text-xl font-bold">後から追加費用がかかることはありますか？</h3>
+                    </div>
+                    <div class="flex gap-4 pl-0 md:pl-11">
+                        <div class="a-badge md:hidden">A</div>
+                        <div class="bg-gray-50 p-6 rounded-2xl text-gray-700 flex-grow border border-gray-100">
+                            <p class="mb-2"><strong>ご契約後にお見積り金額が上がることは非常に少ないですが、例外もございます。</strong></p>
+                            <p class="text-sm leading-relaxed">
+                                唯一の例外は、建物の下に埋まっていた「浄化槽」「コンクリート塊」「古井戸」などの地中障害物が見つかった場合です。これらは事前調査でも判断ができないため、発見次第すぐにお客様へ報告し、追加費用の承諾をいただいた上で作業を進めます。勝手に進めて後から請求することはありませんのでご安心ください。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Item 8: ガス・水道 -->
+                <div class="flex flex-col space-y-4">
+                    <div class="flex gap-4">
+                        <div class="q-badge">Q</div>
+                        <h3 class="text-lg md:text-xl font-bold">ガスや水道の停止手続きはどうすればいいですか？</h3>
+                    </div>
+                    <div class="flex gap-4 pl-0 md:pl-11">
+                        <div class="a-badge md:hidden">A</div>
+                        <div class="bg-gray-50 p-6 rounded-2xl text-gray-700 flex-grow border border-gray-100">
+                            <p>個人情報の観点から、停止手続きはお客様ご自身で行っていただく必要がございます。停止の方法やタイミングについては事前に詳しくお伝えいたしますのでご安心ください。</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-        </header>
+    </main>
 
-        <!-- Hero Section -->
-        <section class="bg-gray-50 py-16 md:py-24">
-            <div class="max-w-4xl mx-auto px-6">
-                <span class="text-xs font-bold tracking-widest text-gray-400 uppercase">Support</span>
-                <h1 class="text-3xl md:text-5xl font-bold mt-2 text-black leading-tight">よくあるご質問</h1>
-                <p class="text-gray-500 mt-4 max-w-xl">
-                    お客様から寄せられることの多いご質問と回答をまとめました。
+
+
+    <!-- Banner / CTA -->
+    <section class="max-w-4xl mx-auto px-6 pb-20">
+        <div class="bg-black text-white rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
+            <div class="relative z-10">
+                <h2 class="text-2xl md:text-3xl font-bold mb-4">荷物お預かりサービスのご案内</h2>
+                <p class="text-gray-400 mb-8 max-w-lg mx-auto leading-relaxed">
+                    解体や引越しの際の家財道具の保管にお困りではありませんか？松島商店が責任を持ってお預かりいたします。
                 </p>
+                <a href="luggage.html"
+                    class="inline-flex items-center bg-white text-black font-bold py-4 px-10 rounded-full hover:bg-gray-200 transition">
+                    サービス詳細を見る
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
             </div>
-        </section>
+            <!-- Decorative circle -->
+            <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-gray-800 rounded-full opacity-50"></div>
+        </div>
+    </section>
 
-        <!-- FAQ Section -->
-        <main class="py-12 md:py-20">
-            <div class="max-w-4xl mx-auto px-6">
-                <div class="space-y-12">
-
-                    <!-- FAQ Item 1 -->
-                    <div class="flex flex-col space-y-4">
-                        <div class="flex gap-4">
-                            <div class="q-badge">Q</div>
-                            <h3 class="text-lg md:text-xl font-bold">見積りを依頼した場合の見積り料金はかかりますか？</h3>
-                        </div>
-                        <div class="flex gap-4 pl-0 md:pl-11">
-                            <div class="a-badge md:hidden">A</div>
-                            <div
-                                class="bg-gray-50 p-6 rounded-2xl text-gray-700 flex-grow border border-gray-100 italic">
-                                <p class="mb-2"><strong>もちろん、お見積りは完全に無料です。</strong></p>
-                                <p class="text-sm">
-                                    松島商店では「まずはお客様に正しい情報を知っていただくこと」を大切にしています。お見積り後のしつこい営業も一切ございません。他社様との相見積もりも大歓迎ですので、まずは現状把握のために、お気軽にご活用ください。
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 2 -->
-                    <div class="flex flex-col space-y-4">
-                        <div class="flex gap-4">
-                            <div class="q-badge">Q</div>
-                            <h3 class="text-lg md:text-xl font-bold">接する道路が狭く、車が出入りしづらい場所でも対応出来ますか？</h3>
-                        </div>
-                        <div class="flex gap-4 pl-0 md:pl-11">
-                            <div class="a-badge md:hidden">A</div>
-                            <div class="bg-gray-50 p-6 rounded-2xl text-gray-700 flex-grow border border-gray-100">
-                                <p class="mb-2"><strong>はい、問題なく対応可能です。ご安心ください。</strong></p>
-                                <p class="text-sm leading-relaxed">
-                                    弊社では狭小地専用の小型重機（ミニユンボ）や軽トラックを保有しておりますので、大型車両が入れない場所でも安全に施工できます。人力による解体（手壊し）を組み合わせるなど、現場に最適な工法をご提案します。道路の幅や電線の位置が気になる場合も、まずは現地を確認させていただきます。
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 3 -->
-                    <div class="flex flex-col space-y-4">
-                        <div class="flex gap-4">
-                            <div class="q-badge">Q</div>
-                            <h3 class="text-lg md:text-xl font-bold">解体時に立ち会いは必要ですか？</h3>
-                        </div>
-                        <div class="flex gap-4 pl-0 md:pl-11">
-                            <div class="a-badge md:hidden">A</div>
-                            <div class="bg-gray-50 p-6 rounded-2xl text-gray-700 flex-grow border border-gray-100">
-                                <p class="mb-2"><strong>基本的には不要ですが、初回（現地調査時）の立ち会いをおすすめしています。</strong></p>
-                                <p class="text-sm leading-relaxed">
-                                    解体範囲の最終確認（残してほしい庭木や石垣、境界線の確認など）を現地で行うことで、後のトラブルを未然に防ぐことができます。工事期間中については、安全確保の観点からも常時立ち会っていただく必要はありません。工事の進捗は随時ご報告させていただきます。
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 4 -->
-                    <div class="flex flex-col space-y-4">
-                        <div class="flex gap-4">
-                            <div class="q-badge">Q</div>
-                            <h3 class="text-lg md:text-xl font-bold">荷物が多くて保管に困っています。どうしたら良いですか？</h3>
-                        </div>
-                        <div class="flex gap-4 pl-0 md:pl-11">
-                            <div class="a-badge md:hidden">A</div>
-                            <div class="bg-gray-50 p-6 rounded-2xl text-gray-700 flex-grow border border-gray-100">
-                                <p>松島商店では荷物を一時的にお預かりするサービスを行っておりますので、仮住まいに入りきらなかった荷物を保管しておくことができます。ぜひこちらのサービスをご利用ください。
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 5: 近隣への影響 -->
-                    <div class="flex flex-col space-y-4">
-                        <div class="flex gap-4">
-                            <div class="q-badge">Q</div>
-                            <h3 class="text-lg md:text-xl font-bold">解体工事で近所の人に迷惑をかけないか心配です。</h3>
-                        </div>
-                        <div class="flex gap-4 pl-0 md:pl-11">
-                            <div class="a-badge md:hidden">A</div>
-                            <div class="bg-gray-50 p-6 rounded-2xl text-gray-700 flex-grow border border-gray-100">
-                                <p>ご安心ください。着工前に弊社スタッフが近隣の方々へ丁寧にご挨拶に伺い、工事の内容やスケジュールをご説明します。また、養生や散水を徹底し、騒音や粉塵を最小限に抑えるよう細心の注意を払っております。
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 6: 工期 -->
-                    <div class="flex flex-col space-y-4">
-                        <div class="flex gap-4">
-                            <div class="q-badge">Q</div>
-                            <h3 class="text-lg md:text-xl font-bold">解体工事にはどのくらいの期間がかかりますか？</h3>
-                        </div>
-                        <div class="flex gap-4 pl-0 md:pl-11">
-                            <div class="a-badge md:hidden">A</div>
-                            <div class="bg-gray-50 p-6 rounded-2xl text-gray-700 flex-grow border border-gray-100">
-                                <p>建物の規模や構造にもよりますが、一般的な木造住宅（のべ40坪程度）の場合、約1週間から15日間が目安となります。正確な工期は、現地調査後のお見積り時にご提示させていただきます。
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 7: 追加費用 -->
-                    <div class="flex flex-col space-y-4">
-                        <div class="flex gap-4">
-                            <div class="q-badge">Q</div>
-                            <h3 class="text-lg md:text-xl font-bold">後から追加費用がかかることはありますか？</h3>
-                        </div>
-                        <div class="flex gap-4 pl-0 md:pl-11">
-                            <div class="a-badge md:hidden">A</div>
-                            <div class="bg-gray-50 p-6 rounded-2xl text-gray-700 flex-grow border border-gray-100">
-                                <p class="mb-2"><strong>ご契約後にお見積り金額が上がることは非常に少ないですが、例外もございます。</strong></p>
-                                <p class="text-sm leading-relaxed">
-                                    唯一の例外は、建物の下に埋まっていた「浄化槽」「コンクリート塊」「古井戸」などの地中障害物が見つかった場合です。これらは事前調査でも判断ができないため、発見次第すぐにお客様へ報告し、追加費用の承諾をいただいた上で作業を進めます。勝手に進めて後から請求することはありませんのでご安心ください。
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- FAQ Item 8: ガス・水道 -->
-                    <div class="flex flex-col space-y-4">
-                        <div class="flex gap-4">
-                            <div class="q-badge">Q</div>
-                            <h3 class="text-lg md:text-xl font-bold">ガスや水道の停止手続きはどうすればいいですか？</h3>
-                        </div>
-                        <div class="flex gap-4 pl-0 md:pl-11">
-                            <div class="a-badge md:hidden">A</div>
-                            <div class="bg-gray-50 p-6 rounded-2xl text-gray-700 flex-grow border border-gray-100">
-                                <p>個人情報の観点から、停止手続きはお客様ご自身で行っていただく必要がございます。停止の方法やタイミングについては事前に詳しくお伝えいたしますのでご安心ください。</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
+    <!-- Footer -->
+    <footer class="bg-gray-100 py-12">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="text-lg font-bold mb-4 text-black">有限会社松島商店</div>
+            <p class="text-sm text-gray-500 mb-8">
+                愛知県半田市 | 建物解体・土地再生のプロフェッショナル<br>
+                TEL: 00-0000-0000 / FAX: 00-0000-0000
+            </p>
+            <div class="border-t border-gray-200 pt-8">
+                <p class="text-xs text-gray-400">© Matsushima Shoten Co., Ltd. All Rights Reserved.</p>
             </div>
-        </main>
-
-
-
-        <!-- Banner / CTA -->
-        <section class="max-w-4xl mx-auto px-6 pb-20">
-            <div class="bg-black text-white rounded-3xl p-8 md:p-12 text-center relative overflow-hidden">
-                <div class="relative z-10">
-                    <h2 class="text-2xl md:text-3xl font-bold mb-4">荷物お預かりサービスのご案内</h2>
-                    <p class="text-gray-400 mb-8 max-w-lg mx-auto leading-relaxed">
-                        解体や引越しの際の家財道具の保管にお困りではありませんか？松島商店が責任を持ってお預かりいたします。
-                    </p>
-                    <a href="luggage.html"
-                        class="inline-flex items-center bg-white text-black font-bold py-4 px-10 rounded-full hover:bg-gray-200 transition">
-                        サービス詳細を見る
-                        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                        </svg>
-                    </a>
-                </div>
-                <!-- Decorative circle -->
-                <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-gray-800 rounded-full opacity-50"></div>
-            </div>
-        </section>
-
-        <!-- Footer -->
-        <footer class="bg-gray-100 py-12">
-            <div class="max-w-4xl mx-auto px-6 text-center">
-                <div class="text-lg font-bold mb-4 text-black">有限会社松島商店</div>
-                <p class="text-sm text-gray-500 mb-8">
-                    愛知県半田市 | 建物解体・土地再生のプロフェッショナル<br>
-                    TEL: 00-0000-0000 / FAX: 00-0000-0000
-                </p>
-                <div class="border-t border-gray-200 pt-8">
-                    <p class="text-xs text-gray-400">© Matsushima Shoten Co., Ltd. All Rights Reserved.</p>
-                </div>
-            </div>
-        </footer>
+        </div>
+    </footer>
 
 </body>
 
