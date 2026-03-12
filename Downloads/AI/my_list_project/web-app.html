@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web制作会社調査ツール</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            opacity: 0.9;
+            font-size: 1.1em;
+        }
+        
+        .form-section {
+            padding: 40px;
+        }
+        
+        .input-group {
+            margin-bottom: 25px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        .input-group input, .input-group select, .input-group textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e1e5e9;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        
+        .input-group input:focus, .input-group select:focus, .input-group textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .search-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 18px;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+        }
+        
+        .search-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .results-section {
+            padding: 0 40px 40px;
+            display: none;
+        }
+        
+        .results-header {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .company-card {
+            background: white;
+            border: 2px solid #e1e5e9;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .company-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
+        }
+        
+        .company-name {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .company-section {
+            margin-bottom: 20px;
+        }
+        
+        .section-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 10px;
+            padding: 8px 12px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .company-info {
+            display: grid;
+            gap: 8px;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 5px 0;
+        }
+        
+        .info-label {
+            font-weight: 600;
+            color: #666;
+            min-width: 120px;
+            flex-shrink: 0;
+        }
+        
+        .info-value {
+            color: #333;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
+        
+        .info-value a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .info-value a:hover {
+            text-decoration: underline;
+        }
+        
+        /* FVテキストの特別なスタイル */
+        .fv-item .info-value {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.08) 0%, rgba(118, 75, 162, 0.08) 100%);
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 1.1em;
+            font-weight: 500;
+            line-height: 1.6;
+            border-left: 4px solid #667eea;
+            font-style: italic;
+            color: #333;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 40px;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #667eea;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .download-section {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .download-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            margin: 0 10px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            background: #218838;
+            transform: translateY(-1px);
+        }
+        
+        .error-message {
+            background: #f8d7da;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 1px solid #f5c6cb;
+        }
+        
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 1px solid #c3e6cb;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 id="headerTitle">🔍 Web制作会社調査ツール</h1>
+            <p id="headerSubtitle">転職活動での企業研究を支援します</p>
+        </div>
+        
+        <div class="form-section">
+            <div class="input-group">
+                <label for="companyType">🏢 会社の種類</label>
+                <select id="companyType">
+                    <option value="production">Web制作会社</option>
+                    <option value="marketing">マーケティング会社</option>
+                </select>
+                <small style="color: #666; margin-top: 5px; display: block;">
+                    💡 調査したい会社の種類を選択してください
+                </small>
+            </div>
+            
+            <div class="input-group">
+                <label for="location">📍 調査したい場所（複数入力可能）</label>
+                <textarea id="location" placeholder="例: 東京, 大阪, 名古屋, 渋谷（カンマで区切って複数入力）" rows="5">東京</textarea>
+                <small style="color: #666; margin-top: 5px; display: block;">
+                    💡 複数の地域を調査する場合は、カンマ（,）で区切って入力してください。
+                    <br>⚠️ 現実的な取得上限: 各地域100社 × 30地域 = 最大3000社程度
+                    <br>📊 大量データ取得には、市区町村レベルまで細分化することを推奨
+                </small>
+            </div>
+            
+            <div class="input-group">
+                <label for="maxResults">📊 各地域ごとの取得企業数</label>
+                <select id="maxResults">
+                    <option value="5">5社</option>
+                    <option value="10" selected>10社</option>
+                    <option value="15">15社</option>
+                    <option value="20">20社</option>
+                    <option value="30">30社</option>
+                    <option value="50">50社</option>
+                    <option value="100">100社</option>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <label for="autoSaveToSheets">📊 自動でGoogleスプレッドシートに保存</label>
+                <input type="checkbox" id="autoSaveToSheets" checked style="width: auto; margin-right: 10px;">
+                <small style="color: #666;">チェックすると検索完了後、自動的にスプレッドシートに保存されます</small>
+            </div>
+            
+            <div class="input-group">
+                <label for="searchMode">🔍 検索モード</label>
+                <select id="searchMode">
+                    <option value="test">🧪 テスト（サンプルデータ）</option>
+                    <option value="real">🌐 本物の検索（実際のWeb制作会社）</option>
+                </select>
+            </div>
+            
+            <button class="search-btn" onclick="startSearch()">
+                🚀 検索開始
+            </button>
+        </div>
+        
+        <div class="results-section" id="results">
+            <div class="loading" id="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p id="searchingText">会社を検索中...</p>
+                <p id="progress"></p>
+            </div>
+            
+            <div class="results-header" id="resultsHeader" style="display: none;">
+                <h2>📋 調査結果</h2>
+                <p id="resultsSummary"></p>
+            </div>
+            
+            <div id="companiesList"></div>
+            
+            <div class="download-section" id="downloadSection" style="display: none;">
+                <h3>💾 結果をダウンロード</h3>
+                <button class="download-btn" onclick="downloadJSON()">📄 JSON形式</button>
+                <button class="download-btn" onclick="downloadCSV()">📊 CSV形式</button>
+                
+                <div style="margin-top: 20px; border-top: 1px solid #eee; padding-top: 20px;">
+                    <h3>📊 Google Sheetsに保存</h3>
+                    <div class="input-group" style="margin-bottom: 15px;">
+                        <label>スプレッドシートID（オプション）:</label>
+                        <input type="text" id="spreadsheetId" placeholder="1ABC123XYZ789...（空欄可）" 
+                               style="padding: 10px; border: 2px solid #e1e5e9; border-radius: 8px;">
+                        <small style="display: block; margin-top: 5px; color: #666;">
+                            ※ 空欄の場合はデフォルトのスプレッドシートに保存されます
+                        </small>
+                    </div>
+                    <button class="download-btn" onclick="saveToGoogleSheets()" style="background: #34a853;">
+                        📊 Google Sheetsに保存
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let searchResults = [];
+        
+        // UI更新関数
+        function updateUIForCompanyType(companyType) {
+            const isMarketing = companyType === 'marketing';
+            const companyTypeText = isMarketing ? 'マーケティング会社' : 'Web制作会社';
+            
+            document.getElementById('headerTitle').textContent = `🔍 ${companyTypeText}調査ツール`;
+            document.getElementById('searchingText').textContent = `${companyTypeText}を検索中...`;
+        }
+        
+        // ページ読み込み時とオプション変更時にUI更新
+        document.addEventListener('DOMContentLoaded', function() {
+            const companyTypeSelect = document.getElementById('companyType');
+            updateUIForCompanyType(companyTypeSelect.value);
+            
+            companyTypeSelect.addEventListener('change', function() {
+                updateUIForCompanyType(this.value);
+            });
+        });
+        
+        // サンプルデータ（実際の検索の代わり）
+        const sampleCompanies = [
+            {
+                title: "株式会社WebCreators",
+                url: "https://example.com/webcreators",
+                companyName: "株式会社WebCreators",
+                ceoName: "田中太郎",
+                contactUrl: "https://example.com/contact",
+                fvText: "あなたのビジネスを次のステージへ。最新技術で実現する、成果にコミットするWeb制作。",
+                strengths: "レスポンシブデザインとSEO対策に特化したWeb制作サービスを提供。10年以上の実績。",
+                hasPortfolio: true,
+                portfolioUrl: "https://example.com/webcreators/portfolio",
+                businessType: "Web制作・システム開発・SEOコンサルティング"
+            },
+            {
+                title: "デザインスタジオABC",
+                url: "https://example.com/designabc",
+                companyName: "デザインスタジオABC",
+                ceoName: "佐藤花子",
+                contactUrl: "https://example.com/inquiry",
+                fvText: "美しいデザインで、ブランドの想いを伝える。心に響くビジュアルコミュニケーション。",
+                strengths: "ブランディングを重視したデザイン制作。大手企業との取引実績多数。",
+                hasPortfolio: true,
+                portfolioUrl: "https://example.com/designabc/works",
+                businessType: "ブランディング・グラフィックデザイン・Web制作"
+            },
+            {
+                title: "クリエイティブ合同会社",
+                url: "https://example.com/creative",
+                companyName: "クリエイティブ合同会社",
+                ceoName: "山田次郎",
+                contactUrl: "https://example.com/contact-us",
+                fvText: "スタートアップの挑戦を支える、革新的なデジタルソリューション。",
+                strengths: "スタートアップ企業向けのコスト効率の良いWeb制作サービス。",
+                hasPortfolio: false,
+                portfolioUrl: null,
+                businessType: "Web制作・アプリ開発・ITコンサルティング"
+            }
+        ];
+        
+        async function startSearch() {
+            const companyType = document.getElementById('companyType').value;
+            const locationInput = document.getElementById('location').value.trim();
+            const maxResults = parseInt(document.getElementById('maxResults').value);
+            const searchMode = document.getElementById('searchMode').value;
+            const autoSaveToSheets = document.getElementById('autoSaveToSheets').checked;
+            
+            if (!locationInput) {
+                showError('場所を入力してください');
+                return;
+            }
+            
+            // 複数地域を配列に分割
+            const locations = locationInput.split(',').map(loc => loc.trim()).filter(loc => loc);
+            
+            // UI更新
+            document.querySelector('.search-btn').disabled = true;
+            document.getElementById('results').style.display = 'block';
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('resultsHeader').style.display = 'none';
+            document.getElementById('downloadSection').style.display = 'none';
+            
+            searchResults = [];
+            
+            try {
+                // 地域数の制限チェック
+                if (locations.length > 30) {
+                    showError('一度に検索できる地域は30個までです。地域数を減らしてください。');
+                    return;
+                }
+                
+                // 各地域を順番に検索
+                for (let i = 0; i < locations.length; i++) {
+                    const location = locations[i];
+                    updateProgress(`検索中 (${i + 1}/${locations.length}): ${location}`);
+                    
+                    if (searchMode === 'real') {
+                        // 本物の検索
+                        await performRealSearch(location, maxResults, companyType);
+                    } else {
+                        // テスト検索（サンプルデータ）
+                        await simulateSearch(location, maxResults, companyType);
+                    }
+                    
+                    // 検索間の待機時間（API制限対策）
+                    if (i < locations.length - 1) {
+                        await sleep(1000);
+                    }
+                }
+                
+                // 重複除去
+                searchResults = removeDuplicates(searchResults);
+                
+                // 結果表示
+                displayResults();
+                
+                // 自動でスプレッドシートに保存
+                if (autoSaveToSheets && searchResults.length > 0) {
+                    await saveToGoogleSheets();
+                }
+                
+            } catch (error) {
+                console.error('検索エラー詳細:', error);
+                showError('検索中にエラーが発生しました: ' + (error.message || error.toString()));
+            } finally {
+                document.querySelector('.search-btn').disabled = false;
+                document.getElementById('loading').style.display = 'none';
+            }
+        }
+        
+        async function performRealSearch(location, maxResults, companyType) {
+            try {
+                console.log('検索リクエスト送信:', { location, maxResults, companyType });
+                const response = await fetch('/api/search', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        location: location,
+                        maxResults: maxResults,
+                        companyType: companyType,
+                        useRealSearch: true
+                    })
+                });
+                
+                console.log('レスポンス受信:', response.status, response.statusText);
+                
+                if (!response.ok) {
+                    const errorData = await response.json().catch(() => ({ error: `HTTP ${response.status}` }));
+                    throw new Error(errorData.error || `サーバーエラー: ${response.status}`);
+                }
+                
+                const data = await response.json();
+                console.log('データ受信完了:', data);
+                
+                // 地域情報を追加して結果を保存
+                const companiesWithLocation = data.companies.map(company => ({
+                    ...company,
+                    searchLocation: location
+                }));
+                searchResults.push(...companiesWithLocation);
+                
+                updateProgress(`${location}: ${data.totalFound}社の情報を取得完了！`);
+            } catch (error) {
+                console.error(`${location}の検索でエラー:`, error);
+                throw new Error(`${location}の検索に失敗: ${error.message}`);
+            }
+        }
+        
+        async function simulateSearch(location, maxResults, companyType) {
+            try {
+                console.log('テスト検索開始:', { location, maxResults, companyType });
+                
+                // 検索シミュレーション
+                await sleep(1000);
+                
+                // 会社の種類に応じてサンプルデータを調整
+                const typePrefix = companyType === 'marketing' ? 'マーケティング' : 'Web制作';
+                
+                // サンプルデータから指定件数を取得
+                const locationResults = sampleCompanies.slice(0, maxResults).map(company => ({
+                    ...company,
+                    companyName: company.companyName.replace('Web', typePrefix) + ` (${location}エリア)`,
+                    searchLocation: location,
+                    companyType: companyType
+                }));
+                
+                searchResults.push(...locationResults);
+                console.log(`${location}のテストデータ生成完了:`, locationResults.length, '件');
+                
+                // 各企業の詳細取得をシミュレート
+                for (let i = 0; i < locationResults.length; i++) {
+                    updateProgress(`${location} - 進行状況: ${i + 1}/${locationResults.length} - ${locationResults[i].companyName}`);
+                    await sleep(300);
+                }
+            } catch (error) {
+                console.error(`${location}のテスト検索でエラー:`, error);
+                throw new Error(`${location}のテスト検索に失敗: ${error.message}`);
+            }
+        }
+        
+        function displayResults() {
+            document.getElementById('resultsHeader').style.display = 'block';
+            
+            // 地域ごとにグループ化
+            const companiesByLocation = {};
+            searchResults.forEach(company => {
+                const location = company.searchLocation || '不明';
+                if (!companiesByLocation[location]) {
+                    companiesByLocation[location] = [];
+                }
+                companiesByLocation[location].push(company);
+            });
+            
+            const locationCount = Object.keys(companiesByLocation).length;
+            document.getElementById('resultsSummary').textContent = 
+                `${locationCount}地域から合計${searchResults.length}社の情報を取得しました`;
+            
+            const companiesList = document.getElementById('companiesList');
+            companiesList.innerHTML = '';
+            
+            // 地域ごとに表示
+            Object.entries(companiesByLocation).forEach(([location, companies]) => {
+                const locationHeader = document.createElement('div');
+                locationHeader.style.cssText = 'background: #f8f9fa; padding: 15px; margin: 20px 0 10px; border-radius: 10px; font-weight: bold; font-size: 1.2em;';
+                locationHeader.textContent = `📍 ${location} (${companies.length}社)`;
+                companiesList.appendChild(locationHeader);
+                
+                companies.forEach((company, index) => {
+                    const card = createCompanyCard(company, index + 1);
+                    companiesList.appendChild(card);
+                });
+            });
+            
+            document.getElementById('downloadSection').style.display = 'block';
+        }
+        
+        function createCompanyCard(company, index) {
+            const card = document.createElement('div');
+            card.className = 'company-card';
+            
+            // デバッグ用ログ
+            console.log(`Company ${index} data:`, {
+                fvText: company.fvText,
+                portfolioUrl: company.portfolioUrl,
+                hasPortfolio: company.hasPortfolio
+            });
+            
+            card.innerHTML = `
+                <div class="company-name">${index}. ${company.companyName}</div>
+                
+                <!-- ファーストビュー -->
+                ${company.fvText && company.fvText.trim() !== '' ? `
+                <div class="company-section">
+                    <h4 class="section-title">💫 キャッチコピー・メッセージ</h4>
+                    <div class="company-info">
+                        <div class="info-item fv-item">
+                            <span class="info-value">${company.fvText}</span>
+                        </div>
+                    </div>
+                </div>
+                ` : ''}
+
+                <!-- 基本情報 -->
+                <div class="company-section">
+                    <h4 class="section-title">📋 基本情報</h4>
+                    <div class="company-info">
+                        <div class="info-item">
+                            <span class="info-label">🌐 URL:</span>
+                            <span class="info-value"><a href="${company.url}" target="_blank">${company.url}</a></span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">👤 社長名:</span>
+                            <span class="info-value">${company.ceoName || 'N/A'}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">📧 お問合せ:</span>
+                            <span class="info-value">${company.contactUrl && company.contactUrl !== 'N/A' ? `<a href="${company.contactUrl}" target="_blank">${company.contactUrl}</a>` : 'N/A'}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">🏢 事業内容:</span>
+                            <span class="info-value">${company.businessType || 'N/A'}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">📁 制作実績:</span>
+                            <span class="info-value">${company.portfolioUrl && company.portfolioUrl.trim() !== '' && company.portfolioUrl !== 'null' ? `<a href="${company.portfolioUrl}" target="_blank">${company.portfolioUrl}</a>` : 'なし'}</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- 強み・特徴 -->
+                <div class="company-section">
+                    <h4 class="section-title">💪 強み・特徴</h4>
+                    <div class="company-info">
+                        <div class="info-item">
+                            <span class="info-value">${company.strengths || 'N/A'}</span>
+                        </div>
+                    </div>
+                </div>
+
+            `;
+            
+            return card;
+        }
+        
+        function updateProgress(message) {
+            document.getElementById('progress').textContent = message;
+        }
+        
+        function showError(message) {
+            const errorDiv = document.createElement('div');
+            errorDiv.className = 'error-message';
+            errorDiv.textContent = message;
+            
+            const formSection = document.querySelector('.form-section');
+            formSection.insertBefore(errorDiv, formSection.firstChild);
+            
+            setTimeout(() => {
+                errorDiv.remove();
+            }, 5000);
+        }
+        
+        function downloadJSON() {
+            const data = {
+                searchDate: new Date().toISOString(),
+                totalCompanies: searchResults.length,
+                companies: searchResults
+            };
+            
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `web-companies-${new Date().toISOString().slice(0, 10)}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+        
+        function downloadCSV() {
+            const headers = ['URL', '会社名', '社長名', 'お問合せURL', 'FVテキスト', '強み', '制作実績ページ', '制作実績URL'];
+            const csvContent = [
+                headers.join(','),
+                ...searchResults.map(company => [
+                    `"${company.url}"`,
+                    `"${company.companyName}"`,
+                    `"${company.ceoName || ''}"`,
+                    `"${company.contactUrl || ''}"`,
+                    `"${(company.fvText || '').replace(/"/g, '""')}"`,
+                    `"${(company.strengths || '').replace(/"/g, '""')}"`,
+                    `"${company.hasPortfolio ? 'あり' : 'なし'}"`,
+                    `"${company.portfolioUrl || ''}"`
+                ].join(','))
+            ].join('\n');
+            
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `web-companies-${new Date().toISOString().slice(0, 10)}.csv`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+        
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+        
+        async function saveToGoogleSheets() {
+            try {
+                updateProgress('Googleスプレッドシートに保存中...');
+                
+                // ユーザーが入力したスプレッドシートIDを取得
+                const spreadsheetId = document.getElementById('spreadsheetId').value.trim();
+                
+                const response = await fetch('/api/save-to-sheets', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        companies: searchResults,
+                        spreadsheetId: spreadsheetId || null // 空の場合はnullを送信
+                    })
+                });
+                
+                if (!response.ok) {
+                    const errorData = await response.json();
+                    throw new Error(errorData.error || 'スプレッドシート保存エラー');
+                }
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    // 成功メッセージを改行で表示
+                    const successMessage = `✅ Googleスプレッドシートに保存完了！\n\n📊 スプレッドシートURL:\n${data.spreadsheetUrl}`;
+                    
+                    // 成功メッセージを表示
+                    alert(successMessage);
+                    
+                    // URLをクリップボードにコピー（可能な場合）
+                    if (navigator.clipboard) {
+                        navigator.clipboard.writeText(data.spreadsheetUrl);
+                        showSuccess('スプレッドシートのURLをクリップボードにコピーしました');
+                    }
+                    
+                    // 新しいタブで開く
+                    window.open(data.spreadsheetUrl, '_blank');
+                } else {
+                    throw new Error(data.error || 'スプレッドシート保存に失敗しました');
+                }
+                
+            } catch (error) {
+                showError('スプレッドシート保存エラー: ' + error.message);
+                
+                // エラーメッセージに応じたヘルプを表示
+                if (error.message.includes('permission')) {
+                    alert('❌ 権限エラー\n\nスプレッドシートにアクセスできません。\n\n解決方法:\n1. Google Sheetsで新しいスプレッドシートを作成\n2. 共有ボタンをクリック\n3. 以下のメールアドレスを「編集者」として追加:\nweb-company-scraper@x-auto-poster-466609.iam.gserviceaccount.com');
+                }
+            }
+        }
+        
+        function showSuccess(message) {
+            const successDiv = document.createElement('div');
+            successDiv.className = 'success-message';
+            successDiv.textContent = message;
+            
+            const formSection = document.querySelector('.form-section');
+            formSection.insertBefore(successDiv, formSection.firstChild);
+            
+            setTimeout(() => {
+                successDiv.remove();
+            }, 10000);
+        }
+        
+        function removeDuplicates(companies) {
+            const seen = new Map();
+            const uniqueCompanies = [];
+            
+            companies.forEach(company => {
+                // URLとドメインベースで重複チェック
+                const url = company.url;
+                let domain = '';
+                
+                try {
+                    domain = new URL(url).hostname;
+                } catch (e) {
+                    domain = url;
+                }
+                
+                // 同じURLまたは同じドメイン＋同じ会社名の場合は重複とみなす
+                const key = `${domain}_${company.companyName || ''}`;
+                
+                if (!seen.has(key)) {
+                    seen.set(key, true);
+                    uniqueCompanies.push(company);
+                }
+            });
+            
+            return uniqueCompanies;
+        }
+    </script>
+</body>
+</html>

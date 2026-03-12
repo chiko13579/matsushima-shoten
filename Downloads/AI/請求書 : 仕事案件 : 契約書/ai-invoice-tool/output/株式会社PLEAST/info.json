@@ -1,0 +1,29 @@
+{
+    "client": "株式会社PLEAST",
+    "project_name": "LP制作",
+    "date": "2026-02-11",
+    "items": [
+        {
+            "desc": "LPデザイン制作",
+            "price": 50000,
+            "quantity": 1
+        },
+        {
+            "desc": "コーディング（レスポンシブ対応）",
+            "price": 40000,
+            "quantity": 1
+        },
+        {
+            "desc": "お問い合わせフォーム設置・調整",
+            "price": 20000,
+            "quantity": 1
+        },
+        {
+            "desc": "サーバー設定",
+            "price": 10000,
+            "quantity": 1
+        }
+    ],
+    "total": 120000,
+    "profile": "森田"
+}

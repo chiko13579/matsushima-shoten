@@ -1,0 +1,152 @@
+[
+  {
+    "name": "税理士法人テラス",
+    "url": "https://trc-tax.com/contact",
+    "fields": [
+      {
+        "type": "text",
+        "label": "[placeholder: 税理士　太郎]",
+        "name": "your-name",
+        "id": "",
+        "required": false,
+        "placeholder": "税理士　太郎"
+      },
+      {
+        "type": "text",
+        "label": "[placeholder: ぜいりし　たろう]",
+        "name": "text-671",
+        "id": "",
+        "required": false,
+        "placeholder": "ぜいりし　たろう"
+      },
+      {
+        "type": "email",
+        "label": "[placeholder: test0123@gmail.com]",
+        "name": "your-email",
+        "id": "",
+        "required": false,
+        "placeholder": "test0123@gmail.com"
+      },
+      {
+        "type": "tel",
+        "label": "[placeholder: 00012345678]",
+        "name": "your-tel",
+        "id": "",
+        "required": false,
+        "placeholder": "00012345678"
+      },
+      {
+        "type": "checkbox",
+        "label": "ネット検索",
+        "name": "checkbox-753[]",
+        "id": "",
+        "required": false,
+        "placeholder": ""
+      },
+      {
+        "type": "checkbox",
+        "label": "メルマガ",
+        "name": "checkbox-753[]",
+        "id": "",
+        "required": false,
+        "placeholder": ""
+      },
+      {
+        "type": "checkbox",
+        "label": "SNS",
+        "name": "checkbox-753[]",
+        "id": "",
+        "required": false,
+        "placeholder": ""
+      },
+      {
+        "type": "checkbox",
+        "label": "広告",
+        "name": "checkbox-753[]",
+        "id": "",
+        "required": false,
+        "placeholder": ""
+      },
+      {
+        "type": "checkbox",
+        "label": "口コミ",
+        "name": "checkbox-753[]",
+        "id": "",
+        "required": false,
+        "placeholder": ""
+      },
+      {
+        "type": "checkbox",
+        "label": "その他",
+        "name": "checkbox-753[]",
+        "id": "",
+        "required": false,
+        "placeholder": ""
+      },
+      {
+        "type": "textarea",
+        "label": "[placeholder: 詳しいお問い合わせ内容をご記入ください。]",
+        "name": "textarea-475",
+        "id": "",
+        "required": false,
+        "placeholder": "詳しいお問い合わせ内容をご記入ください。"
+      },
+      {
+        "type": "checkbox",
+        "label": "「個人情報の取扱いについて」に同意する",
+        "name": "checkbox-410[]",
+        "id": "",
+        "required": false,
+        "placeholder": ""
+      },
+      {
+        "type": "text",
+        "label": "[name: name2]",
+        "name": "name2",
+        "id": "",
+        "required": false,
+        "placeholder": ""
+      },
+      {
+        "type": "text",
+        "label": "必須メールアドレス",
+        "name": "email",
+        "id": "Usermail",
+        "required": false,
+        "placeholder": ""
+      },
+      {
+        "type": "text",
+        "label": "[name: name2]",
+        "name": "name2",
+        "id": "",
+        "required": false,
+        "placeholder": ""
+      },
+      {
+        "type": "text",
+        "label": "[name: email]",
+        "name": "email",
+        "id": "",
+        "required": false,
+        "placeholder": ""
+      },
+      {
+        "type": "checkbox",
+        "label": "セミナー",
+        "name": "",
+        "id": "acd-check1",
+        "required": false,
+        "placeholder": ""
+      },
+      {
+        "type": "textarea",
+        "label": "[name: g-recaptcha-response]",
+        "name": "g-recaptcha-response",
+        "id": "g-recaptcha-response-100000",
+        "required": false,
+        "placeholder": ""
+      }
+    ]
+  }
+]

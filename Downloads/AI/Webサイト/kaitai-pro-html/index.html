@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>KAITAI PRO</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@500;700;900&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                    },
+                    colors: {
+                        green: {
+                            50: '#f0fdf4',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                        },
+                        yellow: {
+                            300: '#fde047',
+                            400: '#facc15',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+        }
+
+        .text-stroke {
+            -webkit-text-stroke: 2px black;
+            paint-order: stroke fill;
+        }
+
+        .text-stroke-white {
+            -webkit-text-stroke: 4px white;
+            paint-order: stroke fill;
+        }
+
+        .text-shadow-sm {
+            text-shadow: 1px 1px 0 #000;
+        }
+
+        .comic-shadow {
+            box-shadow: 6px 6px 0px 0px #000000;
+        }
+
+        .comic-shadow-sm {
+            box-shadow: 3px 3px 0px 0px #000000;
+        }
+
+        .clip-diagonal {
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        }
+
+        .clip-diagonal-reverse {
+            clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+        }
+
+        .bg-pattern-dot {
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        /* Header transition */
+        header {
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            background-color: white;
+            border-bottom: 4px solid black;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        header.scrolled .header-text {
+            color: black;
+            -webkit-text-stroke: 0;
+        }
+
+        header.scrolled .nav-link {
+            color: black;
+            text-shadow: none;
+        }
+
+        /* Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .slide-in-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .slide-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .slide-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .pop-in {
+            opacity: 0;
+            transform: scale(0.8);
+            transition: opacity 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275), transform 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .pop-in.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Marquee Animation */
+        @keyframes marquee {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .animate-marquee {
+            animation: marquee 30s linear infinite;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 font-sans text-gray-900 selection:bg-yellow-400 selection:text-black overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 py-4 bg-transparent" id="main-header">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <!-- Logo -->
+                <a href="#" class="flex items-center gap-3 hover:scale-105 transition-transform duration-300 group">
+                    <div
+                        class="bg-green-500 p-2 rounded-lg border-2 border-white group-hover:rotate-12 transition-transform">
+                        <i class="fas fa-helmet-safety text-white text-2xl"></i>
+                    </div>
+                    <div class="flex flex-col text-white header-text">
+                        <span class="text-xs tracking-widest opacity-90">総合解体業</span>
+                        <h1 class="text-xl md:text-2xl font-black tracking-tighter leading-none mb-1">有限会社松島商店</h1>
+                        <p class="text-[10px] opacity-80 hidden md:block max-w-lg leading-tight">
+                            解体のプロとして迅速、安全、確実に不動産価値への再生へ導くためのプロセスをお手伝いします。
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            <nav class="hidden md:flex gap-8 font-bold items-center">
+                <a href="#"
+                    class="nav-link hover:text-yellow-400 transition-colors text-white text-shadow-sm hover:-translate-y-1 inline-block transform">TOP</a>
+                <a href="#flow"
+                    class="nav-link hover:text-yellow-400 transition-colors text-white text-shadow-sm hover:-translate-y-1 inline-block transform">工事完了までの流れ</a>
+                <a href="#faq"
+                    class="nav-link hover:text-yellow-400 transition-colors text-white text-shadow-sm hover:-translate-y-1 inline-block transform">よくある質問</a>
+                <a href="#company"
+                    class="nav-link hover:text-yellow-400 transition-colors text-white text-shadow-sm hover:-translate-y-1 inline-block transform">会社概要</a>
+                <a href="#contact"
+                    class="nav-link hover:text-yellow-400 transition-colors text-white text-shadow-sm hover:-translate-y-1 inline-block transform">お問い合わせ</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden">
+        <!-- Background Split -->
+        <div class="absolute inset-0 z-0 flex">
+            <div class="w-1/2 bg-black h-full border-r-4 border-black"></div>
+            <div class="w-1/2 bg-green-600 h-full"></div>
+        </div>
+
+        <!-- Decorative Background Text (Faded) -->
+        <div
+            class="absolute top-20 left-0 right-0 z-0 opacity-10 pointer-events-none overflow-hidden whitespace-nowrap">
+            <span class="text-[12rem] font-black text-white leading-none animate-marquee inline-block">DEMOLITION
+                REBIRTH DEMOLITION REBIRTH</span>
+        </div>
+
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between">
+
+                <!-- Left Content -->
+                <div class="md:w-1/2 text-center md:text-left mb-12 md:mb-0">
+                    <div
+                        class="inline-block bg-white border-4 border-black px-6 py-2 mb-6 transform -rotate-2 comic-shadow fade-in-up">
+                        <span class="font-bold text-lg md:text-xl tracking-widest">建物解体のプロフェッショナル</span>
+                    </div>
+
+                    <h2 class="text-6xl md:text-8xl font-black text-white italic tracking-tighter mb-4 drop-shadow-[4px_4px_0_rgba(0,0,0,1)] slide-in-left"
+                        style="transition-delay: 0.2s;">
+                        解体 <span class="text-yellow-400">×</span> 再生
+                    </h2>
+
+                    <p class="text-xl md:text-3xl font-bold text-white mb-8 leading-relaxed drop-shadow-md slide-in-left"
+                        style="transition-delay: 0.4s;">
+                        不動産の解体、<br />
+                        そして価値ある再生へ。
+                    </p>
+
+                    <p class="text-white font-bold bg-black/30 backdrop-blur-sm p-4 border-l-4 border-yellow-400 inline-block text-left max-w-lg fade-in-up"
+                        style="transition-delay: 0.6s;">
+                        として迅速、安全、そして確実に<br />
+                        不動産価値への再生へと導くためのプロセスを<br />
+                        お手伝いします。
+                    </p>
+                </div>
+
+                <!-- Right Visual -->
+                <div class="md:w-1/2 relative flex justify-center fade-in-up" style="transition-delay: 0.4s;">
+
+                    <!-- Main Image Frame -->
+                    <div
+                        class="relative z-10 transform rotate-2 hover:rotate-0 transition-transform duration-300 group">
+                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800&auto=format&fit=crop"
+                            alt="Construction Worker"
+                            class="w-96 md:w-[32rem] h-auto border-4 border-black rounded-xl comic-shadow bg-yellow-400 object-cover group-hover:scale-105 transition-transform duration-500" />
+                        <!-- Comic Speech Bubble -->
+                        <div
+                            class="absolute -top-10 -left-10 bg-white border-4 border-black p-4 rounded-full comic-shadow z-20 animate-bounce">
+                            <p class="font-black text-center leading-tight">安全<br />第一!</p>
+                            <div
+                                class="absolute bottom-0 right-4 w-4 h-4 bg-white border-r-4 border-b-4 border-black transform rotate-45 translate-y-2">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Right Illustration -->
+        <div class="absolute bottom-0 right-0 p-4 md:p-10 z-20 pointer-events-none">
+            <div class="animate-move-x">
+                <img src="images/character.png" alt="Moving Truck Character"
+                    class="w-32 md:w-48 drop-shadow-[4px_4px_0_rgba(0,0,0,1)] transform -scale-x-100">
+            </div>
+        </div>
+    </section>
+
+    <!-- Signboard Divider -->
+    <div class="bg-gray-100 pt-20 pb-10 relative">
+        <div class="container mx-auto px-4 relative z-10 -mt-28 mb-12 flex justify-start">
+            <div
+                class="bg-green-600 text-white border-4 border-white outline outline-4 outline-black px-8 py-4 rounded-lg shadow-xl transform -rotate-1 inline-flex flex-col items-center hover:rotate-0 transition-transform duration-300 pop-in">
+                <h3 class="text-3xl font-black tracking-widest mb-1">採用について</h3>
+                <div class="bg-white text-green-600 font-bold text-sm px-4 py-1 rounded-full mb-2 tracking-widest">
+                    RECRUITMENT</div>
+                <i class="fas fa-arrow-right animate-bounce mt-1 text-3xl"></i>
+            </div>
+        </div>
+
+        <!-- About Content Section -->
+        <div class="container mx-auto px-4">
+            <div class="bg-white border-4 border-black rounded-3xl comic-shadow overflow-hidden relative fade-in-up">
+                <!-- Decorative stripe -->
+                <div
+                    class="absolute top-0 right-0 w-32 h-32 bg-yellow-400 border-l-4 border-b-4 border-black rounded-bl-full z-0">
+                </div>
+
+                <div class="flex flex-col md:flex-row">
+                    <!-- Text Content -->
+                    <div class="md:w-1/2 p-8 md:p-12 relative z-10">
+                        <div class="flex items-center gap-3 mb-6">
+                            <h2 class="text-4xl md:text-5xl font-black italic tracking-tighter">
+                                About Us
+                            </h2>
+                            <div class="h-1 flex-grow bg-black rounded-full"></div>
+                        </div>
+
+                        <h3 class="text-2xl md:text-3xl font-bold mb-8 leading-snug">
+                            <span
+                                class="bg-yellow-300 px-1 inline-block hover:scale-105 transition-transform">あなたの「負」動産を、</span><br />
+                            <span
+                                class="bg-yellow-300 px-1 inline-block hover:scale-105 transition-transform mt-2">価値ある資産へ再生しませんか？</span>
+                        </h3>
+
+                        <div class="space-y-6 text-lg font-medium text-gray-700 leading-relaxed">
+                            <p>
+                                解体のプロフェッショナルとして、迅速・安全に不動産価値の再生をお手伝いします。
+                                立地が良くても、古い建物があっては売却や運用ができません。私たちは解体工事によって建物を撤去し、活用可能な「更地」へと生まれ変わらせます。
+                            </p>
+                            <p>
+                                また、日本の住宅事情である密集地での施工もお任せください。解体は荒っぽい工事と思われがちですが、私たちは細かな配慮と安全管理を徹底し、土地再生の第一歩をサポートします。
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Image/Comic Panel -->
+                    <div
+                        class="md:w-1/2 bg-green-600 relative border-t-4 md:border-t-0 md:border-l-4 border-black min-h-[400px]">
+                        <div class="absolute inset-0 bg-cover bg-center mix-blend-multiply opacity-50"
+                            style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1000&auto=format&fit=crop')">
+                        </div>
+
+                        <!-- Character/Visual Overlay -->
+                        <div class="absolute bottom-0 left-0 right-0 p-8 flex flex-col items-center justify-end h-full">
+                            <div
+                                class="bg-white border-4 border-black p-6 rounded-xl comic-shadow transform rotate-1 max-w-sm w-full hover:rotate-0 transition-transform duration-300 slide-in-right">
+                                <h4 class="font-black text-xl mb-3 flex items-center gap-2">
+                                    <i class="fas fa-circle-check text-green-500"></i>
+                                    まごころの解体屋です！
+                                </h4>
+                                <p class="text-sm font-bold text-gray-600">
+                                    丁寧な説明と、近隣への配慮を徹底しています。
+                                    「荒っぽい」イメージを覆す、繊細な技術力にご期待ください。
+                                </p>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1535732820275-9ffd998cac22?q=80&w=500&auto=format&fit=crop"
+                                alt="Worker Portrait"
+                                class="w-48 h-48 rounded-full border-4 border-black object-cover bg-yellow-400 mt-[-2rem] ml-[10rem] z-10 shadow-lg hover:scale-110 transition-transform duration-300" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Achievements Section -->
+        <div class="container mx-auto px-4 mt-24 pb-10">
+            <!-- Title Area -->
+            <div class="text-center mb-12 relative fade-in-up">
+                <div class="flex items-center justify-center gap-4">
+                    <div class="h-1 bg-black w-12 md:w-32 rounded-full"></div>
+                    <h3 class="text-xl md:text-2xl font-black tracking-widest transform -rotate-1">
+                        <span class="text-3xl mr-2">\</span>
+                        例えば、このような物件で実績がございます
+                        <span class="text-3xl ml-2">/</span>
+                    </h3>
+                    <div class="h-1 bg-black w-12 md:w-32 rounded-full"></div>
+                </div>
+            </div>
+
+            <!-- Cards Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
+                <!-- Card 1: House -->
+                <div class="bg-white border-4 border-black rounded-xl overflow-hidden comic-shadow-sm hover:-translate-y-2 transition-transform duration-300 pop-in"
+                    style="transition-delay: 0.1s;">
+                    <div class="h-40 overflow-hidden border-b-4 border-black">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=500&auto=format&fit=crop"
+                            alt="House Demolition"
+                            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="bg-[#2A9D8F] text-white font-black text-center py-3 tracking-wider">
+                        家の解体
+                    </div>
+                </div>
+
+                <!-- Card 2: Vacant House -->
+                <div class="bg-white border-4 border-black rounded-xl overflow-hidden comic-shadow-sm hover:-translate-y-2 transition-transform duration-300 pop-in"
+                    style="transition-delay: 0.2s;">
+                    <div class="h-40 overflow-hidden border-b-4 border-black">
+                        <img src="https://images.unsplash.com/photo-1516156008625-3a9d6067fab5?q=80&w=500&auto=format&fit=crop"
+                            alt="Vacant House"
+                            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="bg-[#2A9D8F] text-white font-black text-center py-3 tracking-wider">
+                        空き家の解体
+                    </div>
+                </div>
+
+                <!-- Card 3: Interior -->
+                <div class="bg-white border-4 border-black rounded-xl overflow-hidden comic-shadow-sm hover:-translate-y-2 transition-transform duration-300 pop-in"
+                    style="transition-delay: 0.3s;">
+                    <div class="h-40 overflow-hidden border-b-4 border-black">
+                        <img src="https://images.unsplash.com/photo-1595846519845-68e298c2edd8?q=80&w=500&auto=format&fit=crop"
+                            alt="Interior"
+                            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="bg-[#2A9D8F] text-white font-black text-center py-3 tracking-wider">
+                        内装解体
+                    </div>
+                </div>
+
+                <!-- Card 4: Fire Site -->
+                <div class="bg-white border-4 border-black rounded-xl overflow-hidden comic-shadow-sm hover:-translate-y-2 transition-transform duration-300 pop-in"
+                    style="transition-delay: 0.4s;">
+                    <div class="h-40 overflow-hidden border-b-4 border-black">
+                        <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=500&auto=format&fit=crop"
+                            alt="Fire Site"
+                            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 grayscale">
+                    </div>
+                    <div class="bg-[#2A9D8F] text-white font-black text-center py-3 tracking-wider">
+                        火事現場解体
+                    </div>
+                </div>
+
+                <!-- Card 5: Store -->
+                <div class="bg-white border-4 border-black rounded-xl overflow-hidden comic-shadow-sm hover:-translate-y-2 transition-transform duration-300 pop-in"
+                    style="transition-delay: 0.5s;">
+                    <div class="h-40 overflow-hidden border-b-4 border-black">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=500&auto=format&fit=crop"
+                            alt="Store"
+                            class="w-full h-full object-cover hover:scale-110 transition-transform duration-500">
+                    </div>
+                    <div class="bg-[#2A9D8F] text-white font-black text-center py-3 tracking-wider">
+                        店舗解体
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer / CTA Area -->
+    <footer class="bg-white pt-20 pb-10 border-t-4 border-black bg-pattern-dot">
+        <div class="container mx-auto px-4 text-center">
+            <!-- 
+            <div
+                class="max-w-4xl mx-auto bg-green-600 rounded-3xl p-1 border-4 border-black comic-shadow mb-16 transform -rotate-1 hover:rotate-0 transition-transform duration-500 fade-in-up">
+                <div class="bg-white rounded-[1.3rem] p-8 md:p-12 border-2 border-black border-dashed">
+                    <h3 class="text-3xl md:text-4xl font-black mb-4 text-green-600">
+                        マルヨシ自動車のお約束 <span
+                            class="text-black text-sm block md:inline md:ml-4 font-normal">(参考デザインのため再現)</span>
+                    </h3>
+                    <div
+                        class="bg-green-600 text-white font-bold py-2 px-8 inline-block rounded-full mb-8 border-2 border-black">
+                        人と土地にとことんまごころこめます！
+                    </div>
+                    <div class="text-left max-w-xl mx-auto space-y-3 font-bold">
+                        <div class="flex items-start gap-2">
+                            <span class="text-green-500 text-xl">✓</span>
+                            <p>お客様には、誠実で明るい接客をいたします。</p>
+                        </div>
+                        <div class="flex items-start gap-2">
+                            <span class="text-green-500 text-xl">✓</span>
+                            <p>工事は、プロの知識と技術で迅速・安全に行います。</p>
+                        </div>
+                        <div className="flex items-start gap-2">
+                            <span className="text-green-500 text-xl">✓</span>
+                            <p>丁寧で分かりやすい説明で、信頼いただける対応をいたします。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+ -->
+            <div class="flex justify-center gap-6 mb-8">
+                <!-- SNS Icons -->
+                <button
+                    class="bg-green-500 p-4 rounded-full border-4 border-black comic-shadow hover:translate-y-1 hover:shadow-none transition-all w-16 h-16 flex items-center justify-center pop-in"
+                    style="transition-delay: 0.1s;">
+                    <i class="fas fa-phone text-black text-2xl"></i>
+                </button>
+                <button
+                    class="bg-yellow-400 p-4 rounded-full border-4 border-black comic-shadow hover:translate-y-1 hover:shadow-none transition-all w-16 h-16 flex items-center justify-center pop-in"
+                    style="transition-delay: 0.2s;">
+                    <i class="fas fa-envelope text-black text-2xl"></i>
+                </button>
+                <button
+                    class="bg-green-600 p-4 rounded-full border-4 border-black comic-shadow hover:translate-y-1 hover:shadow-none transition-all w-16 h-16 flex items-center justify-center pop-in"
+                    style="transition-delay: 0.3s;">
+                    <i class="fas fa-helmet-safety text-black text-2xl"></i>
+                </button>
+            </div>
+
+            <p class="font-bold text-gray-500">© 2024 KAITAI REBIRTH PRO. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('main-header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Intersection Observer for scroll animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Run once
+                    }
+                });
+            }, observerOptions);
+
+            const animatedElements = document.querySelectorAll('.fade-in-up, .slide-in-left, .slide-in-right, .pop-in');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+    </script>
+
+
+
+    <style>
+        @keyframes move-x {
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(-20px);
+            }
+        }
+
+        .animate-move-x {
+            animation: move-x 2s ease-in-out infinite;
+        }
+    </style>
+</body>
+
+</html>

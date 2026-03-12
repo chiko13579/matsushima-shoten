@@ -1,0 +1,34 @@
+=== 送信ログ 2025/12/11 12:57:21 ===
+
+=== 送信ログ 2025/12/11 12:59:29 ===
+
+=== 送信ログ 2025/12/11 13:00:02 ===
+
+【株式会社リーディングシステム】
+URL: https://www.leadingsystem.co.jp/contact/
+結果: 失敗
+エラー: Cannot read properties of null (reading 'type')
+pptr:evaluate;fillForm%20(%2FUsers%2Fsaeki%2FDownloads%2Fimg%2Flist_project%2Fauto_contact_sender.js%3A774%3A31):421:100
+
+=== 送信ログ 2025/12/11 13:00:49 ===
+
+【株式会社リーディングシステム】
+URL: https://www.leadingsystem.co.jp/contact/
+結果: 失敗
+エラー: Cannot read properties of null (reading 'type')
+pptr:evaluate;fillForm%20(%2FUsers%2Fsaeki%2FDownloads%2Fimg%2Flist_project%2Fauto_contact_sender.js%3A774%3A31):421:100
+
+=== 送信ログ 2025/12/11 13:01:24 ===
+
+【株式会社リーディングシステム】
+URL: https://www.leadingsystem.co.jp/contact/
+結果: 失敗
+エラー: 送信後にエラーまたは画面遷移なし
+
+=== 送信ログ 2025/12/11 13:01:41 ===
+
+【株式会社リーディングシステム】
+URL: https://www.leadingsystem.co.jp/contact/
+結果: 失敗
+エラー: 送信後にエラーまたは画面遷移なし
+

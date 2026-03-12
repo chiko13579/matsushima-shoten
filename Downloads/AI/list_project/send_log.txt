@@ -1,0 +1,189 @@
+🚀 お問合せフォーム自動送信を開始します
+
+📋 送信者: 森田憲治 (あなたのおかげ)
+📧 連絡先: info@anatano-okage.com
+🧪 テストモード: ON (最大50件)
+
+📋 送信済み: 0件をスキップします
+
+📋 CSV形式: 会社名[0], お問合せURL[2]
+📍 開始行: 1
+📊 送信対象: 50件
+
+
+[1/50] 合同会社3Bros.works
+
+📝 合同会社3Bros.works のフォームに入力中...
+   URL: https://3brosworks.com/contact/
+   📝 実行プラン: 4件の操作を実行します...
+   ✅ 入力完了: 4項目
+      - 氏名 (fullName): 森田憲治
+      - メールアドレス (email): info@anatano-okage.com
+      - タイトル (subject): テストです
+      - メッセージ本文 (任意) (message): テストです
+   📤 第1ボタン発見: "送信"
+   ⏰ 2秒待機中...
+   ✅ 第1ボタンクリック完了
+   ⏳ 2秒待機...
+
+[2/50] 株式会社レッツアイ
+
+📝 株式会社レッツアイ のフォームに入力中...
+   URL: https://lets-marke.com/contact
+   📝 実行プラン: 7件の操作を実行します...
+   ✅ 入力完了: 8項目
+      - お問い合わせ内容必須: その他
+      - ご法人名・屋号必須 (company): あなたのおかげ
+      - お名前必須 (fullName): 森田憲治
+      - ふりがな必須 (fullNameKana): もりたけんじ
+      - メールアドレス必須 (email): info@anatano-okage.com
+      - 電話番号必須 (tel): 09091749043
+      - お問い合わせ内容必須 (message): テストです
+      - 個人情報保護方針と
+利用規約の同意必須: checked
+   📤 第1ボタン発見: "入力内容を確認する"
+   📋 確認画面へ遷移します...
+   ⏰ 2秒待機中...
+   ✅ 第1ボタンクリック完了
+   📤 最終送信ボタンを探しています...
+   ✅ 最終送信ボタン発見: "この内容で送信する"
+   ⏰ 2秒待機中...
+   ✅✅ 最終送信完了！
+   🎉 送信成功と判定しました（URL遷移: true, キーワード検出: true）
+   ⏳ 2秒待機...
+
+[3/50] ダッシュボード株式会社
+
+📝 ダッシュボード株式会社 のフォームに入力中...
+   URL: https://dash-b.co.jp/contact/
+   ⚠️  reCAPTCHAを検出しました。手動解決を待機します（60秒）...
+   ⚠️  ヘッドレスモードのため待機をスキップします（失敗する可能性があります）
+   📝 実行プラン: 8件の操作を実行します...
+   ✅ 入力完了: 8項目
+      - 会社名 * (company): あなたのおかげ
+      - 氏名 * (lastName): 森田
+      - 氏名 * (firstName): 憲治
+      - 役職 *: その他
+      - メールアドレス * (email): info@anatano-okage.com
+      - 電話番号 (tel): 09091749043
+      - お問合せ内容 * (message): テストです
+      - プロモーションのご予算 *: 月間100～200万円
+   📤 第1ボタン発見: "無料相談を申し込む"
+   ⏰ 2秒待機中...
+   ✅ 第1ボタンクリック完了
+   ⏳ 2秒待機...
+
+[4/50] 株式会社Reinolz
+
+📝 株式会社Reinolz のフォームに入力中...
+   URL: https://reinolz.co.jp/form/
+   📝 実行プラン: 4件の操作を実行します...
+   ✅ 入力完了: 4項目
+      - 会社名（必須） (company): あなたのおかげ
+      - 氏名（必須） (fullName): 森田憲治
+      - メールアドレス（必須） (email): info@anatano-okage.com
+      - 内容 (message): テストです
+   📤 第1ボタン発見: "送信"
+   ⏰ 2秒待機中...
+   ✅ 第1ボタンクリック完了
+   ⏳ 2秒待機...
+
+[5/50] 株式会社 アピリッツ
+
+📝 株式会社 アピリッツ のフォームに入力中...
+   URL: https://appirits.com/inquiry/
+   ⚠️  スキップ: フォームがiframe内にあります（unknown...）
+   ⏳ 2秒待機...
+
+[6/50] シンク株式会社
+
+📝 シンク株式会社 のフォームに入力中...
+   URL: https://ai-shinc.co.jp/servicesite/contact/
+   ⚠️  reCAPTCHAを検出しました。手動解決を待機します（60秒）...
+   ⚠️  ヘッドレスモードのため待機をスキップします（失敗する可能性があります）
+   📝 実行プラン: 10件の操作を実行します...
+   ✅ 入力完了: 10項目
+      - 会社名必須 (company): あなたのおかげ
+      - 部署 (position): 代表
+      - 役職 (position): 代表
+      - お名前必須 (fullName): 森田憲治
+      - メールアドレス必須 (email): info@anatano-okage.com
+      - 電話番号 (tel): 09091749043
+      - ご相談サービス必須: その他
+      - ご予算: その他
+      - お問い合わせ内容必須 (message): テストです
+      - 同意する: checked
+   📤 第1ボタン発見: "上記の内容で送信する"
+   ⏰ 2秒待機中...
+   ✅ 第1ボタンクリック完了
+   ⏳ 2秒待機...
+
+[7/50] 株式会社コンセプトラボ
+
+📝 株式会社コンセプトラボ のフォームに入力中...
+   URL: https://conlad.co.jp/contact
+   ⚠️  reCAPTCHAを検出しました。手動解決を待機します（60秒）...
+   ⚠️  ヘッドレスモードのため待機をスキップします（失敗する可能性があります）
+   📝 実行プラン: 7件の操作を実行します...
+      ⚠️ 値が消えました。強制入力します: あなたのおかげ
+   ✅ 入力完了: 7項目
+      - 会社名 (company): あなたのおかげ
+      - 氏名 (fullName): 森田憲治
+      - ふりがな (fullNameKana): もりたけんじ
+      - 電話番号 (tel): 09091749043
+      - メールアドレス (email): info@anatano-okage.com
+      - 問い合わせ種別: その他
+      - お問い合わせ内容 (message): テストです
+   📤 第1ボタン発見: "確認画面へ"
+   📋 確認画面へ遷移します...
+   ⏰ 2秒待機中...
+   ✅ 第1ボタンクリック完了
+   📤 最終送信ボタンを探しています...
+   ✅ 最終送信ボタン発見: "送信する"
+   ⏰ 2秒待機中...
+   ✅✅ 最終送信完了！
+   🎉 送信成功と判定しました（URL遷移: true, キーワード検出: true）
+   ⏳ 2秒待機...
+
+[8/50] plus work株式会社
+
+📝 plus work株式会社 のフォームに入力中...
+   URL: https://plusarch.net/marketing/inquiry
+   📝 実行プラン: 9件の操作を実行します...
+      ⚠️ 値が消えました。強制入力します: 4702303
+      ❌ 操作エラー (知多郡武豊町 (市区町村+町名)): Attempted to use detached Frame 'A516E164DCDD8D51E835809D14370BA2'.
+      ❌ 操作エラー (1-91 (番地)): Attempted to use detached Frame 'A516E164DCDD8D51E835809D14370BA2'.
+      ❌ 操作エラー (09091749043): Attempted to use detached Frame 'A516E164DCDD8D51E835809D14370BA2'.
+      ❌ 操作エラー (テストです): Attempted to use detached Frame 'A516E164DCDD8D51E835809D14370BA2'.
+   ✅ 入力完了: 10項目
+      - お申し込み内容: その他
+      - 会社名 (company): あなたのおかげ
+      - 必須お名前 (fullName): 森田憲治
+      - 必須メールアドレス (email): info@anatano-okage.com
+      - 必須ご住所 (zip): 4702303
+      - 必須ご住所 (prefecture): 愛知県
+      - 必須ご住所 (city): 知多郡武豊町
+      - 必須ご住所 (street): 1-91
+      - 必須お電話番号 (tel): 09091749043
+      - 必須お問い合わせ内容 (message): テストです
+   ❌ エラー: Attempted to use detached Frame 'A516E164DCDD8D51E835809D14370BA2'.
+   ⚠️  スクリーンショット保存失敗: Protocol error (Page.captureScreenshot): Session closed. Most likely the page has been closed.
+   ⏳ 2秒待機...
+
+[9/50] デジタルアスリート株式会社
+   🔄 ページを再作成中...
+/Users/saeki/Downloads/img/list_project/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:106
+            return Promise.reject(new Errors_js_1.ConnectionClosedError('Connection closed.'));
+                                  ^
+
+ConnectionClosedError: Connection closed.
+    at Connection._rawSend (/Users/saeki/Downloads/img/list_project/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:106:35)
+    at Connection.send (/Users/saeki/Downloads/img/list_project/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Connection.js:99:21)
+    at CdpBrowser._createPageInContext (/Users/saeki/Downloads/img/list_project/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Browser.js:189:53)
+    at CdpBrowser._createPageInContext (/Users/saeki/Downloads/img/list_project/node_modules/puppeteer-extra/dist/index.cjs.js:210:51)
+    at CdpBrowserContext.newPage (/Users/saeki/Downloads/img/list_project/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/BrowserContext.js:123:40)
+    at async CdpBrowser.newPage (/Users/saeki/Downloads/img/list_project/node_modules/puppeteer-core/lib/cjs/puppeteer/cdp/Browser.js:183:16)
+    at async ensurePageValid (/Users/saeki/Downloads/img/list_project/auto_contact_sender.js:2096:14)
+    at async main (/Users/saeki/Downloads/img/list_project/auto_contact_sender.js:2107:5)
+
+Node.js v22.17.1

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ELEVATE | Personal Gym</title>
+    <meta name="description" content="ELEVATE（エレベート）は、あなたの理想を現実にする完全個室のパーソナルジムです。洗練された空間とプロフェッショナルな指導で、最高の自分へ。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Oswald:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__container">
+            <a href="#" class="header__logo">ELEVATE</a>
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="#concept" class="header__nav-link">CONCEPT</a></li>
+                    <li class="header__nav-item"><a href="#trainers" class="header__nav-link">TRAINERS</a></li>
+                    <li class="header__nav-item"><a href="#plans" class="header__nav-link">PLANS</a></li>
+                    <li class="header__nav-item"><a href="#access" class="header__nav-link">ACCESS</a></li>
+                    <li class="header__nav-item"><a href="#contact"
+                            class="header__nav-link header__nav-link--cta">CONTACT</a></li>
+                </ul>
+            </nav>
+            <button class="header__menu-btn" aria-label="Menu">
+                <span class="header__menu-line"></span>
+                <span class="header__menu-line"></span>
+                <span class="header__menu-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero">
+            <div class="hero__bg"></div>
+            <div class="hero__content">
+                <h1 class="hero__title">
+                    <span class="hero__title-sub">REDEFINE YOURSELF</span>
+                    <span class="hero__title-main">BEYOND<br>LIMITS</span>
+                </h1>
+                <p class="hero__text">理想を現実にする、<br>完全個室のプライベートジム。</p>
+                <a href="#contact" class="btn btn--primary">無料カウンセリング予約</a>
+            </div>
+            <div class="hero__scroll">
+                <span class="hero__scroll-text">SCROLL</span>
+                <span class="hero__scroll-line"></span>
+            </div>
+        </section>
+
+        <section id="concept" class="section concept">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">CONCEPT</h2>
+                    <p class="section__subtitle">コンセプト</p>
+                </div>
+                <div class="concept__content">
+                    <div class="concept__image">
+                        <img src="images/interior.png" alt="Gym Interior">
+                    </div>
+                    <div class="concept__text-box">
+                        <h3 class="concept__heading">洗練された空間で、<br>最高の自分へ。</h3>
+                        <p class="concept__desc">
+                            ELEVATEは、ただ痩せるためだけの場所ではありません。<br>
+                            心身ともに健康で、美しく、強くあるためのライフスタイルを提案します。<br>
+                            完全個室のラグジュアリーな空間、<br>
+                            専属トレーナーによる科学的根拠に基づいたオーダーメイドプログラム。<br>
+                            あなたの「変わりたい」という想いに、本気で向き合います。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="trainers" class="section trainers">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">TRAINERS</h2>
+                    <p class="section__subtitle">トレーナー紹介</p>
+                </div>
+                <div class="trainers__grid">
+                    <div class="trainer-card">
+                        <div class="trainer-card__image">
+                            <img src="images/trainer1.png" alt="Trainer RYO">
+                        </div>
+                        <div class="trainer-card__info">
+                            <h3 class="trainer-card__name">RYO</h3>
+                            <p class="trainer-card__role">Head Trainer</p>
+                            <p class="trainer-card__desc">
+                                大手パーソナルジムで5年間の指導経験。<br>
+                                解剖学に基づいたフォーム指導と、<br>
+                                メンタル面でのサポートに定評がある。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="trainer-card">
+                        <div class="trainer-card__image">
+                            <img src="images/trainer2.png" alt="Trainer AYAKA">
+                        </div>
+                        <div class="trainer-card__info">
+                            <h3 class="trainer-card__name">AYAKA</h3>
+                            <p class="trainer-card__role">Trainer / Nutritionist</p>
+                            <p class="trainer-card__desc">
+                                管理栄養士の資格を持つトレーナー。<br>
+                                「食べて痩せる」食事指導と、<br>
+                                女性ならではのボディメイクが得意。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="plans" class="section plans">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">PLANS</h2>
+                    <p class="section__subtitle">料金プラン</p>
+                </div>
+                <div class="plans__grid">
+                    <div class="plan-card">
+                        <h3 class="plan-card__name">STANDARD</h3>
+                        <p class="plan-card__desc">週2回のトレーニングで<br>着実に結果を出すプラン</p>
+                        <div class="plan-card__price">
+                            <span class="plan-card__price-val">¥120,000</span>
+                            <span class="plan-card__price-unit">/月</span>
+                        </div>
+                        <ul class="plan-card__features">
+                            <li>全8回 (60分/回)</li>
+                            <li>食事指導 (LINE)</li>
+                            <li>ウェア・タオル無料レンタル</li>
+                            <li>プロテイン無料</li>
+                        </ul>
+                    </div>
+                    <div class="plan-card plan-card--featured">
+                        <div class="plan-card__badge">POPULAR</div>
+                        <h3 class="plan-card__name">PREMIUM</h3>
+                        <p class="plan-card__desc">短期集中で<br>劇的な変化を目指すプラン</p>
+                        <div class="plan-card__price">
+                            <span class="plan-card__price-val">¥200,000</span>
+                            <span class="plan-card__price-unit">/月</span>
+                        </div>
+                        <ul class="plan-card__features">
+                            <li>全16回 (75分/回)</li>
+                            <li>徹底食事管理 (毎日)</li>
+                            <li>ウェア・タオル無料レンタル</li>
+                            <li>プロテイン・サプリ無料</li>
+                            <li>完全個室優先予約</li>
+                        </ul>
+                    </div>
+                    <div class="plan-card">
+                        <h3 class="plan-card__name">MAINTENANCE</h3>
+                        <p class="plan-card__desc">理想の体型を<br>維持するためのプラン</p>
+                        <div class="plan-card__price">
+                            <span class="plan-card__price-val">¥40,000</span>
+                            <span class="plan-card__price-unit">/月</span>
+                        </div>
+                        <ul class="plan-card__features">
+                            <li>月4回 (60分/回)</li>
+                            <li>食事アドバイス</li>
+                            <li>ウェア・タオル無料レンタル</li>
+                            <li>ウォーターサーバー利用可</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="access" class="section access">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">ACCESS</h2>
+                    <p class="section__subtitle">アクセス</p>
+                </div>
+                <div class="access__content">
+                    <div class="access__map">
+                        <img src="images/map.png" alt="Access Map">
+                    </div>
+                    <div class="access__info">
+                        <dl class="access__list">
+                            <div class="access__item">
+                                <dt>ADDRESS</dt>
+                                <dd>〒107-0062<br>東京都港区南青山X-X-X<br>ELEVATEビル 3F</dd>
+                            </div>
+                            <div class="access__item">
+                                <dt>OPEN</dt>
+                                <dd>07:00 - 23:00 (不定休)</dd>
+                            </div>
+                            <div class="access__item">
+                                <dt>TEL</dt>
+                                <dd>03-1234-5678</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <div class="container">
+                <div class="section__header">
+                    <h2 class="section__title">CONTACT</h2>
+                    <p class="section__subtitle">お問い合わせ</p>
+                </div>
+                <div class="contact__form-wrapper">
+                    <p class="contact__text">
+                        無料カウンセリング・体験トレーニングのご予約は<br>
+                        以下のフォームより承っております。
+                    </p>
+                    <form class="contact__form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">お名前</label>
+                            <input type="text" id="name" name="name" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">メールアドレス</label>
+                            <input type="email" id="email" name="email" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="type" class="form-label">お問い合わせ内容</label>
+                            <select id="type" name="type" class="form-select">
+                                <option value="counseling">無料カウンセリング予約</option>
+                                <option value="experience">体験トレーニング予約</option>
+                                <option value="other">その他のお問い合わせ</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">メッセージ</label>
+                            <textarea id="message" name="message" class="form-textarea" rows="5"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn--submit">送信する</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__logo">ELEVATE</div>
+                <ul class="footer__links">
+                    <li><a href="#concept">CONCEPT</a></li>
+                    <li><a href="#trainers">TRAINERS</a></li>
+                    <li><a href="#plans">PLANS</a></li>
+                    <li><a href="#access">ACCESS</a></li>
+                    <li><a href="#contact">CONTACT</a></li>
+                </ul>
+                <div class="footer__social">
+                    <a href="#" class="footer__social-link">INSTAGRAM</a>
+                    <a href="#" class="footer__social-link">LINE</a>
+                </div>
+            </div>
+            <p class="footer__copyright">&copy; 2024 ELEVATE Personal Gym. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

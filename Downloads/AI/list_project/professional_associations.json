@@ -1,0 +1,46 @@
+{
+  "行政書士": {
+    "全国組織": "日本行政書士会連合会",
+    "検索URL": "https://www.gyosei.or.jp/",
+    "都道府県協会": [
+      {"name": "東京都行政書士会", "url": "https://www.tokyo-gyosei.or.jp/"},
+      {"name": "大阪府行政書士会", "url": "https://www.osaka-gyosei.or.jp/"},
+      {"name": "神奈川県行政書士会", "url": "https://www.kanagawa-gyosei.or.jp/"},
+      {"name": "愛知県行政書士会", "url": "https://www.aichi-gyosei.or.jp/"},
+      {"name": "北海道行政書士会", "url": "https://www.gyosei-hokkaido.or.jp/"},
+      {"name": "福岡県行政書士会", "url": "https://www.fukuoka-gyosei.or.jp/"}
+    ]
+  },
+  "中小企業診断士": {
+    "全国組織": "中小企業診断協会",
+    "検索URL": "https://www.j-smeca.jp/",
+    "都道府県協会": [
+      {"name": "東京都中小企業診断士協会", "url": "https://www.tokyo-smeca.jp/"},
+      {"name": "大阪府中小企業診断士協会", "url": "https://www.osaka-smeca.jp/"},
+      {"name": "神奈川県中小企業診断士協会", "url": "https://www.kanagawa-smeca.jp/"},
+      {"name": "愛知県中小企業診断士協会", "url": "https://www.aichi-smeca.jp/"}
+    ]
+  },
+  "税理士": {
+    "全国組織": "日本税理士会連合会",
+    "検索URL": "https://www.nichizeiren.or.jp/",
+    "地域協会": [
+      {"name": "東京税理士会", "url": "https://www.tokyozeirishikai.or.jp/"},
+      {"name": "東京地方税理士会", "url": "https://www.tokyokokai.or.jp/"},
+      {"name": "近畿税理士会", "url": "https://www.kinzei.or.jp/"},
+      {"name": "東海税理士会", "url": "https://www.tokaizei.or.jp/"},
+      {"name": "北海道税理士会", "url": "https://www.hitozei.or.jp/"}
+    ]
+  },
+  "社会保険労務士": {
+    "全国組織": "全国社会保険労務士会連合会",
+    "検索URL": "https://www.shakaihokenroumushi.jp/",
+    "都道府県協会": [
+      {"name": "東京都社会保険労務士会", "url": "https://www.tokyosr.jp/"},
+      {"name": "大阪府社会保険労務士会", "url": "https://www.osaka-sr.or.jp/"},
+      {"name": "神奈川県社会保険労務士会", "url": "https://www.sr-kanagawa.or.jp/"},
+      {"name": "愛知県社会保険労務士会", "url": "https://www.aichi-sr.or.jp/"},
+      {"name": "北海道社会保険労務士会", "url": "https://www.sr-hokkaido.or.jp/"}
+    ]
+  }
+}

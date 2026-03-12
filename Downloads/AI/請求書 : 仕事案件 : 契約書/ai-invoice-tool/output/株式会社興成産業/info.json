@@ -1,0 +1,24 @@
+{
+    "client": "株式会社興成産業",
+    "project_name": "ホームページ制作（10P）",
+    "date": "2026-02-15",
+    "items": [
+        {"desc": "ヒアリング・企画構成（サイト設計／ページ構成／導線計画）", "price": 220000, "quantity": 1},
+        {"desc": "市場調査・戦略立案（競合リサーチ／ターゲット分析／方向性策定）", "price": 150000, "quantity": 1},
+        {"desc": "プロジェクト管理・進行ディレクション", "price": 230000, "quantity": 1},
+        {"desc": "UIデザイン トップページ+下層ページ（10P）", "price": 420000, "quantity": 1},
+        {"desc": "フロントエンド実装（レスポンシブ対応込）", "price": 300000, "quantity": 1},
+        {"desc": "検索エンジン最適化（内部SEO設計・初期施策）", "price": 180000, "quantity": 1},
+        {"desc": "出張撮影・写真素材制作（現地1日／レタッチ加工含む）", "price": 180000, "quantity": 1},
+        {"desc": "コンテンツライティング 全10ページ（取材・原稿作成）", "price": 180000, "quantity": 1},
+        {"desc": "CMS導入・管理画面構築（更新機能一式）", "price": 60000, "quantity": 1},
+        {"desc": "メールフォーム構築（お問い合わせ機能）", "price": 50000, "quantity": 1},
+        {"desc": "セキュリティ設定・SSL証明書導入", "price": 40000, "quantity": 1},
+        {"desc": "アクセス解析ツール導入（GA4・Search Console）", "price": 30000, "quantity": 1},
+        {"desc": "サーバー環境構築・ドメイン接続", "price": 50000, "quantity": 1},
+        {"desc": "テスト検証・公開作業（マルチデバイス動作確認）", "price": 50000, "quantity": 1}
+    ],
+    "total": 2140000,
+    "profile": "佐伯真",
+    "deposit_ratio": 0
+}

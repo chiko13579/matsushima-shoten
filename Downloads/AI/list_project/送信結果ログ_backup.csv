@@ -1,0 +1,48 @@
+会社名,URL,結果,入力項目数,スキップ項目数,エラー
+FAST BPO株式会社,https://www.fastbpo.co.jp/contact-6,成功,5,0,
+SugarBeats株式会社,https://sugarbeats.co.jp/contact/,成功,5,0,
+株式会社バースタイプ,https://verse-type.co.jp/contact/,成功,6,0,
+株式会社Experience,https://ai-cmo.co.jp/service-contact/,失敗,0,0,送信ボタンが見つかりませんでした
+株式会社日テレWands,https://ad.ntv-wands.co.jp/movie#contact,失敗,0,0,iframeフォーム（非対応）
+株式会社Leading Communication,https://www.le-commu.co.jp/contact/,失敗,0,0,iframeフォーム（非対応）
+株式会社AppleTea,https://appletea.tokyo/#contact,成功,3,0,
+Bancor株式会社,https://www.bancor.co.jp/contact,成功,11,0,
+株式会社CCG C.REP,https://ccg-crep.jp/contact,成功,7,0,
+株式会社Your Pro,https://yourpro.co.jp/contact-us,成功,9,0,
+株式会社ビジョン_463897,https://snsunyo.com/lp#Contact,成功,7,0,
+株式会社アドプラス,https://ad-plus.net/lp/adp_2/#form,成功,5,0,
+LBJ株式会社,https://www.lovebj.co.jp/,成功,6,0,
+株式会社コンピュータ技研,https://www.kkctl.co.jp/contact,失敗,5,0,送信後にエラーまたは画面遷移なし
+株式会社アドレクス,https://ad-rex.com/contact,成功,9,0,
+GIGA株式会社,https://giga-tokyo.jp/contact/,成功,9,0,
+株式会社グラフトンノート,https://graphtone-note.co.jp/contact/,成功,5,0,
+"and,https://and-mmm.com/youtube/,成功,0,0,
+株式会社itoq,https://itoq.co.jp/contact,成功,4,0,
+株式会社プラセム,https://plusem.co.jp/contact/,失敗,8,0,送信後にエラーまたは画面遷移なし
+ドコドア株式会社,https://docodoor.com/recruit/contact_recruit/,成功,9,0,
+
+フレンドリーフラワー株式会社,http://friendly.co.jp/#Contact,成功,3,0,
+株式会社Qoox,https://qoox.co.jp/contact/,失敗,8,0,送信後にエラーまたは画面遷移なし
+株式会社Liforld,https://liforld.site/company#contact,成功,4,0,
+株式会社デジタリフト,https://digitalift.co.jp/contact/post-ir/,成功,5,0,
+キタイステクノロジーズ,https://kitais.jp/contact,成功,8,0,
+瀬戸株式会社,https://sedo.co.jp/inquiry/,成功,7,0,
+株式会社Zインディペンデンス,https://www.z-idp.com/contact,成功,5,0,
+株式会社天職市場,https://ten.1049.cc/job/25474223,失敗,0,0,送信ボタンが見つかりませんでした
+有限会社dilight,https://dilight.jp/contact/,失敗,0,0,送信ボタンが見つかりませんでした
+株式会社WiUs,https://wius.co.jp/digital-marketing/#contact,成功,5,0,
+ソリッドインテリジェンス株式会社,https://solid-i.co.jp/contact,失敗,0,0,送信ボタンが見つかりませんでした
+アントプロダクション株式会社,https://ant-production.co.jp/contact,成功,5,0,
+株式会社ウェブロッサム,https://weblossom.co.jp/inquiry/,成功,5,0,
+株式会社イノベーター･ジャパン,https://www.innovator.jp.net/contact,成功,7,0,
+株式会社リトラ,https://corporate.re-tra.com/contact/,成功,8,0,
+株式会社Looox,https://www.looox.jp/contact/,成功,4,0,
+プライムナンバーズ株式会社,https://primenumbers.co.jp/contact/,失敗,9,0,送信後にエラーまたは画面遷移なし
+BeBiz株式会社,https://bebiz.jp/contact/,成功,6,0,
+株式会社アシタヘ,https://forms.gle/QzwBokyeAAwVNMvv7,失敗,0,0,送信ボタンが見つかりませんでした
+合同会社Breate,https://breate.net/contact/,成功,7,0,
+タクシーチャンネル株式会社,https://taxi-ch.com/#link4,失敗,0,0,iframeフォーム（非対応）
+株式会社アサーティブ,https://assertive.co.jp/contact/,失敗,7,0,送信後にエラーまたは画面遷移なし
+株式会社プライムリード,https://prime-lead.co.jp/contact,失敗,4,0,ユーザーがスキップ
+株式会社らいとなう,https://right-now.jp/contact,失敗,0,0,送信ボタンが見つかりませんでした
+株式会社スタビライザー,https://www.stabilizer.co.jp/contact/,失敗,0,0,Attempted to use detached Frame '5C9CC2604BEAE9CA07F5367B56F367C2'.

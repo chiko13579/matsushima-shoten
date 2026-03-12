@@ -1,0 +1,20 @@
+{
+    "client": "だるまミート株式会社",
+    "project_name": "ホームページ制作",
+    "date": "2026-02-12",
+    "items": [
+        {"desc": "企画・構成費", "price": 30000, "quantity": 1},
+        {"desc": "デザイン TOPページ", "price": 70000, "quantity": 1},
+        {"desc": "デザイン 下層ページ", "price": 20000, "quantity": 6},
+        {"desc": "コーディング TOPページ", "price": 70000, "quantity": 1},
+        {"desc": "コーディング 下層ページ", "price": 20000, "quantity": 6},
+        {"desc": "WordPress実装", "price": 56000, "quantity": 1},
+        {"desc": "検証・デバッグ費", "price": 30000, "quantity": 1},
+        {"desc": "写真撮影 / 写真加工費用", "price": 60000, "quantity": 1},
+        {"desc": "ライティング費用", "price": 60000, "quantity": 1},
+        {"desc": "お値引き", "price": -116000, "quantity": 1}
+    ],
+    "total": 500000,
+    "profile": "森田",
+    "deposit_ratio": 0
+}

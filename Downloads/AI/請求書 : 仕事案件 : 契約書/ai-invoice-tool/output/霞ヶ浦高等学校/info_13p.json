@@ -1,0 +1,68 @@
+{
+    "client": "高校",
+    "project_name": "Webサイト制作（13P）",
+    "date": "2026-02-04",
+    "items": [
+        {
+            "desc": "デザイン TOPページ",
+            "price": 50000,
+            "quantity": 1
+        },
+        {
+            "desc": "デザイン 下層ページ",
+            "price": 25000,
+            "quantity": 5
+        },
+        {
+            "desc": "コーディング TOPページ（レスポンシブ込）",
+            "price": 70000,
+            "quantity": 1
+        },
+        {
+            "desc": "コーディング 下層ページ（レスポンシブ込）",
+            "price": 25000,
+            "quantity": 5
+        },
+        {
+            "desc": "コーディング PDFページ",
+            "price": 5000,
+            "quantity": 3
+        },
+        {
+            "desc": "WordPress実装・CMS構築（お知らせ・コース・卒業生の声・PDF管理）",
+            "price": 100000,
+            "quantity": 1
+        },
+        {
+            "desc": "お問い合わせフォーム実装（3系統）",
+            "price": 20000,
+            "quantity": 3
+        },
+        {
+            "desc": "卒業生フォーム追加機能",
+            "price": 30000,
+            "quantity": 1
+        },
+        {
+            "desc": "サーバー設定・SSL導入",
+            "price": 20000,
+            "quantity": 1
+        },
+        {
+            "desc": "検証・デバッグ費",
+            "price": 30000,
+            "quantity": 1
+        },
+        {
+            "desc": "ディレクション費",
+            "price": 20000,
+            "quantity": 1
+        },
+        {
+            "desc": "割引",
+            "price": -45000,
+            "quantity": 1
+        }
+    ],
+    "total": 600000
+}

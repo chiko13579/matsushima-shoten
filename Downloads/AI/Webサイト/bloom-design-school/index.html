@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloom Design School | 女性のためのデザインスクール</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Shippori+Mincho:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: #5a5550;
+            background-color: #fdfbf7;
+        }
+
+        h1,
+        h2,
+        h3,
+        .serif {
+            font-family: 'Shippori Mincho', serif;
+        }
+
+        .text-accent {
+            color: #d4a373;
+        }
+
+        .bg-accent {
+            background-color: #d4a373;
+        }
+
+        .bg-soft-pink {
+            background-color: #f7e6e2;
+        }
+
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 163, 115, 0.3);
+        }
+
+        /* Mobile Menu Animation */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(100%);
+        }
+
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .blob-shape {
+            border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+        }
+    </style>
+</head>
+
+<body class="leading-relaxed">
+
+    <!-- Header -->
+    <header class="fixed w-full bg-[#fdfbf7]/90 backdrop-blur-md z-50 py-4 shadow-sm border-b border-stone-100">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-2xl font-serif font-medium tracking-wider text-stone-700 flex items-center gap-2">
+                <i data-lucide="flower-2" class="text-[#d4a373]"></i>
+                Bloom <span class="text-xs mt-2 ml-1 text-stone-400 font-sans">Design School</span>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 text-sm tracking-widest text-stone-600">
+                <a href="#about" class="hover:text-[#d4a373] transition-colors">スクールについて</a>
+                <a href="#courses" class="hover:text-[#d4a373] transition-colors">コース紹介</a>
+                <a href="#voice" class="hover:text-[#d4a373] transition-colors">受講生の声</a>
+                <a href="#contact" class="px-6 py-2.5 bg-[#d4a373] text-white rounded-full btn-hover">無料相談会</a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-stone-600">
+                <i data-lucide="menu" size="28"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-[#fdfbf7] z-40 flex flex-col justify-center items-center gap-8 text-stone-600 md:hidden">
+        <button id="close-menu" class="absolute top-6 right-6">
+            <i data-lucide="x" size="32"></i>
+        </button>
+        <a href="#about" class="text-xl serif mobile-link">スクールについて</a>
+        <a href="#courses" class="text-xl serif mobile-link">コース紹介</a>
+        <a href="#voice" class="text-xl serif mobile-link">受講生の声</a>
+        <a href="#contact" class="px-8 py-3 bg-[#d4a373] text-white rounded-full shadow-lg mobile-link">無料相談会へ申し込む</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 md:pt-40 md:pb-32 px-6 overflow-hidden relative">
+        <!-- Decorative blobs -->
+        <div
+            class="absolute top-20 right-0 w-96 h-96 bg-[#f7e6e2] rounded-full mix-blend-multiply filter blur-3xl opacity-50 -z-10 animate-pulse">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-72 h-72 bg-[#e8e6d9] rounded-full mix-blend-multiply filter blur-3xl opacity-50 -z-10">
+        </div>
+
+        <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1 space-y-6">
+                <span
+                    class="inline-block px-4 py-1 bg-stone-100 text-[#d4a373] rounded-full text-xs tracking-widest mb-2">女性限定デザインスクール</span>
+                <h1 class="text-3xl md:text-5xl leading-tight font-medium text-stone-700">
+                    「私らしい」働き方を、<br>
+                    ここからデザインする。
+                </h1>
+                <p class="text-stone-500 leading-loose text-sm md:text-base pt-4">
+                    未経験からWebデザインを学び、<br class="md:hidden">場所や時間にとらわれない働き方を叶えませんか？<br>
+                    Bloomは、あなたの「好き」を仕事にするための<br class="md:hidden">一番優しいスクールです。
+                </p>
+                <div class="pt-6 flex flex-col sm:flex-row gap-4">
+                    <a href="#contact"
+                        class="px-8 py-3.5 bg-[#d4a373] text-white rounded-full text-center btn-hover tracking-wider shadow-lg shadow-orange-100">
+                        無料で相談してみる
+                    </a>
+                    <a href="#courses"
+                        class="px-8 py-3.5 border border-stone-300 text-stone-600 rounded-full text-center hover:bg-stone-50 transition-colors tracking-wider">
+                        コースを見る
+                    </a>
+                </div>
+            </div>
+            <div class="order-1 md:order-2 relative">
+                <div class="relative z-10">
+                    <!-- Fallback for image using styled div -->
+                    <div
+                        class="w-full h-[300px] md:h-[500px] bg-stone-200 blob-shape overflow-hidden relative shadow-xl">
+                        <img src="https://images.unsplash.com/photo-1598257006626-48b0c252070d?q=80&w=2070&auto=format&fit=crop"
+                            alt="カフェでデザイン作業をする女性"
+                            class="w-full h-full object-cover opacity-90 hover:scale-105 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-[#5a5550]/20 to-transparent"></div>
+                    </div>
+                </div>
+                <!-- Decorative Circle -->
+                <div class="absolute -bottom-6 -right-6 w-32 h-32 md:w-40 md:h-40 bg-white rounded-full flex items-center justify-center shadow-lg z-20 animate-bounce"
+                    style="animation-duration: 3s;">
+                    <div class="text-center">
+                        <p class="text-[10px] tracking-widest text-stone-400">SATISFACTION</p>
+                        <p class="text-2xl md:text-3xl font-serif text-[#d4a373]">98%</p>
+                        <p class="text-[10px] text-stone-400">満足度</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Concept Section -->
+    <section id="about" class="py-20 bg-white/50">
+        <div class="container mx-auto px-6 text-center max-w-2xl">
+            <h2 class="text-2xl md:text-3xl text-stone-700 mb-8 tracking-widest relative inline-block">
+                Concept
+                <span class="absolute -bottom-3 left-1/2 transform -translate-x-1/2 w-12 h-0.5 bg-[#d4a373]"></span>
+            </h2>
+            <p class="text-lg font-serif mb-6 text-stone-600">
+                心地よい空間で、<br>
+                新しい自分に出会う。
+            </p>
+            <p class="text-stone-500 text-sm leading-8 text-justify md:text-center">
+                デザインを学ぶことは、単にツールを使えるようになることではありません。<br>
+                それは、あなたの感性を形にし、誰かの役に立つ喜びを知ること。<br>
+                Bloomは、カフェのようにリラックスできる学びの場を提供します。<br>
+                忙しい毎日の中でも、ほっと一息つきながら、<br>
+                自分のペースで成長できる環境をご用意しました。
+            </p>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-24 bg-[#fdfbf7]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-[#d4a373] tracking-widest text-xs uppercase mb-2 block">Our Features</span>
+                <h2 class="text-2xl md:text-3xl text-stone-700 serif">Bloomが選ばれる理由</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div
+                    class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-lg transition-shadow border border-stone-50">
+                    <div
+                        class="w-14 h-14 bg-[#f7e6e2] rounded-full flex items-center justify-center mb-6 text-[#d4a373]">
+                        <i data-lucide="heart-handshake"></i>
+                    </div>
+                    <h3 class="text-lg mb-4 text-stone-700">女性限定の安心コミュニティ</h3>
+                    <p class="text-sm text-stone-500 leading-relaxed">
+                        講師も生徒も全員女性。キャリアの悩みやライフスタイルの相談もしやすく、一生モノの仲間に出会えます。
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div
+                    class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-lg transition-shadow border border-stone-50">
+                    <div
+                        class="w-14 h-14 bg-[#e8e6d9] rounded-full flex items-center justify-center mb-6 text-[#9a8c7d]">
+                        <i data-lucide="monitor-play"></i>
+                    </div>
+                    <h3 class="text-lg mb-4 text-stone-700">初心者でも挫折しないカリキュラム</h3>
+                    <p class="text-sm text-stone-500 leading-relaxed">
+                        パソコンが苦手な方でも大丈夫。基礎から実践まで、マンツーマンに近いサポートで丁寧に指導します。
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div
+                    class="bg-white p-8 rounded-3xl shadow-sm hover:shadow-lg transition-shadow border border-stone-50">
+                    <div
+                        class="w-14 h-14 bg-[#e2eaf7] rounded-full flex items-center justify-center mb-6 text-[#7d8c9a]">
+                        <i data-lucide="coffee"></i>
+                    </div>
+                    <h3 class="text-lg mb-4 text-stone-700">自分のペースで学べる</h3>
+                    <p class="text-sm text-stone-500 leading-relaxed">
+                        完全オンライン対応。子育ての合間や、お仕事終わりのカフェタイムなど、好きな時間に学習を進められます。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses -->
+    <section id="courses" class="py-24 bg-white relative">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+                <div>
+                    <span class="text-[#d4a373] tracking-widest text-xs uppercase mb-2 block">Courses</span>
+                    <h2 class="text-2xl md:text-3xl text-stone-700 serif">目的に合わせて選べるコース</h2>
+                </div>
+                <a href="#"
+                    class="hidden md:flex items-center gap-2 text-stone-500 hover:text-[#d4a373] transition-colors text-sm">
+                    全てのコースを見る <i data-lucide="arrow-right" size="16"></i>
+                </a>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Course Card 1 -->
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=2071&auto=format&fit=crop"
+                            alt="Web Design"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span
+                            class="text-[10px] bg-[#d4a373] text-white px-2 py-1 rounded-full tracking-wider">人気No.1</span>
+                        <h3 class="text-lg mt-3 mb-2 text-stone-700">Webデザインコース</h3>
+                        <p class="text-xs text-stone-400 mb-4 border-b border-stone-100 pb-4">Photoshop / Illustrator /
+                            HTML / CSS</p>
+                        <p class="text-sm text-stone-500 leading-relaxed mb-6 line-clamp-2">
+                            バナー制作からWebサイト構築まで。未経験からプロのデザイナーを目指す方のための総合コースです。
+                        </p>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-stone-400">期間: 4ヶ月~</span>
+                            <span class="font-serif text-[#d4a373] text-lg">¥12,800<span
+                                    class="text-xs text-stone-400">/月〜</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 2 -->
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1626785774573-4b7993143d2d?q=80&w=2070&auto=format&fit=crop"
+                            alt="UIUX Design"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span
+                            class="text-[10px] bg-stone-400 text-white px-2 py-1 rounded-full tracking-wider">キャリアアップ</span>
+                        <h3 class="text-lg mt-3 mb-2 text-stone-700">UI/UXデザインコース</h3>
+                        <p class="text-xs text-stone-400 mb-4 border-b border-stone-100 pb-4">Figma / XD / リサーチ / 設計</p>
+                        <p class="text-sm text-stone-500 leading-relaxed mb-6 line-clamp-2">
+                            使いやすさと美しさを両立する。アプリやWebサービスの設計を学び、より市場価値の高いデザイナーへ。
+                        </p>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-stone-400">期間: 3ヶ月~</span>
+                            <span class="font-serif text-[#d4a373] text-lg">¥14,500<span
+                                    class="text-xs text-stone-400">/月〜</span></span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Course Card 3 -->
+                <div
+                    class="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+                    <div class="h-48 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e?q=80&w=2070&auto=format&fit=crop"
+                            alt="Freelance"
+                            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span
+                            class="text-[10px] bg-[#e8a3a3] text-white px-2 py-1 rounded-full tracking-wider">副業・フリーランス</span>
+                        <h3 class="text-lg mt-3 mb-2 text-stone-700">フリーランス独立コース</h3>
+                        <p class="text-xs text-stone-400 mb-4 border-b border-stone-100 pb-4">営業 / 案件獲得 / 税金 / 契約</p>
+                        <p class="text-sm text-stone-500 leading-relaxed mb-6 line-clamp-2">
+                            スキルをお金に変える技術。案件の取り方からクライアントワークの作法まで、独立に必要な全てを学びます。
+                        </p>
+                        <div class="flex justify-between items-center text-sm">
+                            <span class="text-stone-400">期間: 2ヶ月~</span>
+                            <span class="font-serif text-[#d4a373] text-lg">¥9,800<span
+                                    class="text-xs text-stone-400">/月〜</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 text-center md:hidden">
+                <a href="#"
+                    class="inline-flex items-center gap-2 text-[#d4a373] border-b border-[#d4a373] pb-1 text-sm">
+                    全てのコースを見る <i data-lucide="arrow-right" size="14"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Voice Section -->
+    <section id="voice" class="py-24 bg-[#fdfbf7]">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-[#d4a373] tracking-widest text-xs uppercase mb-2 block">Student Voice</span>
+                <h2 class="text-2xl md:text-3xl text-stone-700 serif">卒業生の声</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+                <!-- Voice 1 -->
+                <div
+                    class="bg-white p-8 rounded-tr-3xl rounded-bl-3xl rounded-tl-md rounded-br-md shadow-sm flex flex-col md:flex-row gap-6 items-start relative">
+                    <div class="absolute -top-3 -left-2 text-5xl text-[#f7e6e2] font-serif">“</div>
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=1964&auto=format&fit=crop"
+                        alt="User"
+                        class="w-16 h-16 rounded-full object-cover border-2 border-white shadow-md flex-shrink-0">
+                    <div>
+                        <p class="text-sm text-stone-600 leading-loose mb-4">
+                            事務職からの転職でした。センスがないと無理だと思っていましたが、論理的にデザインを教えてもらえたので自信がつきました。今では在宅でWeb制作のお仕事をしています。
+                        </p>
+                        <div class="text-xs text-stone-400">
+                            <span class="block text-stone-700 font-medium text-sm mb-1">K.Sさん (28歳)</span>
+                            Webデザインコース卒業 / 現在フリーランス
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Voice 2 -->
+                <div
+                    class="bg-white p-8 rounded-tl-3xl rounded-br-3xl rounded-tr-md rounded-bl-md shadow-sm flex flex-col md:flex-row gap-6 items-start relative">
+                    <div class="absolute -top-3 -left-2 text-5xl text-[#e8e6d9] font-serif">“</div>
+                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?q=80&w=1887&auto=format&fit=crop"
+                        alt="User"
+                        class="w-16 h-16 rounded-full object-cover border-2 border-white shadow-md flex-shrink-0">
+                    <div>
+                        <p class="text-sm text-stone-600 leading-loose mb-4">
+                            育児との両立ができるか不安でしたが、自分のペースで進められるので無理なく続けられました。先生もママさんが多く、同じ悩み相談ができたのが心の支えになりました。
+                        </p>
+                        <div class="text-xs text-stone-400">
+                            <span class="block text-stone-700 font-medium text-sm mb-1">M.Tさん (34歳)</span>
+                            UI/UXコース卒業 / パート＆副業
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery / Instagram like area -->
+    <section class="py-12 overflow-hidden">
+        <div class="flex gap-4 min-w-full justify-center opacity-80">
+            <div class="w-40 h-40 md:w-56 md:h-56 rounded-lg overflow-hidden flex-shrink-0">
+                <img src="https://images.unsplash.com/photo-1497681883844-82b4f0a359a4?q=80&w=2070&auto=format&fit=crop"
+                    class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
+            </div>
+            <div class="w-40 h-40 md:w-56 md:h-56 rounded-lg overflow-hidden flex-shrink-0 mt-8">
+                <img src="https://images.unsplash.com/photo-1453614512568-c4024d13c247?q=80&w=1932&auto=format&fit=crop"
+                    class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
+            </div>
+            <div class="w-40 h-40 md:w-56 md:h-56 rounded-lg overflow-hidden flex-shrink-0">
+                <img src="https://images.unsplash.com/photo-1507537297725-24a1c434c67b?q=80&w=2070&auto=format&fit=crop"
+                    class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
+            </div>
+            <div class="w-40 h-40 md:w-56 md:h-56 rounded-lg overflow-hidden flex-shrink-0 mt-8">
+                <img src="https://images.unsplash.com/photo-1523362628745-0c100150b504?q=80&w=2036&auto=format&fit=crop"
+                    class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
+            </div>
+            <div class="w-40 h-40 md:w-56 md:h-56 rounded-lg overflow-hidden flex-shrink-0 hidden md:block">
+                <img src="https://images.unsplash.com/photo-1541462608143-0af7558bf1e8?q=80&w=1974&auto=format&fit=crop"
+                    class="w-full h-full object-cover hover:scale-110 transition-transform duration-700">
+            </div>
+        </div>
+        <p class="text-center mt-6 text-xs tracking-widest text-[#d4a373]">@BLOOM_DESIGN_SCHOOL</p>
+    </section>
+
+    <!-- CTA / Contact -->
+    <section id="contact" class="py-24 bg-[#f7e6e2] relative overflow-hidden">
+        <div class="absolute -top-24 -left-24 w-64 h-64 bg-white/30 rounded-full blur-3xl"></div>
+        <div class="absolute -bottom-24 -right-24 w-64 h-64 bg-[#d4a373]/20 rounded-full blur-3xl"></div>
+
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="bg-white/80 backdrop-blur-sm rounded-3xl p-8 md:p-16 max-w-3xl mx-auto shadow-xl text-center">
+                <h2 class="text-2xl md:text-3xl text-stone-700 serif mb-4">無料カウンセリングのご案内</h2>
+                <p class="text-stone-500 mb-8 leading-relaxed">
+                    「自分にできるかな？」「どのコースが良いかわからない」<br>
+                    そんな不安を解消するために、個別の無料相談会を実施しています。<br>
+                    無理な勧誘は一切ありません。まずはお話してみませんか？
+                </p>
+
+                <form class="space-y-4 max-w-md mx-auto text-left"
+                    onsubmit="event.preventDefault(); alert('お問い合わせありがとうございます。担当者よりご連絡いたします。');">
+                    <div>
+                        <label class="block text-xs text-stone-500 mb-1 ml-2">お名前</label>
+                        <input type="text" placeholder="例：山田 花子"
+                            class="w-full px-6 py-3 rounded-full bg-[#fdfbf7] border border-stone-200 focus:outline-none focus:border-[#d4a373] text-stone-600 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-stone-500 mb-1 ml-2">メールアドレス</label>
+                        <input type="email" placeholder="email@example.com"
+                            class="w-full px-6 py-3 rounded-full bg-[#fdfbf7] border border-stone-200 focus:outline-none focus:border-[#d4a373] text-stone-600 transition-colors">
+                    </div>
+                    <div>
+                        <label class="block text-xs text-stone-500 mb-1 ml-2">ご希望の日時（任意）</label>
+                        <select
+                            class="w-full px-6 py-3 rounded-full bg-[#fdfbf7] border border-stone-200 focus:outline-none focus:border-[#d4a373] text-stone-600 transition-colors appearance-none cursor-pointer">
+                            <option>平日 10:00 - 12:00</option>
+                            <option>平日 13:00 - 15:00</option>
+                            <option>平日 19:00 - 21:00</option>
+                            <option>土日祝 10:00 - 12:00</option>
+                            <option>土日祝 13:00 - 15:00</option>
+                        </select>
+                    </div>
+                    <div class="pt-4">
+                        <button type="submit"
+                            class="w-full px-8 py-4 bg-[#d4a373] text-white rounded-full btn-hover font-medium tracking-wider shadow-md">
+                            無料で申し込む
+                        </button>
+                    </div>
+                </form>
+                <p class="text-[10px] text-stone-400 mt-6">※オンライン（Zoom）にて実施いたします。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#5a5550] text-[#e8e6d9] py-12">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+                <div class="text-center md:text-left">
+                    <a href="#"
+                        class="text-2xl font-serif font-medium tracking-wider text-white flex justify-center md:justify-start items-center gap-2 mb-4">
+                        <i data-lucide="flower-2" class="text-[#d4a373]"></i>
+                        Bloom <span class="text-xs mt-2 ml-1 text-stone-400 font-sans">Design School</span>
+                    </a>
+                    <p class="text-xs text-stone-400">
+                        〒150-0000 東京都渋谷区神宮前1-2-3<br>
+                        info@bloom-design.jp
+                    </p>
+                </div>
+                <div class="flex gap-6 text-sm">
+                    <a href="#" class="hover:text-white transition-colors">スクールについて</a>
+                    <a href="#" class="hover:text-white transition-colors">コース紹介</a>
+                    <a href="#" class="hover:text-white transition-colors">よくある質問</a>
+                    <a href="#" class="hover:text-white transition-colors">プライバシーポリシー</a>
+                </div>
+                <div class="flex gap-4">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#d4a373] transition-colors">
+                        <i data-lucide="instagram" size="18"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#d4a373] transition-colors">
+                        <i data-lucide="twitter" size="18"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#d4a373] transition-colors">
+                        <i data-lucide="facebook" size="18"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-12 pt-8 text-center text-[10px] text-stone-500 tracking-wider">
+                &copy; 2024 Bloom Design School. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Icons
+        lucide.createIcons();
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('menu-btn');
+        const closeBtn = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('open');
+            document.body.classList.toggle('overflow-hidden');
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeBtn.addEventListener('click', toggleMenu);
+
+        // Close menu when clicking links
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+
+        // Simple smooth scroll fallback (if css scroll-behavior doesn't work perfectly in all contexts)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

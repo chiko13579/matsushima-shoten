@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【士業専門】審査・申請用サイト作成サービス</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2C70B9', // 指定テーマカラー（濃い青）
+                        primaryDark: '#1a528e', // primaryより少し暗い色
+                        cream: '#FBF9F7', // 指定背景色（薄いベージュ）
+                        line: '#06C755', // LINE公式カラーに近い緑
+                        secondary: '#facc15', // アクセントの黄色（強調など）
+                        text: '#374151', // 柔らかいダークグレー
+                        textLight: '#444444', // 薄いテキストカラー
+                    },
+                    fontFamily: {
+                        sans: ['"Noto Sans JP"', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        'xl': '1rem',
+                        '2xl': '1.5rem',
+                        '3xl': '2rem',
+                        '4xl': '3rem', // 大きな角丸用
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: #374151;
+            line-height: 1.8;
+            background-color: #FBF9F7;
+        }
+
+        /* 波のような曲線の区切り */
+        .wave-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            overflow: hidden;
+            line-height: 0;
+            transform: rotate(180deg);
+        }
+
+        .wave-bottom svg {
+            position: relative;
+            display: block;
+            width: calc(138% + 1.3px);
+            height: 50px;
+        }
+
+        .wave-bottom .shape-fill {
+            fill: #ffffff;
+        }
+
+        /* 柔らかい影 */
+        .soft-shadow {
+            box-shadow: 0 10px 40px -10px rgba(44, 112, 185, 0.15);
+        }
+    </style>
+</head>
+
+<body class="bg-cream">
+
+    <!-- Header -->
+    <header class="bg-white/90 backdrop-blur-md shadow-sm fixed w-full z-50 transition-all">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="font-bold text-primary text-lg md:text-xl flex items-center gap-2">
+                <i class="fas fa-cloud text-primary text-2xl"></i>
+                あなたのおかげマーケティング
+            </div>
+            <a href="https://lin.ee/HktIPxF"
+                class="bg-line hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full text-sm transition duration-300 shadow-md flex items-center gap-2">
+                <i class="fab fa-line text-white text-lg"></i> 無料相談（LINE）
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative w-full">
+        <div class="w-full">
+            <img src="./TOP_PC.jpg" alt="トップ画像" class="hidden md:block w-full h-auto">
+            <img src="./TOP_SP.jpg" alt="トップ画像" class="md:hidden w-full h-auto">
+        </div>
+    </section>
+
+
+
+    <!-- Problems / Use Cases -->
+    <section class="py-10 md:py-12 bg-cream relative">
+
+
+        <div class="max-w-6xl mx-auto px-4 mt-10">
+            <!-- Header Full Width -->
+            <div class="text-center mb-12">
+                <div class="bg-primary text-white rounded-2xl py-4 px-6 md:px-10 inline-block relative shadow-md">
+                    <h2 class="text-xl md:text-2xl font-bold flex items-center gap-3 leading-[1.3]">
+                        <i class="far fa-comment-dots text-2xl"></i>
+                        <div class="w-[70%] mx-auto md:w-auto">
+                            顧問先様から<br class="md:hidden">こんな相談はありませんか？
+                        </div>
+                    </h2>
+                    <!-- Speech bubble triangle -->
+                    <div
+                        class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 rotate-45 w-6 h-6 bg-primary">
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-10 items-center mb-10">
+                <!-- Left: Illustration -->
+                <div class="w-full md:w-4/12">
+                    <img src="./consultation.jpg" alt="顧問先の悩みイラスト"
+                        class="w-[60%] mx-auto md:w-[80%] rounded-[2.5rem] shadow-lg object-cover">
+                </div>
+                <!-- Right: Worries List -->
+                <div class="w-full md:w-8/12">
+                    <div class="space-y-6 pl-2">
+                        <!-- List Items -->
+                        <div class="flex items-start gap-4">
+                            <div class="bg-blue-100 p-2 rounded-full text-primary flex-shrink-0 mt-1">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <p class="font-bold text-xl text-slate-800 leading-relaxed text-left">取引先からホームページがないと言われた...
+                            </p>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-blue-100 p-2 rounded-full text-primary flex-shrink-0 mt-1">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <p class="font-bold text-xl text-slate-800 leading-relaxed text-left">
+                                開業したてでホームページを作る時間がない...</p>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-blue-100 p-2 rounded-full text-primary flex-shrink-0 mt-1">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <p class="font-bold text-xl text-slate-800 leading-relaxed text-left">
+                                補助金・融資・許可申請でホームページが必要...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Full Width Item -->
+            <div
+                class="bg-white p-5 md:p-6 rounded-2xl shadow-sm border-2 border-blue-100 flex items-center gap-4 justify-center max-w-4xl mx-auto mb-4">
+                <div class="bg-blue-100 p-2 rounded-full text-primary flex-shrink-0">
+                    <i class="fas fa-check"></i>
+                </div>
+                <p class="font-bold text-lg md:text-xl text-slate-800">でも、高い制作会社しか<br class="md:hidden">知らず、顧問先に<br
+                        class="md:hidden">紹介しづらい...</p>
+            </div>
+            <div
+                class="bg-white p-5 md:p-6 rounded-2xl shadow-sm border-2 border-blue-100 flex items-center gap-4 justify-center max-w-4xl mx-auto">
+                <div class="bg-blue-100 p-2 rounded-full text-primary flex-shrink-0">
+                    <i class="fas fa-check"></i>
+                </div>
+                <p class="font-bold text-lg md:text-xl text-slate-800">急いではいるけど、<br class="md:hidden">雑なものは困る...</p>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Proposal Header -->
+    <section class="pt-24 pb-12 bg-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-[1.75rem] md:text-4xl font-black text-slate-800 leading-[1.3]">
+                そんな時には、<br>
+                <span class="text-primary">最短2日で納品! 49,800円</span><br>
+                信頼される、<br class="md:hidden">高品質のホームページを。
+            </h2>
+        </div>
+    </section>
+
+    <!-- Gallery (Moved) -->
+    <section class="pb-20 bg-white relative">
+        <div class="w-full px-0 md:px-4 text-center">
+            <span class="text-primary font-bold tracking-widest text-sm mb-2 block">GALLERY</span>
+            <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-12 leading-[1.3]">
+                実際のホームページ
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 md:gap-0 px-4 md:px-0">
+                <!-- Video/Image Placeholder 1 -->
+                <div class="group relative bg-white overflow-hidden transition duration-500 border-none">
+                    <div class="md:h-72 w-full">
+                        <video src="./movie01.mp4" autoplay muted loop playsinline class="w-full"></video>
+                    </div>
+
+                </div>
+                <!-- Video/Image Placeholder 2 -->
+                <div class="group relative bg-white overflow-hidden transition duration-500 border-none">
+                    <div class="md:h-72 w-full">
+                        <video src="./movie02.mp4" autoplay muted loop playsinline class="w-full"></video>
+                    </div>
+
+                </div>
+                <!-- Video/Image Placeholder 3 -->
+                <div class="group relative bg-white overflow-hidden transition duration-500 border-none">
+                    <div class="md:h-72 w-full">
+                        <video src="./movie03.mp4" autoplay muted loop playsinline class="w-full"></video>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="mt-12">
+                <a href="https://rokuha.xsrv.jp/demo/" target="_blank"
+                    class="inline-flex items-center justify-center bg-primary hover:bg-primaryDark text-white font-bold py-4 px-10 rounded-full shadow-lg text-lg transition duration-300 transform hover:-translate-y-1">
+                    <i class="fas fa-desktop mr-3"></i> 実際のサイトを見てみる
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proposal Points List -->
+    <section class="pb-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+
+            <div
+                class="bg-cream rounded-[2.5rem] p-5 md:p-12 border-2 border-blue-100 shadow-lg relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-64 h-64 bg-blue-50 rounded-full -mr-20 -mt-20 opacity-50"></div>
+                <div class="absolute bottom-0 left-0 w-40 h-40 bg-yellow-50 rounded-full -ml-10 -mb-10 opacity-50">
+                </div>
+
+                <div class="relative z-10">
+                    <h3
+                        class="text-xl md:text-2xl font-black text-center mb-10 text-slate-800 flex items-center justify-center gap-2">
+                        <i class="fas fa-check-circle text-green-500 text-3xl"></i>
+                        顧問先に<br class="md:hidden">説明しやすいポイント
+                    </h3>
+
+                    <ul class="space-y-6 md:space-y-8">
+                        <li class="flex items-center gap-4 md:gap-6">
+                            <div class="bg-white p-2 rounded-full text-primary shadow-sm flex-shrink-0">
+                                <i class="fas fa-yen-sign text-xl w-6 h-6 flex items-center justify-center"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-lg md:text-xl text-slate-800 mb-1">料金が固定で<br
+                                        class="md:hidden">分かりやすい（49,800円）</p>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-4 md:gap-6">
+                            <div class="bg-white p-2 rounded-full text-primary shadow-sm flex-shrink-0">
+                                <i class="fas fa-shipping-fast text-xl w-6 h-6 flex items-center justify-center"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-lg md:text-xl text-slate-800 mb-1">最短2日で納品できる</p>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-4 md:gap-6">
+                            <div class="bg-white p-2 rounded-full text-primary shadow-sm flex-shrink-0">
+                                <i class="fas fa-file-alt text-xl w-6 h-6 flex items-center justify-center"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-lg md:text-xl text-slate-800 mb-1">必要な情報が<br
+                                        class="md:hidden">しっかり揃う<br class="md:hidden">ホームページに</p>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-4 md:gap-6">
+                            <div class="bg-white p-2 rounded-full text-primary shadow-sm flex-shrink-0">
+                                <i
+                                    class="fas fa-hand-holding-heart text-xl w-6 h-6 flex items-center justify-center"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-lg md:text-xl text-slate-800 mb-1">クライアントの負担が少ない<br
+                                        class="md:hidden">（情報提供＋Zoomだけ）
+                                </p>
+                            </div>
+                        </li>
+                        <li class="flex items-center gap-4 md:gap-6">
+                            <div class="bg-white p-2 rounded-full text-primary shadow-sm flex-shrink-0">
+                                <i class="fas fa-user-shield text-xl w-6 h-6 flex items-center justify-center"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-lg md:text-xl text-slate-800 mb-1">専門知識不要なので、<br
+                                        class="md:hidden">士業の先生の<br class="md:hidden">フォロー不要</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <!-- Additional Points -->
+                    <div class="mt-12 pt-10 border-t-2 border-blue-100/50 grid md:grid-cols-2 gap-6">
+                        <div class="bg-white rounded-2xl p-6 shadow-sm flex items-center gap-4">
+                            <div class="bg-blue-50 p-3 rounded-full text-primary">
+                                <i class="fas fa-lock text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-slate-800 text-lg">セキュリティーバッチリ</p>
+                                <p class="text-sm text-textLight">SSL・暗号化通信標準装備</p>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-2xl p-6 shadow-sm flex items-center gap-4">
+                            <div class="bg-blue-50 p-3 rounded-full text-primary">
+                                <i class="fas fa-mobile-alt text-2xl"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold text-slate-800 text-lg">スマホ対応</p>
+                                <p class="text-sm text-textLight">レスポンシブデザイン標準装備</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Audience (Match/Mismatch) -->
+    <section class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- Good For -->
+                <div class="bg-cream rounded-[2.5rem] p-6 md:p-10 border-2 border-blue-100 text-left">
+                    <div class="mb-8">
+                        <img src="./good_for.jpg" alt="こんな方にピッタリのイメージ"
+                            class="w-full h-48 object-cover rounded-2xl mb-6 shadow-sm">
+                        <div class="flex items-center gap-4">
+                            <img src="https://placehold.co/60x60/22c55e/ffffff?text=OK" alt="ピッタリな人アイコン"
+                                class="w-12 h-12 rounded-full shadow-sm">
+                            <h3 class="text-2xl font-black text-slate-800 leading-[1.3]">こんな方にピッタリ</h3>
+                        </div>
+                    </div>
+                    <ul class="space-y-5">
+                        <li class="flex items-center gap-4">
+                            <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                            <span class="font-medium text-slate-700">とにかく急いでいる</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                            <span class="font-medium text-slate-700">名刺用のサイト</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                            <span class="font-medium text-slate-700">デザインより機能<br class="md:hidden">（見た目より信用と情報）</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                            <span class="font-medium text-slate-700">コストを抑えたい<br class="md:hidden">（5万円程度の予算）</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                            <span class="font-medium text-slate-700">IT操作に不安がある<br class="md:hidden">（Zoomで一緒に設定）</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Not Good For -->
+                <div
+                    class="bg-slate-50 rounded-[2.5rem] p-6 md:p-10 border-2 border-slate-100 grayscale-[0.5] text-left">
+                    <div class="mb-8">
+                        <img src="./not_good_for.jpg" alt="向かない人のイメージ"
+                            class="w-full h-48 object-cover rounded-2xl mb-6 shadow-sm">
+                        <div class="flex items-center gap-4">
+                            <img src="https://placehold.co/60x60/94a3b8/ffffff?text=NG" alt="向かない人アイコン"
+                                class="w-12 h-12 rounded-full shadow-sm">
+                            <h3 class="text-2xl font-black text-textLight leading-[1.3]">こんな方には向きません</h3>
+                        </div>
+                    </div>
+                    <ul class="space-y-5 text-textLight">
+                        <li class="flex items-center gap-4">
+                            <i class="fas fa-times-circle text-slate-300 text-xl"></i>
+                            <span>オリジナルデザインが欲しい（※テンプレートです）</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fas fa-times-circle text-slate-300 text-xl"></i>
+                            <span>集客メインのサイト</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fas fa-times-circle text-slate-300 text-xl"></i>
+                            <span>デザインに強いこだわり（細部まで調整したい）</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i class="fas fa-times-circle text-slate-300 text-xl"></i>
+                            <span>複雑な機能が必要（予約システムなどは非対応）</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mt-10 text-left bg-cream p-8 rounded-[2rem] border border-blue-100 max-w-3xl mx-auto">
+                <p class="font-bold text-primary mb-2 text-lg"><i
+                        class="far fa-lightbulb text-yellow-400 mr-2 text-xl"></i>デザインについて</p>
+                <p class="text-textLight">このサービスは「信用されるサイトを急ぎで作る」ことに特化しています。<br>
+                    雰囲気は選べますが、ゼロからオリジナルではありません。その分、圧倒的なスピードと低コストを実現しています。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Standard Content -->
+    <section class="py-24 bg-cream">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-6 leading-[1.3]">掲載できる内容（標準）</h2>
+                <p class="text-textLight">名刺がわりのホームページに必要な情報を<br
+                        class="md:hidden">掲載いたします。<br>「これも載せられますか？」などございましたら、お気軽におっしゃってください。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+                <div class="bg-white p-5 md:p-6 rounded-2xl shadow-sm flex items-center gap-4 border border-slate-100">
+                    <i class="fas fa-building text-primary text-2xl w-8 text-center"></i>
+                    <span class="font-bold text-slate-700 text-lg">事務所概要</span>
+                </div>
+                <div class="bg-white p-5 md:p-6 rounded-2xl shadow-sm flex items-center gap-4 border border-slate-100">
+                    <i class="fas fa-user-tie text-primary text-2xl w-8 text-center"></i>
+                    <span class="font-bold text-slate-700 text-lg">経歴・資格</span>
+                </div>
+                <div class="bg-white p-5 md:p-6 rounded-2xl shadow-sm flex items-center gap-4 border border-slate-100">
+                    <i class="fas fa-briefcase text-primary text-2xl w-8 text-center"></i>
+                    <span class="font-bold text-slate-700 text-lg">取り扱い業務</span>
+                </div>
+                <div class="bg-white p-5 md:p-6 rounded-2xl shadow-sm flex items-center gap-4 border border-slate-100">
+                    <i class="fas fa-list-alt text-primary text-2xl w-8 text-center"></i>
+                    <span class="font-bold text-slate-700 text-lg">サービス案内</span>
+                </div>
+                <div class="bg-white p-5 md:p-6 rounded-2xl shadow-sm flex items-center gap-4 border border-slate-100">
+                    <i class="fas fa-yen-sign text-primary text-2xl w-8 text-center"></i>
+                    <span class="font-bold text-slate-700 text-lg">料金案内（任意）</span>
+                </div>
+
+                <div class="bg-white p-5 md:p-6 rounded-2xl shadow-sm flex items-center gap-4 border border-slate-100">
+                    <i class="fas fa-envelope text-primary text-2xl w-8 text-center"></i>
+                    <span class="font-bold text-slate-700 text-lg">問い合わせフォーム</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="py-24 bg-primary relative overflow-hidden text-white">
+        <!-- 背景装飾 -->
+        <div
+            class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIiBmaWxsLX9wYWNpdHk9IjAuMDUiIGZpbGw9IiNmZmZmZmYiPjxjaXJjbGUgY3g9IjIwIiBjeT0iMjAiIHI9IjEiLz48L3N2Zz4=')]">
+        </div>
+
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-3xl md:text-4xl font-black mb-10 leading-[1.3]">料金プラン</h2>
+            <div
+                class="bg-white text-slate-800 rounded-[2.5rem] shadow-2xl p-6 md:p-14 max-w-3xl mx-auto relative border-[8px] border-white/20 bg-clip-padding">
+                <p class="text-slate-400 mb-2 mt-4 font-bold">すべて込みで</p>
+                <div class="text-6xl md:text-7xl font-black text-primary mb-4 tracking-tight">
+                    49,800<span class="text-2xl font-bold text-textLight ml-1">円(税別)</span>
+                </div>
+                <p class="text-xs text-slate-400 mb-10 font-medium">（納品確認後のお支払い）</p>
+
+                <div class="text-left bg-slate-50 rounded-[1.5rem] p-5 md:p-8 mb-8 border border-slate-100">
+                    <p class="text-center font-bold text-primary mb-6 border-b-2 border-blue-100 pb-3">パッケージ内容</p>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-y-4 gap-x-4 text-base font-medium">
+                        <span><i class="fas fa-check text-green-500 mr-2"></i>3ページ制作</span>
+                        <span><i class="fas fa-check text-green-500 mr-2"></i>スマホ完全対応</span>
+                        <span><i class="fas fa-check text-green-500 mr-2"></i>SSL対応</span>
+                        <span><i class="fas fa-check text-green-500 mr-2"></i>セキュリティ対策</span>
+                        <span><i class="fas fa-check text-green-500 mr-2"></i>問い合わせフォーム</span>
+                        <span><i class="fas fa-check text-green-500 mr-2"></i>アイキャッチ作成</span>
+                        <span><i class="fas fa-check text-green-500 mr-2"></i>修正2回無料</span>
+                        <span><i class="fas fa-check text-green-500 mr-2"></i>Zoom設定サポート</span>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/50 rounded-xl p-6 text-left border border-white/10">
+                    <h4 class="font-bold text-white mb-4 flex items-center gap-2">
+                        <i class="fas fa-server text-secondary"></i> サーバー・ドメインについて
+                    </h4>
+                    <ul class="space-y-3 text-sm text-slate-200">
+                        <li class="flex items-start gap-2">
+                            <span class="text-secondary">●</span>
+                            推奨サーバー：エックスサーバー
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-secondary">●</span>
+                            年間費用：およそ 10,000〜15,000円
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <span class="text-secondary">●</span>
+                            独自ドメイン取得もサポート（年間1,000〜2,000円前後）
+                        </li>
+                    </ul>
+                    <p class="text-xs text-slate-200 mt-4 pt-4 border-t border-white/10">
+                        固定費が明確なので<br class="md:hidden">安心してご利用いただけます。<br>
+                        ※サーバー・ドメイン費用はお客様の実費負担となります。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Reason for Low Price -->
+    <section class="py-24 bg-cream">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-primary font-bold tracking-widest text-sm mb-2 block">REASON</span>
+                <h2 class="text-3xl md:text-4xl font-black text-slate-800 mb-6 leading-[1.3]">なぜ、安いの？</h2>
+                <p class="text-textLight">「安かろう悪かろう」ではありません。<br>
+                    徹底的なコストカットと効率化により、<br class="md:hidden">高品質なサイトを低価格で提供しています。</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Reason 1 -->
+                <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full -mr-10 -mt-10 opacity-50">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-6 text-primary text-2xl">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">AIを使って時短</h3>
+                        <p class="text-textLight leading-relaxed">
+                            制作工程の一部にAIを活用することで、作業時間を短縮。効率化できた分を、価格に反映しています。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Reason 2 -->
+                <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-yellow-50 rounded-full -mr-10 -mt-10 opacity-50">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-14 h-14 bg-yellow-100 rounded-full flex items-center justify-center mb-6 text-yellow-600 text-2xl">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">シンプルなデザインで、<br>必要なものだけ!!</h3>
+                        <p class="text-textLight leading-relaxed">
+                            シンプルな構成、デザインにすることで、<br>制作にかかる工数を抑えています。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Reason 3 -->
+                <div class="bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-green-50 rounded-full -mr-10 -mt-10 opacity-50">
+                    </div>
+                    <div class="relative z-10">
+                        <div
+                            class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center mb-6 text-green-600 text-2xl">
+                            <i class="fas fa-laptop-house"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 mb-3">完全オンライン完結</h3>
+                        <p class="text-textLight leading-relaxed">
+                            Zoomとチャットで完結させることで、移動コストや時間をカット。その分を価格に還元しています。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="py-24 bg-white">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-black text-center mb-10 text-slate-800 leading-[1.3]">制作の流れ</h2>
+
+            <div
+                class="bg-blue-50 rounded-3xl p-5 md:p-10 mb-16 border-2 border-blue-100 text-center max-w-3xl mx-auto">
+                <h3 class="text-xl font-bold text-primary mb-6">お客様がやることは？</h3>
+                <div class="flex flex-col md:flex-row justify-center gap-4 md:gap-8 mb-6">
+                    <div
+                        class="bg-white px-6 py-4 rounded-xl shadow-sm font-bold text-slate-700 flex items-center justify-center gap-3">
+                        <i class="far fa-keyboard text-primary text-xl"></i>
+                        必要情報の入力
+                    </div>
+                    <div
+                        class="bg-white px-6 py-4 rounded-xl shadow-sm font-bold text-slate-700 flex items-center justify-center gap-3">
+                        <i class="fas fa-server text-primary text-xl"></i>
+                        <div class="text-left md:text-center">
+                            サーバー契約<br class="md:hidden"><span
+                                class="text-xs font-normal text-slate-500">（Zoomで一緒に設定）</span>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-textLight font-medium">
+                    それ以外はすべてこちらで対応します。<br>
+                    <span class="font-bold text-slate-800">専門知識は不要です。</span>
+                </p>
+            </div>
+
+            <div class="relative">
+                <!-- Connector Line (Desktop) -->
+                <div class="absolute top-0 bottom-0 left-8 w-1 bg-slate-100 hidden md:block"
+                    style="transform: translateX(-50%); z-index: 0;"></div>
+
+                <!-- Step 1 -->
+                <div class="flex flex-col md:flex-row gap-2 md:gap-8 mb-16 relative z-10">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-white border-4 border-primary text-primary rounded-full flex items-center justify-center font-black text-xl md:text-2xl shadow-md mx-auto md:mx-0 md:mb-0">
+                        1</div>
+                    <div
+                        class="flex-1 bg-white p-8 rounded-[2rem] shadow-sm border border-slate-100 transition flex flex-col md:flex-row gap-6 items-center">
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-3 text-slate-800">必要情報をご提出</h3>
+                            <p class="text-textLight">専用テンプレートに沿って、事務所情報・サービス内容などをご入力いただきます。難しい専門知識は不要です。</p>
+                        </div>
+                        <div class="w-full md:w-1/3">
+                            <img src="./01.jpg" alt="情報提出のイラスト" class="w-full rounded-xl object-cover">
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 2 -->
+                <div class="flex flex-col md:flex-row gap-2 md:gap-8 mb-16 relative z-10">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-white border-4 border-primary text-primary rounded-full flex items-center justify-center font-black text-xl md:text-2xl shadow-md mx-auto md:mx-0 md:mb-0">
+                        2</div>
+                    <div
+                        class="flex-1 bg-white p-5 md:p-8 rounded-[2rem] shadow-sm border border-slate-100 transition flex flex-col md:flex-row gap-6 items-center">
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-3 text-slate-800">サーバー契約<br class="md:hidden">（Zoomで一緒に設定）
+                            </h3>
+                            <p class="text-textLight">エックスサーバーまたはConoHaを推奨。Zoomで画面共有しながら一緒に設定するので、初めての方でも安心です。</p>
+                        </div>
+                        <div class="w-full md:w-1/3">
+                            <img src="./02.jpg" alt="サーバー契約のイラスト" class="w-full rounded-xl object-cover">
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 3 -->
+                <div class="flex flex-col md:flex-row gap-2 md:gap-8 mb-16 relative z-10">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-white border-4 border-primary text-primary rounded-full flex items-center justify-center font-black text-xl md:text-2xl shadow-md mx-auto md:mx-0 md:mb-0">
+                        3</div>
+                    <div
+                        class="flex-1 bg-white p-5 md:p-8 rounded-[2rem] shadow-sm border border-slate-100 transition flex flex-col md:flex-row gap-6 items-center">
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-3 text-slate-800">2営業日で制作・納品</h3>
+                            <p class="text-textLight">情報が揃ってから最短2日で制作完了。公開前に内容をご確認いただきます。</p>
+                        </div>
+                        <div class="w-full md:w-1/3">
+                            <img src="./03.jpg" alt="制作納品のイラスト" class="w-full rounded-xl object-cover">
+                        </div>
+                    </div>
+                </div>
+                <!-- Step 4 -->
+                <div class="flex flex-col md:flex-row gap-2 md:gap-8 relative z-10">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 bg-primary text-white rounded-full flex items-center justify-center font-black text-xl md:text-2xl shadow-md mx-auto md:mx-0 md:mb-0">
+                        4</div>
+                    <div
+                        class="flex-1 bg-white p-5 md:p-8 rounded-[2rem] shadow-sm border border-slate-100 transition flex flex-col md:flex-row gap-6 items-center">
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold mb-3 text-slate-800">修正対応（2回無料）</h3>
+                            <p class="text-textLight">文章・画像差し替え、レイアウト微調整など、軽微な修正は2回まで無料で対応します。</p>
+                        </div>
+                        <div class="w-full md:w-1/3">
+                            <img src="./04.jpg" alt="修正対応のイラスト" class="w-full rounded-xl object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-24 bg-cream">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-black text-center mb-16 text-slate-800 leading-[1.3]">よくある質問</h2>
+            <div class="space-y-6">
+                <!-- FAQ Item -->
+                <details class="group bg-white rounded-[1.5rem] p-5 md:p-6 cursor-pointer shadow-sm">
+                    <summary class="font-bold flex justify-between items-center list-none text-slate-800 text-lg">
+                        <span class="flex items-center gap-3"><span class="text-primary">Q.</span> 本当に2日で納品できますか？</span>
+                        <span
+                            class="bg-blue-50 w-8 h-8 flex items-center justify-center rounded-full text-primary transition group-open:rotate-180"><i
+                                class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-textLight mt-4 pl-8 leading-relaxed">
+                        A.
+                        はい、可能でございます。必要情報が全て揃ってから2営業日での納品となります。もし情報提供が遅れてしまう場合は、その分納期も調整させていただくことになりますが、できる限り柔軟に対応させていただきます。
+                    </p>
+                </details>
+                <!-- FAQ Item -->
+                <details class="group bg-white rounded-[1.5rem] p-5 md:p-6 cursor-pointer shadow-sm">
+                    <summary class="font-bold flex justify-between items-center list-none text-slate-800 text-lg">
+                        <span class="flex items-center gap-3"><span class="text-primary">Q.</span> 補助金申請に間に合いますか？</span>
+                        <span
+                            class="bg-blue-50 w-8 h-8 flex items-center justify-center rounded-full text-primary transition group-open:rotate-180"><i
+                                class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-textLight mt-4 pl-8 leading-relaxed">
+                        A. 情報が揃っていれば最短2日で公開可能ですので、まずは申請期限をお知らせください。お客様のスケジュールに合わせて、最適な進行をご提案させていただきます。
+                    </p>
+                </details>
+                <!-- FAQ Item -->
+                <details class="group bg-white rounded-[1.5rem] p-5 md:p-6 cursor-pointer shadow-sm">
+                    <summary class="font-bold flex justify-between items-center list-none text-slate-800 text-lg">
+                        <span class="flex items-center gap-3"><span class="text-primary">Q.</span> 修正は何回までできますか？</span>
+                        <span
+                            class="bg-blue-50 w-8 h-8 flex items-center justify-center rounded-full text-primary transition group-open:rotate-180"><i
+                                class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-textLight mt-4 pl-8 leading-relaxed">
+                        A. 納品後2回まで無料で承っております。文章や画像の差し替え、レイアウトの微調整などが対象となります。大幅なデザイン変更につきましては、別途お見積もりとなる場合がございます。
+                    </p>
+                </details>
+                <!-- FAQ Item -->
+                <details class="group bg-white rounded-[1.5rem] p-5 md:p-6 cursor-pointer shadow-sm">
+                    <summary class="font-bold flex justify-between items-center list-none text-slate-800 text-lg">
+                        <span class="flex items-center gap-3"><span class="text-primary">Q.</span>
+                            デザインはどの程度選べますか？</span>
+                        <span
+                            class="bg-blue-50 w-8 h-8 flex items-center justify-center rounded-full text-primary transition group-open:rotate-180"><i
+                                class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-textLight mt-4 pl-8 leading-relaxed">
+                        A. 「堅め」「柔らかめ」「スタイリッシュ」など、ご希望の方向性をお聞かせください。テンプレートベースではございますが、審査用として信頼感のあるデザインをご提供いたします。
+                    </p>
+                </details>
+                <!-- FAQ Item -->
+                <details class="group bg-white rounded-[1.5rem] p-5 md:p-6 cursor-pointer shadow-sm">
+                    <summary class="font-bold flex justify-between items-center list-none text-slate-800 text-lg">
+                        <span class="flex items-center gap-3"><span class="text-primary">Q.</span>
+                            サーバー契約は誰の名義ですか？</span>
+                        <span
+                            class="bg-blue-50 w-8 h-8 flex items-center justify-center rounded-full text-primary transition group-open:rotate-180"><i
+                                class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-textLight mt-4 pl-8 leading-relaxed">
+                        A. お客様ご自身でのご契約をお願いしておりますが、Zoomで画面共有しながら一緒に設定を行いますので、専門知識がなくてもご安心ください。
+                    </p>
+                </details>
+                <!-- FAQ Item -->
+                <details class="group bg-white rounded-[1.5rem] p-5 md:p-6 cursor-pointer shadow-sm">
+                    <summary class="font-bold flex justify-between items-center list-none text-slate-800 text-lg">
+                        <span class="flex items-center gap-3"><span class="text-primary">Q.</span>
+                            今すぐ依頼しなくても相談できますか？</span>
+                        <span
+                            class="bg-blue-50 w-8 h-8 flex items-center justify-center rounded-full text-primary transition group-open:rotate-180"><i
+                                class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-textLight mt-4 pl-8 leading-relaxed">
+                        A. もちろんです。必要になったタイミングでスムーズにご連絡いただけるよう、まずはLINE登録だけでもしていただければ幸いです。ご相談は無料ですので、お気軽にお問い合わせください。
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us -->
+    <!-- About Us -->
+    <section class="py-24 bg-primary relative overflow-hidden">
+        <!-- 背景装飾 -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -mr-32 -mt-32"></div>
+        <div class="absolute bottom-0 left-0 w-96 h-96 bg-yellow-400/20 rounded-full -ml-32 -mb-32"></div>
+
+        <div class="max-w-6xl mx-auto px-4 relative z-10">
+            <h2 class="text-3xl md:text-4xl font-black text-center mb-4 text-white leading-[1.3]">私たちについて</h2>
+            <p class="text-center text-blue-100 mb-16">あなたのおかげマーケティング<br>スピードと品質を両立する、4人の専門チーム</p>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Member 1 -->
+                <div
+                    class="bg-white p-5 md:p-6 rounded-[2rem] shadow-lg border border-slate-50 transition duration-300 flex items-center gap-6">
+                    <img src="./M_01.png" alt="代表者アイコン"
+                        class="w-24 h-24 rounded-full object-cover border-4 border-blue-50 flex-shrink-0">
+                    <div class="text-left">
+                        <h3 class="font-bold text-lg mb-1 text-slate-800">代表 / マーケター</h3>
+                        <ul class="text-sm text-textLight space-y-1 list-disc list-inside">
+                            <li>15年で10店舗の飲食店経営</li>
+                            <li>集客を考えるのが得意</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Member 2 -->
+                <div
+                    class="bg-white p-5 md:p-6 rounded-[2rem] shadow-lg border border-slate-50 transition duration-300 flex items-center gap-6">
+                    <img src="./M_02.png" alt="コーダーアイコン"
+                        class="w-24 h-24 rounded-full object-cover border-4 border-blue-50 flex-shrink-0">
+                    <div class="text-left">
+                        <h3 class="font-bold text-lg mb-1 text-slate-800">コーダー/マーケター</h3>
+                        <ul class="text-sm text-textLight space-y-1 list-disc list-inside">
+                            <li>京都大学卒業後</li>
+                            <li>メーカーの経理として勤務</li>
+
+                            <li>現在はコーダー兼、マーケター</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Member 3 -->
+                <div
+                    class="bg-white p-5 md:p-6 rounded-[2rem] shadow-lg border border-slate-50 transition duration-300 flex items-center gap-6">
+                    <img src="./M_03.png" alt="デザイナーアイコン"
+                        class="w-24 h-24 rounded-full object-cover border-4 border-blue-50 flex-shrink-0">
+                    <div class="text-left">
+                        <h3 class="font-bold text-lg mb-1 text-slate-800">デザイナー 兼ライター</h3>
+                        <ul class="text-sm text-textLight space-y-1 list-disc list-inside">
+                            <li>飛行機のシステム開発に5年携わった後、</li>
+                            <li>デザイナー兼ライターに転身</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Member 4 -->
+                <div
+                    class="bg-white p-5 md:p-6 rounded-[2rem] shadow-lg border border-slate-50 transition duration-300 flex items-center gap-6">
+                    <img src="./M_04.png" alt="デザイナーアイコン"
+                        class="w-24 h-24 rounded-full object-cover border-4 border-blue-50 flex-shrink-0">
+                    <div class="text-left">
+                        <h3 class="font-bold text-lg mb-1 text-slate-800">デザイナー</h3>
+                        <ul class="text-sm text-textLight space-y-1 list-disc list-inside">
+                            <li>細かい作業が得意で</li>
+                            <li>コーポレートサイトを中心にデザイン</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div
+                class="mt-16 text-center max-w-2xl mx-auto bg-gradient-to-r from-yellow-400 to-orange-500 rounded-[2rem] p-5 md:p-10 shadow-2xl transition duration-500 relative overflow-hidden group">
+                <div class="absolute inset-0 bg-white/10 opacity-0 transition duration-500">
+                </div>
+                <h3 class="text-3xl md:text-5xl font-black text-white drop-shadow-md tracking-wider">今まで180件以上制作</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="contact" class="py-24 bg-gradient-to-t from-blue-100 to-white text-center relative overflow-hidden">
+        <div class="max-w-4xl mx-auto px-4 relative z-10">
+            <h2 class="text-3xl md:text-5xl font-black text-slate-800 mb-8 leading-[1.3]">
+                最短2日で、<br>高品質のホームページを。
+            </h2>
+            <p class="text-lg text-textLight mb-12">
+                ホームページが急に<br class="md:hidden">必要になった時、<br class="md:hidden">「どこに頼めばいいか<br
+                    class="md:hidden">分からない」という声を<br class="md:hidden">よく聞きます。<br>
+                その時の選択肢の一つとして、<br class="md:hidden">覚えておいていただけると<br class="md:hidden">嬉しいです。
+            </p>
+
+            <a href="https://lin.ee/HktIPxF"
+                class="inline-flex flex-col items-center justify-center bg-line hover:bg-green-600 text-white font-bold py-6 px-12 rounded-full shadow-xl text-xl md:text-2xl transform hover:-translate-y-1 transition duration-300 w-full md:w-auto min-w-[320px]">
+                <span class="flex items-center"><i
+                        class="fab fa-line mr-3 text-4xl text-white"></i>LINE登録してデモサイトを見てみる</span>
+                <span class="text-sm font-normal mt-2 opacity-80">相談無料・しつこい営業はありません</span>
+            </a>
+
+            <div class="mt-10 flex justify-center gap-6 text-sm text-textLight font-bold">
+                <span class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> 無料相談</span>
+                <span class="flex items-center gap-2"><i class="fas fa-check text-primary"></i> 依頼未定OK</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-800 text-slate-400 py-10 text-center text-sm">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="mb-4">
+                <span class="text-2xl font-bold text-white flex items-center justify-center gap-2">
+                    <i class="fas fa-cloud text-primary"></i>
+                    あなたのおかげマーケティング
+                </span>
+            </div>
+            <p>&copy; 2024 Anata no Okage Marketing. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

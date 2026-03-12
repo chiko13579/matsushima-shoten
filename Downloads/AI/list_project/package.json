@@ -1,0 +1,19 @@
+{
+  "name": "web-production-company-scraper",
+  "version": "1.0.0",
+  "description": "全国のWeb制作会社リストを作成するスクレイピングツール",
+  "main": "scraper_bing.js",
+  "scripts": {
+    "start": "node scraper_duckduckgo.js",
+    "google": "node scraper_google.js",
+    "bing": "node scraper_bing.js",
+    "duckduckgo": "node scraper_duckduckgo.js"
+  },
+  "dependencies": {
+    "puppeteer": "^24.15.0",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  },
+  "author": "",
+  "license": "MIT"
+}

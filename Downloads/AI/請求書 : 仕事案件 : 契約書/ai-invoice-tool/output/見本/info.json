@@ -1,0 +1,23 @@
+{
+    "client": "見本",
+    "project_name": "ホームページ制作（6P・WordPress）",
+    "date": "2026-02-13",
+    "items": [
+        {"desc": "デザイン TOPページ", "price": 60000, "quantity": 1},
+        {"desc": "デザイン 下層ページ", "price": 18000, "quantity": 5},
+        {"desc": "コーディング TOPページ（レスポンシブ込）", "price": 60000, "quantity": 1},
+        {"desc": "コーディング 下層ページ（レスポンシブ込）", "price": 18000, "quantity": 5},
+        {"desc": "取材・ライティング費用", "price": 12000, "quantity": 1},
+        {"desc": "WordPress実装", "price": 20000, "quantity": 1},
+        {"desc": "CMS構築(お知らせ)", "price": 20000, "quantity": 1},
+        {"desc": "お問い合わせフォーム実装", "price": 15000, "quantity": 1},
+        {"desc": "内部SEO対策", "price": 5000, "quantity": 1},
+        {"desc": "セキュリティ設定", "price": 5000, "quantity": 1},
+        {"desc": "Google Analytics・サーチコンソール設定", "price": 5000, "quantity": 1},
+        {"desc": "サーバー設定・SSL導入", "price": 10000, "quantity": 1},
+        {"desc": "ディレクション費", "price": 98000, "quantity": 1}
+    ],
+    "total": 490000,
+    "profile": "佐伯",
+    "deposit_ratio": 0
+}

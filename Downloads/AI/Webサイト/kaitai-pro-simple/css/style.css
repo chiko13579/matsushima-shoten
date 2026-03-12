@@ -1,0 +1,75 @@
+body {
+    -webkit-font-smoothing: antialiased;
+    color: #164E3B;
+    /* 全体の文字色を深緑に */
+    background-color: #fff;
+    letter-spacing: 0.06em;
+    line-height: 2.0;
+}
+
+/* クリップアイコン */
+.clip-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #48C78E;
+    border-radius: 12px;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+    margin-right: 12px;
+    position: relative;
+    top: -2px;
+}
+
+.clip-icon::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -2px;
+    width: 12px;
+    height: 24px;
+    border: 2px solid #48C78E;
+    border-radius: 12px;
+    border-bottom: none;
+    border-left: none;
+}
+
+/* 縦書き用クラス */
+.vertical-rl {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    letter-spacing: 0.2em;
+}
+
+/* アニメーション */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 背景装飾 */
+.bg-blob {
+    position: absolute;
+    filter: blur(100px);
+    z-index: -1;
+    opacity: 0.4;
+}
+
+/* マーカー */
+.marker-highlight {
+    background: linear-gradient(transparent 70%, #DCFCE7 70%);
+    display: inline;
+}
+
+/* キーワード強調 */
+.highlight-keyword {
+    color: #48C78E;
+    font-weight: 700;
+}

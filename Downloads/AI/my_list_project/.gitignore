@@ -1,0 +1,6 @@
+node_modules/
+credentials.json
+*.log
+.DS_Store
+web-companies-*.json
+web-companies-*.csv

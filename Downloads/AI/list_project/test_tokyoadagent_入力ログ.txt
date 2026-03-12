@@ -1,0 +1,26 @@
+【東京アドエージェント株式会社】
+URL: https://www.tokyoadagent.jp/info/contact.html
+結果: 成功
+入力内容:
+  - メニュー ※: その他
+  - お問い合わせ内容: テストです
+  - 会社名（全角） ※: あなたのおかげ
+  - 担当者名（全角） ※: 森田憲治
+  - TEL（半角） ※: 09091749043
+  - E-Mail（半角） ※: info@anatano-okage.com
+  - 個人情報の取り扱いについて ※: checked
+
+=== 送信ログ 2025/12/10 16:27:26 ===
+
+【東京アドエージェント株式会社】
+URL: https://www.tokyoadagent.jp/info/contact.html
+結果: 成功
+入力内容:
+  - メニュー ※: その他
+  - お問い合わせ内容: テストです
+  - 会社名（全角） ※: あなたのおかげ
+  - 担当者名（全角） ※: 森田憲治
+  - TEL（半角） ※: 09091749043
+  - E-Mail（半角） ※: info@anatano-okage.com
+  - 個人情報の取り扱いについて ※: checked
+

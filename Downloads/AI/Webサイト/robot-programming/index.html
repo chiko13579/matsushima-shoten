@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RoboKids - 子供向けロボットプログラミング教室</title>
+    <meta name="robots" content="noindex">
+    <meta name="description" content="未来を創る力を育む、子供向けロボットプログラミング教室「RoboKids」。論理的思考力と創造性を楽しく学びましょう。無料体験受付中！">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;900&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__container">
+            <h1 class="header__logo"><a href="#">RoboKids</a></h1>
+            <nav class="header__nav">
+                <ul class="header__nav-list">
+                    <li class="header__nav-item"><a href="#about">教室について</a></li>
+                    <li class="header__nav-item"><a href="#curriculum">カリキュラム</a></li>
+                    <li class="header__nav-item"><a href="#voice">保護者の声</a></li>
+                    <li class="header__nav-item"><a href="#access">アクセス</a></li>
+                    <li class="header__nav-item"><a href="#contact" class="btn btn--nav">無料体験に申し込む</a></li>
+                </ul>
+            </nav>
+            <button class="header__menu-btn" aria-label="Menu">
+                <span class="header__menu-line"></span>
+                <span class="header__menu-line"></span>
+                <span class="header__menu-line"></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <!-- Text content removed as per user request -->
+            <div class="hero__images">
+                <img src="images/top.png" alt="Children programming" class="hero-img-single">
+            </div>
+            <!-- Shapes removed for image-only view -->
+        </section>
+
+        <section id="about" class="section about">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__subtitle">About Us</span>
+                    <h2 class="section__title">なぜ今、<br>プログラミング？</h2>
+                </div>
+                <div class="about__content">
+                    <div class="about__text">
+                        <p>
+                            2020年から小学校で必修化されたプログラミング教育。<br>
+                            それは単に「コードを書く技術」を学ぶだけではありません。
+                        </p>
+                        <p>
+                            RoboKidsでは、ロボットを動かす試行錯誤を通じて、<br>
+                            <strong>「論理的思考力」</strong><br>
+                            <strong>「問題解決能力」</strong><br>
+                            <strong>「創造性」</strong><br>
+                            という、これからの社会を生き抜くために必要な<br>
+                            3つのチカラを育みます。
+                        </p>
+                    </div>
+                    <div class="about__image">
+                        <!-- Placeholder -->
+                        <img src="images/about_img.png" alt="Child thinking creatively" class="about-img">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="curriculum" class="section curriculum">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__subtitle">Curriculum</span>
+                    <h2 class="section__title">学びに合わせた<br>3つのコース</h2>
+                </div>
+                <div class="curriculum__grid">
+                    <div class="course-card">
+                        <div class="course-card__header course-card__header--beginner">
+                            <h3>ビギナーコース</h3>
+                            <span class="course-card__target">対象：年長〜小2</span>
+                        </div>
+                        <div class="course-card__body">
+                            <div class="course-card__icon">🐣</div>
+                            <p class="course-card__desc">
+                                パソコンに触れたことがなくても大丈夫。<br>
+                                ブロックを組み立てる感覚で、直感的にプログラミングの基礎を学びます。
+                            </p>
+                            <ul class="course-card__features">
+                                <li>マウス操作のみでOK</li>
+                                <li>動くロボット作り</li>
+                                <li>「順次・繰り返し」を学ぶ</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-card__header course-card__header--intermediate">
+                            <h3>スタンダードコース</h3>
+                            <span class="course-card__target">対象：小3〜小6</span>
+                        </div>
+                        <div class="course-card__body">
+                            <div class="course-card__icon">🚀</div>
+                            <p class="course-card__desc">
+                                Scratch（スクラッチ）を使って、より複雑な動きに挑戦。<br>
+                                センサーを使ったロボット制御も学びます。
+                            </p>
+                            <ul class="course-card__features">
+                                <li>条件分岐・変数の理解</li>
+                                <li>オリジナルゲーム作成</li>
+                                <li>センサープログラミング</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-card__header course-card__header--advanced">
+                            <h3>アドバンスコース</h3>
+                            <span class="course-card__target">対象：中学生〜</span>
+                        </div>
+                        <div class="course-card__body">
+                            <div class="course-card__icon">🤖</div>
+                            <p class="course-card__desc">
+                                本格的なテキストコーディング（Pythonなど）に挑戦。<br>
+                                AIやIoTなど、最新技術の基礎にも触れます。
+                            </p>
+                            <ul class="course-card__features">
+                                <li>テキスト言語の習得</li>
+                                <li>高度なアルゴリズム</li>
+                                <li>アプリ開発の基礎</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="voice" class="section voice">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__subtitle">Voice</span>
+                    <h2 class="section__title">保護者様の声</h2>
+                </div>
+                <div class="voice__grid">
+                    <div class="voice-card">
+                        <div class="voice-card__icon">👩</div>
+                        <p class="voice-card__text">
+                            「ゲームばかりしていた息子が、自分でゲームを作る側になりたいと言い出し、驚きました。集中力がついたように感じます。」
+                        </p>
+                        <p class="voice-card__author">小3男子のお母様</p>
+                    </div>
+                    <div class="voice-card">
+                        <div class="voice-card__icon">👨</div>
+                        <p class="voice-card__text">
+                            「失敗しても『なぜ動かないんだろう？』と自分で考えて修正する姿に成長を感じます。先生も優しくサポートしてくれます。」
+                        </p>
+                        <p class="voice-card__author">小5女子のお父様</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="access" class="section access">
+            <div class="container">
+                <div class="section__header">
+                    <span class="section__subtitle">Access</span>
+                    <h2 class="section__title">教室アクセス</h2>
+                </div>
+                <div class="access__content">
+                    <div class="access__map">
+                        <!-- Placeholder for Map -->
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.4712453147836!2d136.88025182660755!3d35.16980547275667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600376e794d78b89%3A0x81f7204bf8261663!2z5ZCN5Y-k5bGL6aeF!5e0!3m2!1sja!2sjp!4v1763858771496!5m2!1sja!2sjp"
+                            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="access__info">
+                        <dl>
+                            <dt>教室名</dt>
+                            <dd>RoboKids（ロボキッズ）東京本校</dd>
+                            <dt>住所</dt>
+                            <dd>〒100-0000<br>東京都千代田区プログラミング通り1-2-3<br>ミライビル 3F</dd>
+                            <dt>アクセス</dt>
+                            <dd>「未来駅」徒歩3分</dd>
+                            <dt>開校時間</dt>
+                            <dd>平日 15:00〜20:00 / 土日 10:00〜18:00</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section contact">
+            <div class="container">
+                <div class="contact__box">
+                    <h2 class="contact__title">まずは無料体験へ！</h2>
+                    <p class="contact__desc">
+                        実際の授業の雰囲気を体験してみませんか？<br>
+                        お子様の「できた！」の笑顔に出会えます。
+                    </p>
+                    <form class="contact__form">
+                        <div class="form-group">
+                            <label for="name">お子様のお名前</label>
+                            <input type="text" id="name" name="name" placeholder="例：山田 太郎" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="grade">学年</label>
+                            <select id="grade" name="grade">
+                                <option value="">選択してください</option>
+                                <option value="preschool">年長</option>
+                                <option value="e1">小1</option>
+                                <option value="e2">小2</option>
+                                <option value="e3">小3</option>
+                                <option value="e4">小4</option>
+                                <option value="e5">小5</option>
+                                <option value="e6">小6</option>
+                                <option value="junior">中学生</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">メールアドレス</label>
+                            <input type="email" id="email" name="email" placeholder="例：email@example.com" required>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--block">無料体験に申し込む</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__logo">RoboKids</div>
+                <ul class="footer__links">
+                    <li><a href="#">会社概要</a></li>
+                    <li><a href="#">プライバシーポリシー</a></li>
+                    <li><a href="#">特定商取引法に基づく表記</a></li>
+                </ul>
+            </div>
+            <p class="footer__copyright">&copy; 2024 RoboKids All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
