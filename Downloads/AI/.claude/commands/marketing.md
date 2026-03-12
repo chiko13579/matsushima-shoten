@@ -4,9 +4,9 @@
 
 ## 事前読み込み（必須）
 生成前に以下のファイルを読むこと:
-- `/Users/saeki/Downloads/AI/my-project/01_original/01_構想入力/05_ターゲット情報完成版.md`
-- `/Users/saeki/Downloads/AI/my-project/01_original/10_コンセプト設計/03_商品アイデア草案.md`
-- `/Users/saeki/Downloads/AI/my-project/01_original/40_コツメモ/01_興味づけコツ.md`
+- `/Users/saeki/Downloads/AI/02_自分のプロジェクト/my-project/01_original/01_構想入力/05_ターゲット情報完成版.md`
+- `/Users/saeki/Downloads/AI/02_自分のプロジェクト/my-project/01_original/10_コンセプト設計/03_商品アイデア草案.md`
+- `/Users/saeki/Downloads/AI/02_自分のプロジェクト/my-project/01_original/40_コツメモ/01_興味づけコツ.md`
 
 ## 実行ステップ
 
@@ -32,9 +32,9 @@
 ## fullモード（引数に "full" が含まれる場合）
 
 追加で以下を読んで実行する:
-- `/Users/saeki/Downloads/AI/my-project/01_original/30_販売戦略設計/01_販売導線設計.md`
-- `/Users/saeki/Downloads/AI/my-project/01_original/30_販売戦略設計/02_見込み客の教育戦略.md`
-- `/Users/saeki/Downloads/AI/my-project/01_original/40_コツメモ/03_セミナー構成案コツ_汎用版.md`
+- `/Users/saeki/Downloads/AI/02_自分のプロジェクト/my-project/01_original/30_販売戦略設計/01_販売導線設計.md`
+- `/Users/saeki/Downloads/AI/02_自分のプロジェクト/my-project/01_original/30_販売戦略設計/02_見込み客の教育戦略.md`
+- `/Users/saeki/Downloads/AI/02_自分のプロジェクト/my-project/01_original/40_コツメモ/03_セミナー構成案コツ_汎用版.md`
 
 ### STEP6: 販売導線設計
 ターゲットの悩みに合わせた導線パターンと特典セットを設計する。

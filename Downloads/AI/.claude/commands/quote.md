@@ -15,8 +15,8 @@
 
 ### 2. 参照ファイルの確認
 既存の見積書を参考に読む:
-- WordPress版参考: `/Users/saeki/Downloads/AI/請求書 : 仕事案件 : 契約書/ai-invoice-tool/output/JFEチュービック株式会社/info.json`
-- Studio版参考: `/Users/saeki/Downloads/AI/請求書 : 仕事案件 : 契約書/ai-invoice-tool/output/JFEチュービック株式会社/info_studio.json`
+- WordPress版参考: `/Users/saeki/Downloads/AI/03_請求書・契約/ai-invoice-tool/output/JFEチュービック株式会社/info.json`
+- Studio版参考: `/Users/saeki/Downloads/AI/03_請求書・契約/ai-invoice-tool/output/JFEチュービック株式会社/info_studio.json`
 
 ### 3. info.jsonの生成
 参考ファイルをベースに以下のルールで新しいinfo.jsonを作成する:
@@ -27,11 +27,11 @@
 - Studio版はWordPress実装・サーバー設定を除外
 - **備考欄は常に空白**
 
-保存先: `/Users/saeki/Downloads/AI/請求書 : 仕事案件 : 契約書/ai-invoice-tool/output/[クライアント名]/info.json`
+保存先: `/Users/saeki/Downloads/AI/03_請求書・契約/ai-invoice-tool/output/[クライアント名]/info.json`
 
 ### 4. PDF生成
 ```bash
-cd "/Users/saeki/Downloads/AI/請求書 : 仕事案件 : 契約書/ai-invoice-tool"
+cd "/Users/saeki/Downloads/AI/03_請求書・契約/ai-invoice-tool"
 python quote.py
 ```
 
